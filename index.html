@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>منصة همّة للرياضيات</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="شرح مختصر لدروس كتاب الرياضيات 2-1 للصف الثاني الثانوي مع أمثلة وبنك أسئلة واختبارات عشوائية ومسائل تحدٍّ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap">
+<script>
+document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl';
+window.__mjPending = new Set();
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  svg: { fontCache: 'global' },
+  options: { enableMenu: false },
+  startup: {
+    typeset: false,
+    ready: function () {
+      MathJax.startup.defaultReady();
+      MathJax.startup.promise.then(function () {
+        var nodes = Array.from(window.__mjPending).filter(function (n) { return n.isConnected && n.getClientRects().length > 0; });
+        window.__mjPending.clear();
+        document.documentElement.classList.add('mj-ready');
+        return MathJax.typesetPromise(nodes);
+      }).catch(function () {});
+    }
+  }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" async></script>
+<style>
+/* Layout: شريط علوي زجاجي ثابت، وأقسام تتبدّل في صفحة واحدة؛ بطلٌ بالأخضر الوطني ونقش نجمي ثماني، وشريط سدو يفصل الأقسام */
+:root{
+  --bg:#F3F7F4; --surface:#FFFFFF; --surface-2:#E9F2EC; --ink:#0D1F16; --muted:#4F6357; --line:#D5E1D9;
+  --green:#1B8354; --green-ink:#13693F; --gold:#A57E35; --gold-soft:#F5EDDC;
+  --ok:#157A42; --ok-bg:#E3F4E9; --bad:#B42318; --bad-bg:#FCEAE7;
+  --hero-a:#0F5636; --hero-b:#082E1D; --on-hero:#FFFFFF; --on-hero-2:rgba(255,255,255,.80); --on-hero-line:rgba(255,255,255,.16); --hero-gold:#E5C57F;
+  --shadow:0 1px 2px rgba(13,31,22,.05),0 10px 30px -16px rgba(13,31,22,.25);
+  --f-display:"Reem Kufi","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#06110C; --surface:#0D1B14; --surface-2:#12271C; --ink:#E4EEE8; --muted:#9AB1A4; --line:#20392C;
+  --green:#2EA56C; --green-ink:#62CC96; --gold:#D4B068; --gold-soft:#2A2313;
+  --ok:#59CB8C; --ok-bg:#10301E; --bad:#F59482; --bad-bg:#3A1611;
+  --hero-a:#0C4A2E; --hero-b:#04170E; --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px -16px rgba(0,0,0,.7);
+  color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#06110C; --surface:#0D1B14; --surface-2:#12271C; --ink:#E4EEE8; --muted:#9AB1A4; --line:#20392C;
+  --green:#2EA56C; --green-ink:#62CC96; --gold:#D4B068; --gold-soft:#2A2313;
+  --ok:#59CB8C; --ok-bg:#10301E; --bad:#F59482; --bad-bg:#3A1611;
+  --hero-a:#0C4A2E; --hero-b:#04170E; --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px -16px rgba(0,0,0,.7);
+  color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.85;margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+.app{min-height:100%}
+h1,h2,h3,h4{text-wrap:balance}
+button{font:inherit;color:inherit}
+a{color:var(--green-ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+.wrap{max-width:1140px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important;max-width:100%;overflow-x:auto;overflow-y:hidden;padding-block:2px}
+
+/* ---------- header */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--surface) 88%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:24px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex-shrink:0;background:none;border:0;padding:0;cursor:pointer}
+.mark{width:36px;height:36px;flex-shrink:0}
+.mark .m1{fill:var(--green)} .mark .m2{fill:var(--green);opacity:.72} .mark .m3{fill:var(--gold)}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;text-align:start}
+.brand-text b{font-family:var(--f-display);font-weight:700;font-size:1.45rem;color:var(--green-ink)}
+.brand-text small{font-size:.74rem;color:var(--muted)}
+.nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-inline-start:auto;-webkit-overflow-scrolling:touch}
+.nav::-webkit-scrollbar{display:none}
+.nav a{position:relative;padding:8px 13px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap;font-size:.95rem;transition:color .15s,background .15s}
+.nav a:hover{color:var(--ink);background:var(--surface-2)}
+.nav a[aria-current="page"]{color:var(--green-ink);background:var(--surface-2);font-weight:600}
+@media (max-width:880px){
+  .topbar .wrap{flex-wrap:wrap;gap:2px 12px;padding-block:8px 6px;min-height:0}
+  .nav{width:100%;margin-inline-start:0;padding-bottom:2px}
+  .nav a{padding:7px 11px;font-size:.92rem}
+}
+
+/* ---------- sadu band */
+.sadu{display:block;height:20px;position:relative;background:var(--bg)}
+.sadu::before{content:"";position:absolute;inset:0 0 auto;height:10px;background:var(--green);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10'%3E%3Cpath d='M0 10L6 2L12 10Z M12 0L18 8L24 0Z' fill='%23000'/%3E%3C/svg%3E") repeat-x 0 0/24px 10px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10'%3E%3Cpath d='M0 10L6 2L12 10Z M12 0L18 8L24 0Z' fill='%23000'/%3E%3C/svg%3E") repeat-x 0 0/24px 10px}
+.sadu::after{content:"";position:absolute;inset:13px 0 auto;height:3px;background:var(--gold);opacity:.85}
+.sadu.on-hero{background:transparent}
+
+/* ---------- hero */
+.hero{position:relative;color:var(--on-hero);background:linear-gradient(165deg,var(--hero-a),var(--hero-b));overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.085' stroke-width='1'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate%2845 32 32%29'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3Cpath d='M0 0L12.2 12.2M64 0L51.8 12.2M0 64L12.2 51.8M64 64L51.8 51.8'/%3E%3C/g%3E%3C/svg%3E");background-size:64px 64px}
+.hero::after{content:"";position:absolute;inset:auto -10% -40% auto;width:60%;aspect-ratio:1;max-width:100%;background:radial-gradient(closest-side,rgba(229,197,127,.16),transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:64px 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:600;color:var(--hero-gold);letter-spacing:.01em;margin:0}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--hero-gold);transform:rotate(45deg)}
+.hero h1{font-family:var(--f-display);font-weight:600;font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.2;margin:.35em 0 .3em}
+.hero h1 em{font-style:normal;color:var(--hero-gold)}
+.lead{font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--on-hero-2);max-width:56ch;margin:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;margin:28px 0 0;padding:0;list-style:none}
+.stats li{display:flex;align-items:baseline;gap:6px;color:var(--on-hero-2);font-size:.92rem}
+.stats b{font-family:var(--f-display);font-size:1.55rem;color:var(--on-hero);font-weight:600;font-variant-numeric:tabular-nums}
+.plate{background:rgba(255,255,255,.06);border:1px solid var(--on-hero-line);border-radius:18px;padding:22px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.plate-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--on-hero-line)}
+.plate-head p{margin:0;font-size:.8rem;color:var(--hero-gold);font-weight:600}
+.plate-head h2{margin:2px 0 0;font-family:var(--f-display);font-weight:600;font-size:1.35rem;line-height:1.35}
+.plate-head span{font-size:.8rem;color:var(--on-hero-2);text-align:end;line-height:1.5;flex-shrink:0}
+.plate ul{list-style:none;margin:6px 0 0;padding:0}
+.plate-row{width:100%;display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:12px;padding:11px 6px;background:none;border:0;border-bottom:1px dashed var(--on-hero-line);color:var(--on-hero);text-align:start;cursor:pointer;border-radius:8px;transition:background .15s}
+.plate li:last-child .plate-row{border-bottom:0}
+.plate-row:hover{background:rgba(255,255,255,.07)}
+.plate-num{font-family:var(--f-display);font-size:1.25rem;color:var(--hero-gold);text-align:center}
+.plate-title{font-weight:600;line-height:1.45}
+.plate-meta{font-size:.8rem;color:var(--on-hero-2);white-space:nowrap}
+@media (max-width:880px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:40px 40px}}
+
+/* ---------- buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 20px;border-radius:12px;border:1px solid transparent;font-weight:600;font-size:.98rem;cursor:pointer;text-decoration:none;transition:background .15s,border-color .15s,transform .1s,color .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-ink)}
+.btn-gold{background:var(--hero-gold);color:#1d1606}
+.btn-gold:hover{filter:brightness(1.06)}
+.btn-line{background:transparent;color:var(--on-hero);border-color:var(--on-hero-line)}
+.btn-line:hover{background:rgba(255,255,255,.08)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green-ink)}
+.btn-soft{background:var(--surface-2);color:var(--green-ink)}
+.btn-soft:hover{background:color-mix(in srgb,var(--green) 16%,var(--surface))}
+.btn-sm{min-height:38px;padding:7px 16px;font-size:.92rem;border-radius:10px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* ---------- generic sections */
+.view{padding-bottom:72px}
+.section{padding-block:56px 8px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.kicker{margin:0 0 4px;color:var(--gold);font-weight:600;font-size:.86rem}
+.section-head h2,.page-title{font-family:var(--f-display);font-weight:600;font-size:clamp(1.65rem,3.6vw,2.35rem);line-height:1.3;margin:0}
+.section-head p,.page-sub{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.page-head{padding-block:44px 8px}
+
+/* ---------- home: chapters */
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.ch-card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.ch-card:hover{border-color:color-mix(in srgb,var(--green) 45%,var(--line));box-shadow:var(--shadow);transform:translateY(-2px)}
+.ch-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ch-num{font-family:var(--f-display);font-size:2rem;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.ch-count{font-size:.8rem;color:var(--muted);background:var(--surface-2);padding:3px 10px;border-radius:999px}
+.ch-card h3{margin:4px 0 0;font-family:var(--f-display);font-weight:600;font-size:1.28rem;line-height:1.4}
+.ch-card p{margin:0;color:var(--muted);font-size:.94rem}
+.ch-lessons{list-style:none;margin:4px 0 8px;padding:12px 0 0;border-top:1px solid var(--line);display:grid;gap:3px;font-size:.88rem;color:var(--ink)}
+.ch-lessons li{display:flex;gap:8px;line-height:1.55}
+.ch-lessons span{color:var(--green-ink);font-weight:600;font-variant-numeric:tabular-nums;min-width:2.2em}
+.ch-card .btn{margin-top:auto;align-self:flex-start}
+
+.steps-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.steps-strip div{padding:22px;border-inline-start:1px solid var(--line)}
+.steps-strip div:first-child{border-inline-start:0}
+.steps-strip b{display:block;font-family:var(--f-display);font-weight:600;font-size:1.12rem;margin-bottom:4px}
+.steps-strip span.n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--surface-2);color:var(--green-ink);font-weight:700;font-size:.9rem;margin-bottom:10px}
+.steps-strip p{margin:0;color:var(--muted);font-size:.93rem}
+@media (max-width:760px){.steps-strip{grid-template-columns:minmax(0,1fr)}.steps-strip div{border-inline-start:0;border-top:1px solid var(--line)}.steps-strip div:first-child{border-top:0}}
+
+.vision-band{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.vision-band blockquote{margin:0;font-family:var(--f-display);font-weight:500;font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.6;color:var(--green-ink)}
+.vision-band .src{margin:10px 0 0;color:var(--muted);font-size:.86rem}
+.youth{border-inline-start:1px solid var(--line);padding-inline-start:28px}
+.youth p{margin:0;font-size:1.02rem;line-height:1.9}
+.youth cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-size:.86rem}
+@media (max-width:820px){.vision-band{grid-template-columns:minmax(0,1fr);padding:22px}.youth{border-inline-start:0;border-top:1px solid var(--line);padding:20px 0 0}}
+
+/* ---------- lessons */
+.lessons-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:36px;align-items:start;padding-top:32px}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 82px);max-height:calc(100vh - 100px);overflow-y:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px;scrollbar-width:thin}
+.toc-ch+.toc-ch{border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+.toc-ch-title{margin:6px 8px 4px;font-family:var(--f-display);font-weight:600;font-size:1rem;line-height:1.5}
+.toc-ch-title span{display:block;font-family:var(--f-body);font-size:.74rem;color:var(--gold);font-weight:600}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc-l{width:100%;display:flex;gap:10px;align-items:flex-start;text-align:start;background:none;border:0;padding:7px 8px;border-radius:9px;cursor:pointer;font-size:.9rem;line-height:1.5;color:var(--ink)}
+.toc-l:hover{background:var(--surface-2)}
+.toc-l.active{background:var(--green);color:#fff}
+.toc-l.active .toc-num{color:#fff}
+.toc-num{color:var(--green-ink);font-weight:700;font-variant-numeric:tabular-nums;min-width:2.3em}
+.lesson-pick{display:none}
+.lesson-pick label{display:block;font-size:.84rem;color:var(--muted);margin-bottom:6px}
+.lesson-pick select{width:100%;min-height:46px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 12px;font:inherit;font-weight:500}
+@media (max-width:920px){.lessons-layout{grid-template-columns:minmax(0,1fr);gap:18px;padding-top:24px}.toc{display:none}.lesson-pick{display:block}}
+
+.lesson{max-width:800px;min-width:0}
+.lesson-head{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.crumb{display:flex;align-items:center;gap:8px;margin:0 0 6px;color:var(--gold);font-weight:600;font-size:.86rem}
+.crumb .dot{width:5px;height:5px;background:currentColor;transform:rotate(45deg)}
+.lesson-head h2{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0;font-family:var(--f-display);font-weight:600;font-size:clamp(1.55rem,3.6vw,2.2rem);line-height:1.35}
+.lnum{font-size:.62em;color:var(--green-ink);background:var(--surface-2);border-radius:10px;padding:2px 12px;font-variant-numeric:tabular-nums}
+.block{padding-top:26px}
+.block-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.block-title{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-family:var(--f-display);font-weight:600;font-size:1.3rem}
+.block-row .block-title{margin-bottom:14px}
+.block-title::before{content:"";width:10px;height:10px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.concepts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.concepts li{position:relative;padding-inline-start:22px}
+.concepts li::before{content:"";position:absolute;inset-inline-start:2px;top:.78em;width:7px;height:7px;border:1.5px solid var(--green);transform:rotate(45deg)}
+.concepts b{color:var(--green-ink)}
+.rule{margin-top:18px;background:var(--surface-2);border:1px solid color-mix(in srgb,var(--green) 22%,var(--line));border-radius:var(--r);padding:16px 18px 10px;position:relative}
+.rule-tag{position:absolute;top:-11px;inset-inline-start:16px;background:var(--green);color:#fff;font-size:.76rem;font-weight:700;padding:1px 10px;border-radius:999px}
+.rule-body{overflow-x:auto}
+.examples{display:grid;gap:14px}
+.example{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.ex-tag{display:inline-block;font-size:.78rem;font-weight:700;color:var(--gold);margin-bottom:4px}
+.ex-q{margin-bottom:12px;overflow-x:auto}
+.ex-sol{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--surface-2);color:var(--green-ink);font-weight:700;font-size:.82rem;margin-top:3px}
+.steps li>div{min-width:0;overflow-x:auto}
+.answer-line{margin-top:12px;padding:10px 14px;background:var(--gold-soft);border-radius:10px;overflow-x:auto}
+.lesson-score{font-size:.86rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:3px 12px;border-radius:999px;margin-bottom:14px}
+.lesson-score.full{color:var(--ok);border-color:var(--ok);background:var(--ok-bg)}
+.practice-foot{display:flex;justify-content:flex-end;margin-top:14px}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:36px}
+.pager-btn{display:flex;flex-direction:column;gap:2px;text-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer;line-height:1.5;transition:border-color .15s}
+.pager-btn:hover{border-color:var(--green)}
+.pager-btn small{color:var(--muted);font-size:.8rem}
+.pager-btn span{font-weight:600}
+.pager-btn.next{text-align:end;align-items:flex-end}
+
+/* ---------- MCQ */
+.mcq-list{display:grid;gap:14px}
+.mcq{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 16px;transition:border-color .2s}
+.mcq.is-ok{border-color:color-mix(in srgb,var(--ok) 55%,var(--line))}
+.mcq.is-bad{border-color:color-mix(in srgb,var(--bad) 45%,var(--line))}
+.mcq-stem{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;margin-bottom:14px}
+.qnum{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--surface-2);color:var(--green-ink);font-weight:700;font-size:.88rem;font-variant-numeric:tabular-nums;margin-top:2px}
+.stem{min-width:0;overflow-x:auto;font-weight:500}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:640px){.opts{grid-template-columns:minmax(0,1fr)}}
+.opt{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:center;text-align:start;min-height:52px;padding:9px 12px;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover:not([disabled]){border-color:var(--green)}
+.opt[aria-pressed="true"]{border-color:var(--green);background:var(--surface-2)}
+.let{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);font-weight:700;font-size:.85rem;color:var(--muted);background:var(--surface)}
+.opt[aria-pressed="true"] .let{background:var(--green);border-color:var(--green);color:#fff}
+.otext{min-width:0;overflow-x:auto;padding-block:2px}
+.opt[disabled]{cursor:default}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.correct .let{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .let{background:var(--bad);border-color:var(--bad);color:#fff}
+.mcq.done .opt:not(.correct):not(.wrong){opacity:.6}
+.feedback{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.fb-head{display:flex;align-items:center;gap:8px;margin:0 0 4px;font-weight:700}
+.is-ok .fb-head{color:var(--ok)} .is-bad .fb-head{color:var(--bad)}
+.fb-head svg{width:20px;height:20px;flex-shrink:0}
+.fb-body{overflow-x:auto}
+.fb-label{display:inline-block;font-size:.78rem;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:6px;padding:0 8px;margin-inline-end:6px}
+
+/* ---------- test */
+.test-shell{max-width:820px;margin-inline:auto;padding-top:28px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+legend{font-weight:700;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;cursor:pointer}
+.chip input,.seg input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);font-size:.92rem;font-weight:500;transition:all .15s}
+.chip span::before{content:"";width:14px;height:14px;border-radius:4px;border:1.5px solid var(--muted);flex-shrink:0}
+.chip input:checked+span{border-color:var(--green);background:var(--surface-2);color:var(--green-ink)}
+.chip input:checked+span::before{background:var(--green);border-color:var(--green);box-shadow:inset 0 0 0 2px var(--surface-2)}
+.chip input:focus-visible+span,.seg input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.seg{display:inline-flex;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg label{position:relative;cursor:pointer}
+.seg span{display:block;min-width:56px;text-align:center;padding:7px 12px;border-radius:9px;font-weight:600;font-variant-numeric:tabular-nums}
+.seg input:checked+span{background:var(--green);color:#fff}
+.setup-foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.setup-msg{margin:0;color:var(--bad);font-size:.9rem}
+.best{margin:0;color:var(--muted);font-size:.9rem}
+.run-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.run-count{font-weight:700}
+.run-tag{font-size:.82rem;color:var(--muted)}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;color:var(--green-ink);background:var(--surface-2);padding:3px 12px;border-radius:999px;direction:ltr}
+.bar{height:6px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.bar span{display:block;height:100%;width:0;background:var(--green);border-radius:999px;transition:width .35s ease}
+#runQ .mcq{border:0;padding:0;background:none}
+.run-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
+.run-actions .spacer{flex:1}
+.result-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:26px;align-items:center}
+.ring{width:136px;height:136px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:var(--surface-2);stroke-width:10}
+.ring .val{fill:none;stroke:var(--green);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .8s ease}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-display);font-size:2rem;font-weight:600;font-variant-numeric:tabular-nums;direction:ltr}
+.result-top h2{margin:0;font-family:var(--f-display);font-weight:600;font-size:1.6rem}
+.result-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:8px 0 0;padding:0;list-style:none;color:var(--muted);font-size:.93rem}
+.result-meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.result-top{grid-template-columns:minmax(0,1fr);justify-items:start}}
+.review{display:grid;gap:12px;margin-top:22px}
+.rv{border:1px solid var(--line);border-radius:var(--r);padding:16px;background:var(--bg)}
+.rv-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.pill{font-size:.78rem;font-weight:700;padding:2px 10px;border-radius:999px}
+.pill.ok{background:var(--ok-bg);color:var(--ok)} .pill.bad{background:var(--bad-bg);color:var(--bad)} .pill.skip{background:var(--surface-2);color:var(--muted)}
+.rv-lesson{font-size:.8rem;color:var(--muted)}
+.rv-q{font-weight:500;overflow-x:auto}
+.rv-a{display:grid;gap:4px;margin:10px 0;font-size:.94rem}
+.rv-a div{overflow-x:auto}
+.rv-a .mine{color:var(--bad)} .rv-a .right{color:var(--ok)}
+.rv-e{font-size:.94rem;overflow-x:auto}
+
+/* ---------- challenges */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filter{padding:7px 15px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-weight:500;font-size:.92rem}
+.filter[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.chal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;align-items:start}
+@media (max-width:420px){.chal-grid{grid-template-columns:minmax(0,1fr)}}
+.chal{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.chal-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.lvl{font-size:.76rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--surface-2);color:var(--green-ink)}
+.lvl.hard{background:var(--gold-soft);color:var(--gold)}
+.lvl.max{background:var(--green);color:#fff}
+.chal-ch{font-size:.8rem;color:var(--muted)}
+.chal h3{margin:0;font-family:var(--f-display);font-weight:600;font-size:1.15rem;line-height:1.45}
+.chal-q{overflow-x:auto}
+.ans-row{display:flex;gap:8px}
+.ans-row input{flex:1;min-width:0;min-height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 12px;font:inherit}
+.ans-row input:focus{border-color:var(--green);outline:none}
+.chal label{font-size:.84rem;color:var(--muted);display:block;margin-bottom:6px}
+.chal-msg{margin:6px 0 0;font-size:.9rem;font-weight:600;min-height:1.4em}
+.chal-msg.ok{color:var(--ok)} .chal-msg.bad{color:var(--bad)} .chal-msg.info{color:var(--muted);font-weight:500}
+.chal-actions{display:flex;gap:8px;flex-wrap:wrap}
+.chal-hint{background:var(--gold-soft);border-radius:10px;padding:10px 14px;font-size:.95rem;overflow-x:auto}
+.chal-sol{border-top:1px dashed var(--line);padding-top:12px}
+
+/* ---------- vision */
+.v-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;min-width:0}
+.card h3{margin:0 0 10px;font-family:var(--f-display);font-weight:600;font-size:1.2rem}
+.card .label{display:block;font-size:.8rem;color:var(--gold);font-weight:700;margin-bottom:6px}
+.span-7{grid-column:span 7}.span-5{grid-column:span 5}.span-12{grid-column:span 12}.span-4{grid-column:span 4}.span-6{grid-column:span 6}
+@media (max-width:860px){.span-7,.span-5,.span-4,.span-6{grid-column:span 12}}
+.vision-quote{font-family:var(--f-display);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.7rem);line-height:1.6;color:var(--green-ink);margin:0}
+.values{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.values li{padding:6px 14px;border-radius:999px;background:var(--surface-2);color:var(--green-ink);font-weight:600;font-size:.93rem}
+.goals{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px}
+.goals li{position:relative;padding-inline-start:20px;line-height:1.6}
+.goals li::before{content:"";position:absolute;inset-inline-start:2px;top:.6em;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.goals li.hl{font-weight:700;color:var(--green-ink)}
+@media (max-width:640px){.goals{grid-template-columns:minmax(0,1fr)}}
+.pillar{border-top:3px solid var(--green)}
+.pillar:nth-child(2){border-top-color:var(--gold)}
+.pillar p{margin:0;color:var(--muted)}
+.youth-card{position:relative;overflow:hidden;color:var(--on-hero);background:linear-gradient(160deg,var(--hero-a),var(--hero-b));border:0}
+.youth-card::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.085' stroke-width='1'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate%2845 32 32%29'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3Cpath d='M0 0L12.2 12.2M64 0L51.8 12.2M0 64L12.2 51.8M64 64L51.8 51.8'/%3E%3C/g%3E%3C/svg%3E");background-size:64px 64px;opacity:.9}
+.youth-card>*{position:relative}
+.youth-card blockquote{margin:0;font-family:var(--f-display);font-weight:500;font-size:clamp(1.2rem,2.4vw,1.6rem);line-height:1.7}
+.youth-card cite{display:block;margin-top:12px;font-style:normal;color:var(--hero-gold);font-size:.9rem}
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.path{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--bg)}
+.path b{display:block;color:var(--green-ink)}
+.path span{font-size:.9rem;color:var(--muted)}
+.src-note{font-size:.84rem;color:var(--muted);margin-top:14px}
+
+/* ---------- about */
+.devs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.dev{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.avatar{position:relative;width:64px;height:64px;flex-shrink:0;display:grid;place-items:center}
+.avatar::before,.avatar::after{content:"";position:absolute;inset:8px;background:var(--green);border-radius:6px}
+.avatar::after{transform:rotate(45deg);opacity:.75}
+.avatar b{position:relative;z-index:1;font-family:var(--f-display);font-size:1.4rem;color:#fff}
+.dev h3{margin:0;font-family:var(--f-display);font-weight:600;font-size:1.2rem;line-height:1.4}
+.dev p{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+
+/* ---------- footer */
+.foot{border-top:1px solid var(--line);background:var(--surface)}
+.foot .wrap{padding-block:28px 32px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+.foot h4{margin:0 0 6px;font-family:var(--f-display);font-weight:600;font-size:1.05rem}
+.foot p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.8}
+.foot .names{color:var(--ink);font-weight:600}
+@media (max-width:720px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+
+
+</head>
+<body>
+<div class="app" dir="rtl" lang="ar">
+<header class="topbar">
+  <div class="wrap">
+    <button type="button" class="brand" data-go="home" aria-label="الرئيسية">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect class="m1" x="7" y="7" width="18" height="18" rx="2.5"/><rect class="m2" x="7" y="7" width="18" height="18" rx="2.5" transform="rotate(45 16 16)"/><circle class="m3" cx="16" cy="16" r="4.2"/></svg>
+      <span class="brand-text"><b>همّة</b><small>رياضيات 2-1 · ثاني ثانوي</small></span>
+    </button>
+    <nav class="nav" aria-label="الأقسام">
+      <a href="#home" data-go="home">الرئيسية</a>
+      <a href="#lessons" data-go="lessons">الدروس</a>
+      <a href="#test" data-go="test">اختبار عشوائي</a>
+      <a href="#challenge" data-go="challenge">مسائل التحدي</a>
+      <a href="#vision" data-go="vision">الوطن والرؤية</a>
+      <a href="#about" data-go="about">عن المنصة</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<section class="view" data-view="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">الصف الثاني الثانوي · الفصل الدراسي الأول</p>
+        <h1>رياضيات بهمّةٍ<br>تعانق <em>طويق</em></h1>
+        <p class="lead">شرحٌ مختصر وواضح لكل دروس كتاب الرياضيات 2-1، وأمثلة محلولة خطوة بخطوة، وبنك أسئلة اختيار من متعدد بالحلول، واختبارات عشوائية، ومسائل تحدٍّ، لجيلٍ يصنع مستقبل الوطن.</p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-gold" data-go="lessons">ابدأ الدروس</button>
+          <button type="button" class="btn btn-line" data-go="test">اختبر نفسك</button>
+        </div>
+        <ul class="stats">
+          <li><b>4</b>فصول</li>
+          <li><b>26</b>درساً</li>
+          <li><b>132</b>سؤالاً محلولاً</li>
+          <li><b>16</b>مسألة تحدٍّ</li>
+        </ul>
+      </div>
+      <aside class="plate" aria-label="فهرس الكتاب">
+        <div class="plate-head">
+          <div><p>المرجع</p><h2>كتاب الرياضيات 2-1</h2></div>
+          <span>وزارة التعليم<br>المملكة العربية السعودية</span>
+        </div>
+        <ul><li><button type="button" class="plate-row" data-lesson="1-1"><span class="plate-num">1</span><span class="plate-title">الدوال والمتباينات</span><span class="plate-meta">6 دروس</span></button></li><li><button type="button" class="plate-row" data-lesson="2-1"><span class="plate-num">2</span><span class="plate-title">المصفوفات</span><span class="plate-meta">5 دروس</span></button></li><li><button type="button" class="plate-row" data-lesson="3-1"><span class="plate-num">3</span><span class="plate-title">كثيرات الحدود ودوالها</span><span class="plate-meta">8 دروس</span></button></li><li><button type="button" class="plate-row" data-lesson="4-1"><span class="plate-num">4</span><span class="plate-title">العلاقات والدوال العكسية والجذرية</span><span class="plate-meta">7 دروس</span></button></li></ul>
+      </aside>
+    </div>
+  </div>
+  <div class="sadu" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="section">
+      <div class="section-head">
+        <div><p class="kicker">محتوى المقرر</p><h2>أربعة فصول، درسٌ درس</h2><p>كل درس فيه الفكرة باختصار، وقاعدة مركّزة، وأمثلة محلولة، وأسئلة تدريب بحلولها.</p></div>
+      </div>
+      <div class="ch-grid"><article class="ch-card"><div class="ch-top"><span class="ch-num">01</span><span class="ch-count">6 دروس · 29 سؤالاً</span></div><h3>الدوال والمتباينات</h3><p>من خصائص الأعداد الحقيقية إلى البرمجة الخطية وإيجاد الحل الأمثل.</p><ul class="ch-lessons"><li><span>1-1</span>خصائص الأعداد الحقيقية</li><li><span>1-2</span>العلاقات والدوال</li><li><span>1-3</span>دوال خاصة</li><li><span>1-4</span>تمثيل المتباينات الخطية ومتباينات القيمة المطلقة بيانياً</li><li><span>1-5</span>حل أنظمة المتباينات الخطية بيانياً</li><li><span>1-6</span>البرمجة الخطية والحل الأمثل</li></ul><button type="button" class="btn btn-primary btn-sm" data-lesson="1-1">ابدأ الفصل</button></article><article class="ch-card"><div class="ch-top"><span class="ch-num">02</span><span class="ch-count">5 دروس · 26 سؤالاً</span></div><h3>المصفوفات</h3><p>تنظيم البيانات في صفوف وأعمدة، والعمليات عليها، والمحددات، وحل الأنظمة.</p><ul class="ch-lessons"><li><span>2-1</span>مقدمة في المصفوفات</li><li><span>2-2</span>العمليات على المصفوفات</li><li><span>2-3</span>ضرب المصفوفات</li><li><span>2-4</span>المحددات وقاعدة كرامر</li><li><span>2-5</span>النظير الضربي للمصفوفة وأنظمة المعادلات الخطية</li></ul><button type="button" class="btn btn-primary btn-sm" data-lesson="2-1">ابدأ الفصل</button></article><article class="ch-card"><div class="ch-top"><span class="ch-num">03</span><span class="ch-count">8 دروس · 41 سؤالاً</span></div><h3>كثيرات الحدود ودوالها</h3><p>الأعداد المركبة والمميز، وقسمة كثيرات الحدود، ونظريتا الباقي والعوامل، والجذور.</p><ul class="ch-lessons"><li><span>3-1</span>الأعداد المركبة</li><li><span>3-2</span>القانون العام والمميز</li><li><span>3-3</span>العمليات على كثيرات الحدود</li><li><span>3-4</span>قسمة كثيرات الحدود</li><li><span>3-5</span>دوال كثيرات الحدود</li><li><span>3-6</span>حل معادلات كثيرات الحدود</li><li><span>3-7</span>نظريتا الباقي والعوامل</li><li><span>3-8</span>الجذور والأصفار</li></ul><button type="button" class="btn btn-primary btn-sm" data-lesson="3-1">ابدأ الفصل</button></article><article class="ch-card"><div class="ch-top"><span class="ch-num">04</span><span class="ch-count">7 دروس · 36 سؤالاً</span></div><h3>العلاقات والدوال العكسية والجذرية</h3><p>تركيب الدوال، والدوال العكسية، والجذور النونية، والأسس النسبية، والمعادلات الجذرية.</p><ul class="ch-lessons"><li><span>4-1</span>العمليات على الدوال</li><li><span>4-2</span>العلاقات والدوال العكسية</li><li><span>4-3</span>دوال ومتباينات الجذر التربيعي</li><li><span>4-4</span>الجذر النوني</li><li><span>4-5</span>العمليات على العبارات الجذرية</li><li><span>4-6</span>الأسس النسبية</li><li><span>4-7</span>حل المعادلات والمتباينات الجذرية</li></ul><button type="button" class="btn btn-primary btn-sm" data-lesson="4-1">ابدأ الفصل</button></article></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><div><p class="kicker">طريقة المذاكرة</p><h2>ثلاث خطوات للإتقان</h2></div></div>
+      <div class="steps-strip">
+        <div><span class="n">1</span><b>افهم الفكرة</b><p>اقرأ الملخص والقاعدة في أقل من دقيقتين.</p></div>
+        <div><span class="n">2</span><b>تتبّع الأمثلة</b><p>حاول حل المثال بنفسك، ثم اكشف الحل خطوة بخطوة.</p></div>
+        <div><span class="n">3</span><b>تدرّب واختبر</b><p>أجب عن أسئلة الدرس، ثم خُض اختباراً عشوائياً ومسائل التحدي.</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="vision-band">
+        <div>
+          <p class="kicker">رؤية وزارة التعليم</p>
+          <blockquote>تحقيق تعليم في صدارة المنافسة العالمية، ويُمكّن الأفراد والمجتمعات من اكتساب مهارات ذات جودة عالية.</blockquote>
+          <p class="src"><button type="button" class="btn btn-soft btn-sm" data-go="vision">الرؤية والرسالة والأهداف</button></p>
+        </div>
+        <div class="youth">
+          <p class="kicker">الشباب السعودي</p>
+          <p>«ثروتنا الأولى التي لا تعادلها ثروة مهما بلغت: شعبٌ طموحٌ، معظمُه من الشباب، هو فخر بلادنا وضمانُ مستقبلها بعون الله»</p>
+          <cite>صاحب السمو الملكي الأمير محمد بن سلمان، ولي العهد، من كلمته في رؤية السعودية 2030</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LESSONS ================= -->
+<section class="view" data-view="lessons" hidden>
+  <div class="wrap">
+    <div class="lessons-layout">
+      <aside class="toc" id="toc" aria-label="قائمة الدروس"><div class="toc-ch"><p class="toc-ch-title"><span>الفصل 1</span>الدوال والمتباينات</p><ul><li><button type="button" class="toc-l" data-lesson="1-1"><span class="toc-num">1-1</span><span class="toc-name">خصائص الأعداد الحقيقية</span></button></li><li><button type="button" class="toc-l" data-lesson="1-2"><span class="toc-num">1-2</span><span class="toc-name">العلاقات والدوال</span></button></li><li><button type="button" class="toc-l" data-lesson="1-3"><span class="toc-num">1-3</span><span class="toc-name">دوال خاصة</span></button></li><li><button type="button" class="toc-l" data-lesson="1-4"><span class="toc-num">1-4</span><span class="toc-name">تمثيل المتباينات الخطية ومتباينات القيمة المطلقة بيانياً</span></button></li><li><button type="button" class="toc-l" data-lesson="1-5"><span class="toc-num">1-5</span><span class="toc-name">حل أنظمة المتباينات الخطية بيانياً</span></button></li><li><button type="button" class="toc-l" data-lesson="1-6"><span class="toc-num">1-6</span><span class="toc-name">البرمجة الخطية والحل الأمثل</span></button></li></ul></div><div class="toc-ch"><p class="toc-ch-title"><span>الفصل 2</span>المصفوفات</p><ul><li><button type="button" class="toc-l" data-lesson="2-1"><span class="toc-num">2-1</span><span class="toc-name">مقدمة في المصفوفات</span></button></li><li><button type="button" class="toc-l" data-lesson="2-2"><span class="toc-num">2-2</span><span class="toc-name">العمليات على المصفوفات</span></button></li><li><button type="button" class="toc-l" data-lesson="2-3"><span class="toc-num">2-3</span><span class="toc-name">ضرب المصفوفات</span></button></li><li><button type="button" class="toc-l" data-lesson="2-4"><span class="toc-num">2-4</span><span class="toc-name">المحددات وقاعدة كرامر</span></button></li><li><button type="button" class="toc-l" data-lesson="2-5"><span class="toc-num">2-5</span><span class="toc-name">النظير الضربي للمصفوفة وأنظمة المعادلات الخطية</span></button></li></ul></div><div class="toc-ch"><p class="toc-ch-title"><span>الفصل 3</span>كثيرات الحدود ودوالها</p><ul><li><button type="button" class="toc-l" data-lesson="3-1"><span class="toc-num">3-1</span><span class="toc-name">الأعداد المركبة</span></button></li><li><button type="button" class="toc-l" data-lesson="3-2"><span class="toc-num">3-2</span><span class="toc-name">القانون العام والمميز</span></button></li><li><button type="button" class="toc-l" data-lesson="3-3"><span class="toc-num">3-3</span><span class="toc-name">العمليات على كثيرات الحدود</span></button></li><li><button type="button" class="toc-l" data-lesson="3-4"><span class="toc-num">3-4</span><span class="toc-name">قسمة كثيرات الحدود</span></button></li><li><button type="button" class="toc-l" data-lesson="3-5"><span class="toc-num">3-5</span><span class="toc-name">دوال كثيرات الحدود</span></button></li><li><button type="button" class="toc-l" data-lesson="3-6"><span class="toc-num">3-6</span><span class="toc-name">حل معادلات كثيرات الحدود</span></button></li><li><button type="button" class="toc-l" data-lesson="3-7"><span class="toc-num">3-7</span><span class="toc-name">نظريتا الباقي والعوامل</span></button></li><li><button type="button" class="toc-l" data-lesson="3-8"><span class="toc-num">3-8</span><span class="toc-name">الجذور والأصفار</span></button></li></ul></div><div class="toc-ch"><p class="toc-ch-title"><span>الفصل 4</span>العلاقات والدوال العكسية والجذرية</p><ul><li><button type="button" class="toc-l" data-lesson="4-1"><span class="toc-num">4-1</span><span class="toc-name">العمليات على الدوال</span></button></li><li><button type="button" class="toc-l" data-lesson="4-2"><span class="toc-num">4-2</span><span class="toc-name">العلاقات والدوال العكسية</span></button></li><li><button type="button" class="toc-l" data-lesson="4-3"><span class="toc-num">4-3</span><span class="toc-name">دوال ومتباينات الجذر التربيعي</span></button></li><li><button type="button" class="toc-l" data-lesson="4-4"><span class="toc-num">4-4</span><span class="toc-name">الجذر النوني</span></button></li><li><button type="button" class="toc-l" data-lesson="4-5"><span class="toc-num">4-5</span><span class="toc-name">العمليات على العبارات الجذرية</span></button></li><li><button type="button" class="toc-l" data-lesson="4-6"><span class="toc-num">4-6</span><span class="toc-name">الأسس النسبية</span></button></li><li><button type="button" class="toc-l" data-lesson="4-7"><span class="toc-num">4-7</span><span class="toc-name">حل المعادلات والمتباينات الجذرية</span></button></li></ul></div></aside>
+      <div class="lesson-area" style="min-width:0">
+        <div class="lesson-pick"><label for="lessonSelect">اختر الدرس</label><select id="lessonSelect"><optgroup label="الفصل 1: الدوال والمتباينات"><option value="1-1">1-1 خصائص الأعداد الحقيقية</option><option value="1-2">1-2 العلاقات والدوال</option><option value="1-3">1-3 دوال خاصة</option><option value="1-4">1-4 تمثيل المتباينات الخطية ومتباينات القيمة المطلقة بيانياً</option><option value="1-5">1-5 حل أنظمة المتباينات الخطية بيانياً</option><option value="1-6">1-6 البرمجة الخطية والحل الأمثل</option></optgroup><optgroup label="الفصل 2: المصفوفات"><option value="2-1">2-1 مقدمة في المصفوفات</option><option value="2-2">2-2 العمليات على المصفوفات</option><option value="2-3">2-3 ضرب المصفوفات</option><option value="2-4">2-4 المحددات وقاعدة كرامر</option><option value="2-5">2-5 النظير الضربي للمصفوفة وأنظمة المعادلات الخطية</option></optgroup><optgroup label="الفصل 3: كثيرات الحدود ودوالها"><option value="3-1">3-1 الأعداد المركبة</option><option value="3-2">3-2 القانون العام والمميز</option><option value="3-3">3-3 العمليات على كثيرات الحدود</option><option value="3-4">3-4 قسمة كثيرات الحدود</option><option value="3-5">3-5 دوال كثيرات الحدود</option><option value="3-6">3-6 حل معادلات كثيرات الحدود</option><option value="3-7">3-7 نظريتا الباقي والعوامل</option><option value="3-8">3-8 الجذور والأصفار</option></optgroup><optgroup label="الفصل 4: العلاقات والدوال العكسية والجذرية"><option value="4-1">4-1 العمليات على الدوال</option><option value="4-2">4-2 العلاقات والدوال العكسية</option><option value="4-3">4-3 دوال ومتباينات الجذر التربيعي</option><option value="4-4">4-4 الجذر النوني</option><option value="4-5">4-5 العمليات على العبارات الجذرية</option><option value="4-6">4-6 الأسس النسبية</option><option value="4-7">4-7 حل المعادلات والمتباينات الجذرية</option></optgroup></select></div>
+        <article class="lesson" id="lessonArticle"></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEST ================= -->
+<section class="view" data-view="test" hidden>
+  <div class="wrap">
+    <div class="test-shell">
+      <div class="page-head" style="padding-top:16px">
+        <p class="kicker">بنك الأسئلة</p>
+        <h2 class="page-title">اختبار عشوائي</h2>
+        <p class="page-sub">أسئلة اختيار من متعدد تُسحب عشوائياً من الفصول التي تختارها، مع الحل والتفسير بعد كل إجابة.</p>
+      </div>
+
+      <div class="panel" id="testSetup">
+        <fieldset><legend>الفصول المشمولة</legend><div class="chips"><label class="chip"><input type="checkbox" name="tch" value="1" id="tch1" checked><span>الفصل 1: الدوال والمتباينات</span></label><label class="chip"><input type="checkbox" name="tch" value="2" id="tch2" checked><span>الفصل 2: المصفوفات</span></label><label class="chip"><input type="checkbox" name="tch" value="3" id="tch3" checked><span>الفصل 3: كثيرات الحدود ودوالها</span></label><label class="chip"><input type="checkbox" name="tch" value="4" id="tch4" checked><span>الفصل 4: العلاقات والدوال العكسية والجذرية</span></label></div></fieldset>
+        <fieldset><legend>عدد الأسئلة</legend>
+          <div class="seg" role="radiogroup">
+            <label><input type="radio" name="tcount" value="5" id="tc5"><span>5</span></label>
+            <label><input type="radio" name="tcount" value="10" id="tc10" checked><span>10</span></label>
+            <label><input type="radio" name="tcount" value="15" id="tc15"><span>15</span></label>
+            <label><input type="radio" name="tcount" value="20" id="tc20"><span>20</span></label>
+          </div>
+        </fieldset>
+        <div class="setup-foot">
+          <button type="button" class="btn btn-primary" id="startTest">ابدأ الاختبار</button>
+          <p class="best" id="bestScore"></p>
+          <p class="setup-msg" id="setupMsg" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="panel" id="testRun" hidden>
+        <div class="run-head">
+          <div><div class="run-count" id="runCount"></div><div class="run-tag" id="runTag"></div></div>
+          <span class="timer" id="runTimer" aria-label="الوقت المنقضي">00:00</span>
+        </div>
+        <div class="bar"><span id="runBar"></span></div>
+        <div id="runQ"></div>
+        <div class="run-actions">
+          <button type="button" class="btn btn-primary" id="runConfirm" disabled>تأكيد الإجابة</button>
+          <button type="button" class="btn btn-primary" id="runNext" hidden>السؤال التالي</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost btn-sm" id="runQuit">إنهاء الاختبار</button>
+        </div>
+      </div>
+
+      <div class="panel" id="testResult" hidden>
+        <div class="result-top">
+          <div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="52"/><circle class="val" id="ringVal" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/></svg><b id="resPct">0%</b></div>
+          <div>
+            <h2 id="resMsg"></h2>
+            <ul class="result-meta">
+              <li>الإجابات الصحيحة: <b id="resCorrect"></b></li>
+              <li>الوقت: <b id="resTime"></b></li>
+            </ul>
+            <div class="run-actions">
+              <button type="button" class="btn btn-primary" id="resNew">اختبار جديد</button>
+              <button type="button" class="btn btn-ghost" id="resRetry">أعد الأسئلة الخاطئة</button>
+            </div>
+          </div>
+        </div>
+        <div class="review" id="resReview"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHALLENGES ================= -->
+<section class="view" data-view="challenge" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="kicker">إجابات مفتوحة</p>
+      <h2 class="page-title">مسائل التحدي</h2>
+      <p class="page-sub">مسائل أعمق تجمع أكثر من مهارة، بلا خيارات. حلّها في دفترك، واكتب الناتج للتحقق إن كان عددياً، ثم اطّلع على التلميح أو الحل التفصيلي.</p>
+    </div>
+    <div class="filters" id="chalFilters"><button type="button" class="filter" data-filter="all" aria-pressed="true">الكل</button><button type="button" class="filter" data-filter="1" aria-pressed="false">الفصل 1</button><button type="button" class="filter" data-filter="2" aria-pressed="false">الفصل 2</button><button type="button" class="filter" data-filter="3" aria-pressed="false">الفصل 3</button><button type="button" class="filter" data-filter="4" aria-pressed="false">الفصل 4</button></div>
+    <div class="chal-grid" id="chalGrid"></div>
+  </div>
+</section>
+
+<!-- ================= VISION ================= -->
+<section class="view" data-view="vision" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="kicker">التعليم والوطن</p>
+      <h2 class="page-title">وزارة التعليم ورؤية السعودية 2030</h2>
+      <p class="page-sub">نتعلّم الرياضيات لأنها لغة العلوم والتقنية التي تبني بها المملكة مستقبلها، ولأن الطالب المتمكن هو جوهر رؤية الوطن.</p>
+    </div>
+    <div class="v-grid">
+      <div class="card span-7">
+        <span class="label">رؤية وزارة التعليم</span>
+        <p class="vision-quote">تحقيق تعليم في صدارة المنافسة العالمية، ويُمكّن الأفراد والمجتمعات من اكتساب مهارات ذات جودة عالية.</p>
+      </div>
+      <div class="card span-5">
+        <span class="label">رسالة الوزارة</span>
+        <p style="margin:0">تقديم تعليم ذي جودة عالية يعزّز القيم، معزّز بكوادر مؤهلة، متاح للجميع، ضمن بيئة آمنة ومحفّزة، لإعداد أفراد فاعلين في المجتمع ومساهمين في صناعة وطن رائد.</p>
+      </div>
+      <div class="card span-12">
+        <span class="label">القيم</span>
+        <ul class="values"><li>الالتزام</li><li>التعلم المستمر</li><li>الإبداع</li><li>روح الفريق</li><li>الجودة</li></ul>
+      </div>
+      <div class="card span-7">
+        <h3>الأهداف الاستراتيجية للوزارة</h3>
+        <ul class="goals">
+          <li>الارتقاء بمستوى التجربة الرقمية</li>
+          <li>تعزيز الحوكمة والالتزام وإدارة المخاطر</li>
+          <li>تطوير بيئة مدرسية آمنة وابتكارية</li>
+          <li>رفع كفاءة الإنفاق وتعزيز الاستدامة المالية</li>
+          <li>تحسين أداء المدارس، وتعزيز الشراكات مع المجتمع</li>
+          <li>تحسين تجربة المستفيدين</li>
+          <li class="hl">الاستثمار في الطالب والمعلم أولاً بالرعاية</li>
+          <li>ضمان وصول التعليم للجميع</li>
+          <li class="hl">تعزيز القيم والهوية الوطنية</li>
+          <li>تطوير كفاءات الموارد البشرية وتعزيز ثقافة المؤسسة</li>
+        </ul>
+      </div>
+      <div class="card span-5">
+        <h3>محاور الوزارة</h3>
+        <ul class="values"><li>التعليم للجميع</li><li>رحلة التعليم</li><li>جودة التعليم</li><li>الاستدامة المالية</li><li>التميز للمؤسسة</li></ul>
+        <p class="src-note">المصدر: صفحة «الرؤية والرسالة والأهداف» في الموقع الرسمي لوزارة التعليم <a href="https://www.moe.gov.sa/ar/aboutus/aboutministry/Pages/visionmissiongoals.aspx" target="_blank" rel="noopener">moe.gov.sa</a> (الرسالة بتصرف يسير).</p>
+      </div>
+
+      <div class="card span-4 pillar"><span class="label">رؤية 2030</span><h3>مجتمع حيوي</h3><p>مجتمع يعتز بقيمه وهويته الوطنية، وينعم ببيئة إيجابية وحياة عامرة.</p></div>
+      <div class="card span-4 pillar"><span class="label">رؤية 2030</span><h3>اقتصاد مزدهر</h3><p>اقتصاد متنوع يستثمر في التعليم والمهارات ويفتح الفرص أمام الجميع.</p></div>
+      <div class="card span-4 pillar"><span class="label">رؤية 2030</span><h3>وطن طموح</h3><p>حكومة فاعلة ومواطن مسؤول يسهم بعلمه وعمله في بناء وطنه.</p></div>
+
+      <div class="card span-12 youth-card">
+        <span class="label" style="color:var(--hero-gold)">الشباب السعودي</span>
+        <blockquote>«ثروتنا الأولى التي لا تعادلها ثروة مهما بلغت: شعبٌ طموحٌ، معظمُه من الشباب، هو فخر بلادنا وضمانُ مستقبلها بعون الله»</blockquote>
+        <cite>صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز، ولي العهد، من كلمته في رؤية السعودية 2030</cite>
+      </div>
+
+      <div class="card span-12">
+        <h3>رياضيات هذا الفصل في طريق طموحك</h3>
+        <div class="paths">
+          <div class="path"><b>البرمجة الخطية</b><span>تحسين الإنتاج والخدمات اللوجستية وتوزيع الموارد في المصانع والموانئ.</span></div>
+          <div class="path"><b>المصفوفات</b><span>معالجة الصور، ورسوم الحاسب، والذكاء الاصطناعي وعلوم البيانات.</span></div>
+          <div class="path"><b>كثيرات الحدود</b><span>نمذجة المنحنيات في التصميم الهندسي والطاقة المتجددة.</span></div>
+          <div class="path"><b>الدوال الجذرية والأسس</b><span>قوانين الفيزياء والهندسة، وحسابات النمو والتمويل.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="view" data-view="about" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="kicker">عن المنصة</p>
+      <h2 class="page-title">منصة همّة للرياضيات</h2>
+      <p class="page-sub">مشروع تعليمي يساعد طلاب الصف الثاني الثانوي على فهم مقرر الرياضيات وإتقانه بالشرح المختصر والتدريب المكثف.</p>
+    </div>
+    <div class="section" style="padding-top:8px">
+      <div class="section-head"><div><p class="kicker">فريق الإعداد والتطوير</p><h2>المطوّران</h2></div></div>
+      <div class="devs">
+        <div class="dev"><span class="avatar" aria-hidden="true"><b>ح</b></span><div><h3>حسن زكي السبع</h3><p>إعداد وتطوير المنصة</p></div></div>
+        <div class="dev"><span class="avatar" aria-hidden="true"><b>م</b></span><div><h3>محمد عبدالخالق البطاط</h3><p>إعداد وتطوير المنصة</p></div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="v-grid">
+        <div class="card span-6">
+          <span class="label">المرجع</span>
+          <h3>كتاب الرياضيات 2-1</h3>
+          <p style="margin:0">الصف الثاني الثانوي، الفصل الدراسي الأول، وزارة التعليم في المملكة العربية السعودية. يغطي فصول: الدوال والمتباينات، والمصفوفات، وكثيرات الحدود ودوالها، والعلاقات والدوال العكسية والجذرية.</p>
+        </div>
+        <div class="card span-6">
+          <span class="label">ملاحظة</span>
+          <p style="margin:0">الشرح والأمثلة والأسئلة مُعدّة وفق دروس الكتاب لأغراض تعليمية، وجميع حقوق الكتاب محفوظة لوزارة التعليم. هذه المنصة مشروع طلابي مستقل، وليست موقعاً رسمياً لوزارة التعليم.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="sadu" aria-hidden="true" style="background:var(--surface)"></div>
+  <div class="wrap">
+    <div>
+      <h4>منصة همّة للرياضيات</h4>
+      <p>إعداد وتطوير: <span class="names">حسن زكي السبع</span> و<span class="names">محمد عبدالخالق البطاط</span></p>
+    </div>
+    <div>
+      <p>المرجع: كتاب الرياضيات 2-1، الصف الثاني الثانوي، الفصل الدراسي الأول، وزارة التعليم، المملكة العربية السعودية.</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script type="application/json" id="appdata">{"chapters": [{"n": 1, "title": "الدوال والمتباينات", "lessons": [{"id": "1-1", "title": "خصائص الأعداد الحقيقية", "concept": ["<b>الطبيعية<\/b> \\(N=\\{1,2,3,\\dots\\}\\)، و<b>الكلية<\/b> \\(W=\\{0,1,2,\\dots\\}\\)، و<b>الصحيحة<\/b> \\(Z=\\{\\dots,-2,-1,0,1,2,\\dots\\}\\).", "<b>النسبية<\/b> \\(Q\\): كل عدد يُكتب على الصورة \\(\\frac{a}{b}\\) حيث \\(a,b\\) عددان صحيحان و\\(b\\neq 0\\)، وصورتها العشرية منتهية أو دورية مثل \\(0.\\overline{3}\\).", "<b>غير النسبية<\/b> \\(I\\): صورتها العشرية غير منتهية وغير دورية مثل \\(\\sqrt{2}\\) و\\(\\pi\\). والأعداد <b>الحقيقية<\/b> \\(R\\) تضم النسبية وغير النسبية معاً.", "<b>الإبدال<\/b> \\(a+b=b+a\\)، <b>التجميع<\/b> \\((a+b)+c=a+(b+c)\\)، <b>التوزيع<\/b> \\(a(b+c)=ab+ac\\).", "<b>المحايد<\/b> الجمعي \\(0\\) والضربي \\(1\\). <b>النظير<\/b> الجمعي للعدد \\(a\\) هو \\(-a\\)، والضربي هو \\(\\frac{1}{a}\\) حيث \\(a\\neq 0\\)."], "key": "\\[N\\subset W\\subset Z\\subset Q\\subset R,\\qquad I\\subset R\\]", "examples": [{"q": "صنّف كل عدد إلى المجموعات التي ينتمي إليها: \\(\\sqrt{16}\\)، \\(-\\frac{3}{4}\\)، \\(\\sqrt{7}\\).", "steps": ["\\(\\sqrt{16}=4\\): عدد طبيعي، كلي، صحيح، نسبي، حقيقي.", "\\(-\\frac{3}{4}\\): بسطه ومقامه عددان صحيحان، فهو نسبي وحقيقي.", "\\(\\sqrt{7}\\): العدد 7 ليس مربعاً كاملاً، فجذره عشري غير منتهٍ وغير دوري، إذن هو غير نسبي وحقيقي."]}, {"q": "اشترى معلم لكل طالب من طلاب صفه العشرين دفتراً بـ 6 ريالات وقلماً بـ 4 ريالات. اكتب عبارة تمثل المبلغ الكلي، ثم احسبه باستعمال خاصية التوزيع.", "steps": ["العبارة: \\(20(6+4)\\).", "خاصية التوزيع: \\(20(6+4)=20\\cdot 6+20\\cdot 4=120+80\\).", "المبلغ الكلي \\(200\\) ريال."]}], "mcq": [{"q": "العدد \\(\\sqrt{25}\\) ينتمي إلى جميع المجموعات الآتية <b>ما عدا<\/b>:", "o": ["الأعداد الطبيعية", "الأعداد الصحيحة", "الأعداد النسبية", "الأعداد غير النسبية"], "a": 3, "e": "\\(\\sqrt{25}=5\\) عدد طبيعي، فهو أيضاً صحيح ونسبي وحقيقي، ولا يمكن أن يكون غير نسبي."}, {"q": "أي الأعداد الآتية <b>غير نسبي<\/b>؟", "o": ["\\(\\sqrt{49}\\)", "\\(0.\\overline{6}\\)", "\\(\\sqrt{12}\\)", "\\(-\\frac{5}{3}\\)"], "a": 2, "e": "العدد 12 ليس مربعاً كاملاً، فـ \\(\\sqrt{12}\\) عشري غير منتهٍ وغير دوري. أما \\(0.\\overline{6}=\\frac{2}{3}\\) و\\(\\sqrt{49}=7\\) فنسبيان."}, {"q": "الخاصية الموضحة في \\(3(x+5)=3x+15\\) هي:", "o": ["الإبدال", "التجميع", "التوزيع", "المحايد الضربي"], "a": 2, "e": "ضرب العدد 3 في كل حد داخل القوسين هو خاصية التوزيع \\(a(b+c)=ab+ac\\)."}, {"q": "النظير الضربي للعدد \\(-\\frac{2}{5}\\) هو:", "o": ["\\(\\frac{2}{5}\\)", "\\(-\\frac{5}{2}\\)", "\\(\\frac{5}{2}\\)", "\\(-1\\)"], "a": 1, "e": "حاصل ضرب العدد في نظيره الضربي يساوي 1: \\(\\left(-\\frac{2}{5}\\right)\\left(-\\frac{5}{2}\\right)=1\\)."}, {"q": "الخاصية الموضحة في \\((2+7)+4=2+(7+4)\\) هي:", "o": ["التجميع", "الإبدال", "التوزيع", "النظير الجمعي"], "a": 0, "e": "تغيّر موضع الأقواس مع بقاء ترتيب الأعداد هو خاصية التجميع."}]}, {"id": "1-2", "title": "العلاقات والدوال", "concept": ["<b>العلاقة<\/b> مجموعة من الأزواج المرتبة \\((x,y)\\). <b>المجال<\/b>: مجموعة قيم \\(x\\)، و<b>المدى<\/b>: مجموعة قيم \\(y\\).", "<b>الدالة<\/b> علاقة يرتبط فيها كل عنصر من المجال بعنصر <b>واحد فقط<\/b> من المدى.", "<b>اختبار الخط الرأسي<\/b>: يمثّل المنحنى دالةً إذا لم يقطعه أي خط رأسي في أكثر من نقطة.", "<b>الدالة المتباينة<\/b>: كل عنصر في المدى يرتبط بعنصر واحد فقط من المجال. و<b>الدالة الشاملة<\/b>: كل عنصر في المجموعة المقابلة يرتبط بعنصر من المجال.", "<b>رمز الدالة<\/b> \\(f(x)\\): لإيجاد \\(f(a)\\) نعوّض \\(x=a\\). والدالة <b>منفصلة<\/b> إذا كان تمثيلها نقاطاً متفرقة، و<b>متصلة<\/b> إذا كان خطاً أو منحنى دون انقطاع."], "key": "\\[f(x)=x^2-3x+2 \\;\\Longrightarrow\\; f(-2)=(-2)^2-3(-2)+2=12\\]", "examples": [{"q": "هل تمثل العلاقة \\(\\{(1,3),(2,5),(1,7)\\}\\) دالة؟ حدّد مجالها ومداها.", "steps": ["العنصر \\(1\\) من المجال ارتبط بعنصرين مختلفين هما \\(3\\) و\\(7\\).", "إذن العلاقة <b>ليست دالة<\/b>.", "المجال \\(\\{1,2\\}\\)، والمدى \\(\\{3,5,7\\}\\)."]}, {"q": "إذا كانت \\(f(x)=x^2-3x+2\\)، فأوجد \\(f(a+1)\\).", "steps": ["نعوّض \\(x=a+1\\): \\(f(a+1)=(a+1)^2-3(a+1)+2\\).", "نفك الأقواس: \\(a^2+2a+1-3a-3+2\\).", "نجمع الحدود المتشابهة: \\(f(a+1)=a^2-a\\)."]}], "mcq": [{"q": "أي العلاقات الآتية تمثّل دالة؟", "o": ["\\(\\{(2,1),(3,1),(4,1)\\}\\)", "\\(\\{(1,2),(1,3),(2,4)\\}\\)", "\\(\\{(0,0),(0,1),(1,1)\\}\\)", "\\(\\{(5,2),(6,3),(5,4)\\}\\)"], "a": 0, "e": "في العلاقة الأولى يظهر كل عنصر من المجال مرة واحدة. تكرار القيمة \\(1\\) في المدى لا يمنع كونها دالة."}, {"q": "إذا كانت \\(f(x)=2x^2-5\\) فإن \\(f(-3)\\) تساوي:", "o": ["\\(13\\)", "\\(-23\\)", "\\(31\\)", "\\(1\\)"], "a": 0, "e": "\\(f(-3)=2(-3)^2-5=2(9)-5=13\\). انتبه: \\((-3)^2=9\\) وليس \\(-9\\)."}, {"q": "مجال العلاقة \\(\\{(-1,4),(2,4),(3,-5)\\}\\) هو:", "o": ["\\(\\{4,-5\\}\\)", "\\(\\{-1,2,3\\}\\)", "\\(\\{-1,2,3,4,-5\\}\\)", "\\(\\{2,3\\}\\)"], "a": 1, "e": "المجال هو مجموعة الإحداثيات السينية: \\(\\{-1,2,3\\}\\)."}, {"q": "يمثّل التمثيل البياني دالةً إذا:", "o": ["قطعه أي خط أفقي في نقطة واحدة على الأكثر", "قطعه أي خط رأسي في نقطة واحدة على الأكثر", "مرّ بنقطة الأصل", "كان خطاً مستقيماً"], "a": 1, "e": "هذا هو اختبار الخط الرأسي؛ فكل قيمة \\(x\\) يجب أن تقابلها قيمة \\(y\\) واحدة فقط."}, {"q": "إذا كانت \\(f(x)=3x-1\\) فإن \\(f(a+2)\\) تساوي:", "o": ["\\(3a+5\\)", "\\(3a+1\\)", "\\(3a+6\\)", "\\(a+5\\)"], "a": 0, "e": "\\(f(a+2)=3(a+2)-1=3a+6-1=3a+5\\)."}]}, {"id": "1-3", "title": "دوال خاصة", "concept": ["<b>الدالة المتعددة التعريف<\/b>: تُكتب بأكثر من قاعدة، لكل قاعدة جزء من المجال. نحدد أولاً الجزء الذي تقع فيه قيمة \\(x\\) ثم نعوّض في قاعدته.", "<b>دالة أكبر عدد صحيح<\/b> \\(f(x)=[\\![x]\\!]\\): أكبر عدد صحيح أقل من أو يساوي \\(x\\)، مثل \\([\\![3.7]\\!]=3\\) و\\([\\![-2.4]\\!]=-3\\). تمثيلها على شكل درجات، لذا تُسمّى <b>دالة درجية<\/b>.", "<b>دالة القيمة المطلقة<\/b> \\(f(x)=|x|\\): تمثيلها على شكل حرف V رأسه \\((0,0)\\). والدالة \\(f(x)=|x-h|+k\\) رأسها \\((h,k)\\)."], "key": "\\[f(x)=\\begin{cases} x+2, & x\\lt 1 \\\\ 3x, & x\\ge 1 \\end{cases}\\]", "examples": [{"q": "للدالة \\(f(x)\\) في الإطار أعلاه، أوجد \\(f(-2)\\) و\\(f(1)\\) و\\(f(4)\\).", "steps": ["\\(-2\\lt 1\\)، إذن نستعمل القاعدة الأولى: \\(f(-2)=-2+2=0\\).", "\\(1\\ge 1\\)، إذن نستعمل القاعدة الثانية: \\(f(1)=3(1)=3\\).", "\\(4\\ge 1\\): \\(f(4)=3(4)=12\\)."]}, {"q": "أوجد رأس التمثيل البياني للدالة \\(g(x)=|x+3|-2\\) ومداها.", "steps": ["نكتبها على الصورة \\(|x-h|+k\\): \\(g(x)=|x-(-3)|+(-2)\\).", "الرأس \\((-3,-2)\\).", "بما أن \\(|x+3|\\ge 0\\) فإن \\(g(x)\\ge -2\\)، والمدى \\(\\{y\\mid y\\ge -2\\}\\)."]}], "mcq": [{"q": "قيمة \\([\\![-3.2]\\!]\\) هي:", "o": ["\\(-4\\)", "\\(-3\\)", "\\(3\\)", "\\(-3.2\\)"], "a": 0, "e": "أكبر عدد صحيح أقل من أو يساوي \\(-3.2\\) هو \\(-4\\)، لأن \\(-3\\gt -3.2\\)."}, {"q": "رأس التمثيل البياني للدالة \\(f(x)=|x-4|+1\\) هو:", "o": ["\\((4,1)\\)", "\\((-4,1)\\)", "\\((1,4)\\)", "\\((4,-1)\\)"], "a": 0, "e": "الدالة على الصورة \\(|x-h|+k\\) حيث \\(h=4\\) و\\(k=1\\)، فالرأس \\((4,1)\\)."}, {"q": "إذا كانت \\(f(x)=\\begin{cases} 2x-1, & x\\le 2 \\\\ x^2, & x\\gt 2 \\end{cases}\\) فإن \\(f(3)\\) تساوي:", "o": ["\\(9\\)", "\\(5\\)", "\\(6\\)", "\\(4\\)"], "a": 0, "e": "\\(3\\gt 2\\)، إذن نستعمل القاعدة الثانية: \\(f(3)=3^2=9\\)."}, {"q": "مدى الدالة \\(f(x)=|x|-3\\) هو:", "o": ["\\(\\{y\\mid y\\ge -3\\}\\)", "\\(\\{y\\mid y\\ge 3\\}\\)", "\\(\\{y\\mid y\\le -3\\}\\)", "جميع الأعداد الحقيقية"], "a": 0, "e": "أصغر قيمة لـ \\(|x|\\) هي \\(0\\)، فأصغر قيمة للدالة \\(-3\\)، والمدى \\(y\\ge -3\\)."}, {"q": "قيمة \\([\\![5.99]\\!]+[\\![-0.5]\\!]\\) هي:", "o": ["\\(4\\)", "\\(5\\)", "\\(6\\)", "\\(3\\)"], "a": 0, "e": "\\([\\![5.99]\\!]=5\\) و\\([\\![-0.5]\\!]=-1\\)، والمجموع \\(5+(-1)=4\\)."}]}, {"id": "1-4", "title": "تمثيل المتباينات الخطية ومتباينات القيمة المطلقة بيانياً", "concept": ["نمثّل <b>خط الحدود<\/b> (المعادلة المرتبطة): يكون <b>متقطعاً<\/b> مع \\(\\lt\\) أو \\(\\gt\\)، و<b>متصلاً<\/b> مع \\(\\le\\) أو \\(\\ge\\).", "خط الحدود يقسم المستوى إلى <b>مستويين نصفيين<\/b>. نختار <b>نقطة اختبار<\/b> لا تقع على الخط، وغالباً \\((0,0)\\).", "إذا حققت نقطة الاختبار المتباينة نظلّل المستوى النصفي الذي يحويها، وإلا نظلّل الآخر.", "في متباينة القيمة المطلقة مثل \\(y\\ge |x-h|+k\\) يكون خط الحدود على شكل V رأسه \\((h,k)\\)."], "key": "\\[y\\gt mx+b \\;\\Rightarrow\\; \\text{أعلى الخط}\\qquad y\\lt mx+b \\;\\Rightarrow\\; \\text{أسفل الخط}\\]", "examples": [{"q": "مثّل المتباينة \\(y\\lt 2x-3\\) بيانياً.", "steps": ["خط الحدود \\(y=2x-3\\): ميله \\(2\\) ومقطعه الصادي \\(-3\\)، ويُرسم <b>متقطعاً<\/b> لأن الرمز \\(\\lt\\).", "نقطة الاختبار \\((0,0)\\): \\(0\\lt 2(0)-3\\) أي \\(0\\lt -3\\)، وهذه عبارة خاطئة.", "نظلّل المستوى النصفي الذي <b>لا<\/b> يحوي نقطة الأصل، أي أسفل الخط."]}, {"q": "مع سعد 120 ريالاً، يريد شراء \\(x\\) دفتراً بسعر 8 ريالات و\\(y\\) قلماً بسعر 5 ريالات. اكتب متباينة تمثّل الموقف، وهل يستطيع شراء 10 دفاتر و8 أقلام؟", "steps": ["المتباينة: \\(8x+5y\\le 120\\).", "نعوّض \\((10,8)\\): \\(8(10)+5(8)=80+40=120\\).", "\\(120\\le 120\\) صحيحة، إذن يستطيع ذلك، وتقع النقطة على خط الحدود."]}], "mcq": [{"q": "أي النقاط الآتية تقع في منطقة حل المتباينة \\(y\\le -x+4\\)؟", "o": ["\\((1,2)\\)", "\\((3,3)\\)", "\\((0,5)\\)", "\\((4,1)\\)"], "a": 0, "e": "نعوّض \\((1,2)\\): \\(2\\le -1+4=3\\) صحيحة. أما النقاط الأخرى فتعطي \\(3\\le 1\\) و\\(5\\le 4\\) و\\(1\\le 0\\)، وكلها خاطئة."}, {"q": "خط الحدود في التمثيل البياني للمتباينة \\(3x-2y\\gt 6\\) يكون:", "o": ["متقطعاً", "متصلاً", "رأسياً", "غير موجود"], "a": 0, "e": "الرمز \\(\\gt\\) لا يتضمن المساواة، فنقاط الخط ليست حلولاً ويُرسم متقطعاً."}, {"q": "التمثيل البياني للمتباينة \\(y\\gt 3x+1\\) هو:", "o": ["خط متقطع والتظليل أعلاه", "خط متصل والتظليل أعلاه", "خط متقطع والتظليل أسفله", "خط متصل والتظليل أسفله"], "a": 0, "e": "الرمز \\(\\gt\\) يعني خطاً متقطعاً، و\\(y\\) أكبر من قيمة الخط فنظلّل أعلاه."}, {"q": "رأس خط الحدود في التمثيل البياني للمتباينة \\(y\\lt |x+1|+2\\) هو:", "o": ["\\((-1,2)\\)", "\\((1,2)\\)", "\\((-1,-2)\\)", "\\((2,-1)\\)"], "a": 0, "e": "\\(|x+1|+2=|x-(-1)|+2\\)، فالرأس \\((h,k)=(-1,2)\\)."}, {"q": "يريد سلمان شراء \\(x\\) كتاباً بسعر 25 ريالاً و\\(y\\) مجلة بسعر 10 ريالات دون أن يتجاوز ما ينفقه 200 ريال. المتباينة التي تمثّل الموقف هي:", "o": ["\\(25x+10y\\le 200\\)", "\\(25x+10y\\ge 200\\)", "\\(25x+10y\\lt 200\\)", "\\(10x+25y\\le 200\\)"], "a": 0, "e": "«لا يتجاوز» تعني أقل من أو يساوي، وتكلفة الكتب \\(25x\\) والمجلات \\(10y\\)."}]}, {"id": "1-5", "title": "حل أنظمة المتباينات الخطية بيانياً", "concept": ["<b>نظام المتباينات<\/b>: متباينتان أو أكثر في المتغيرات نفسها.", "نمثّل كل متباينة في المستوى نفسه، و<b>منطقة الحل<\/b> هي المنطقة المشتركة في التظليل.", "إذا لم توجد منطقة مشتركة فالنظام <b>ليس له حل<\/b>، كما في خطين متوازيين ظُلِّل كلٌّ منهما في اتجاه مبتعد عن الآخر.", "<b>رؤوس منطقة الحل<\/b> هي نقاط تقاطع خطوط الحدود، ونجدها جبرياً بحل معادلتي الخطين."], "key": "\\[\\begin{cases} y\\ge x-1 \\\\ y\\lt -x+3 \\end{cases}\\;\\Longrightarrow\\; x-1=-x+3 \\Rightarrow (2,1)\\]", "examples": [{"q": "حل النظام \\(y\\ge x-1\\) و\\(y\\lt -x+3\\) بيانياً، وأوجد نقطة تقاطع خطي الحدود.", "steps": ["\\(y=x-1\\) خط متصل والتظليل أعلاه، و\\(y=-x+3\\) خط متقطع والتظليل أسفله.", "التقاطع: \\(x-1=-x+3\\Rightarrow 2x=4\\Rightarrow x=2\\)، و\\(y=2-1=1\\)، أي النقطة \\((2,1)\\).", "نقطة الأصل تحقق المتباينتين (\\(0\\ge -1\\) و\\(0\\lt 3\\))، فهي داخل منطقة الحل."]}, {"q": "أوجد رؤوس منطقة حل النظام \\(x\\ge 0\\)، \\(y\\ge 0\\)، \\(x+y\\le 6\\).", "steps": ["تقاطع \\(x=0\\) و\\(y=0\\): النقطة \\((0,0)\\).", "تقاطع \\(y=0\\) و\\(x+y=6\\): النقطة \\((6,0)\\). وتقاطع \\(x=0\\) و\\(x+y=6\\): النقطة \\((0,6)\\).", "منطقة الحل مثلث رؤوسه \\((0,0)\\)، \\((6,0)\\)، \\((0,6)\\)."]}], "mcq": [{"q": "أي النقاط الآتية تحقق النظام \\(y\\gt x\\) و\\(y\\lt 4\\)؟", "o": ["\\((1,3)\\)", "\\((3,1)\\)", "\\((2,5)\\)", "\\((0,-1)\\)"], "a": 0, "e": "\\((1,3)\\): \\(3\\gt 1\\) و\\(3\\lt 4\\)، وكلتاهما صحيحة. النقاط الأخرى تخالف إحدى المتباينتين."}, {"q": "النظام \\(y\\ge 3x+2\\) و\\(y\\le 3x-4\\):", "o": ["ليس له حل", "له حل وحيد", "منطقة حله المستوى كله", "منطقة حله محصورة بين الخطين"], "a": 0, "e": "الخطان متوازيان (الميل 3). التظليل الأول أعلى الخط العلوي والثاني أسفل الخط السفلي، فلا توجد منطقة مشتركة."}, {"q": "رؤوس منطقة حل النظام \\(x\\ge 0\\)، \\(y\\ge 0\\)، \\(2x+y\\le 8\\) هي:", "o": ["\\((0,0),(4,0),(0,8)\\)", "\\((0,0),(8,0),(0,4)\\)", "\\((0,0),(4,0),(0,4)\\)", "\\((0,0),(2,0),(0,8)\\)"], "a": 0, "e": "عند \\(y=0\\): \\(2x=8\\Rightarrow x=4\\). وعند \\(x=0\\): \\(y=8\\). فالرؤوس \\((0,0)\\) و\\((4,0)\\) و\\((0,8)\\)."}, {"q": "نقطة تقاطع خطي الحدود للنظام \\(y\\le 2x+1\\) و\\(y\\ge -x+7\\) هي:", "o": ["\\((2,5)\\)", "\\((5,2)\\)", "\\((3,4)\\)", "\\((-2,-3)\\)"], "a": 0, "e": "\\(2x+1=-x+7\\Rightarrow 3x=6\\Rightarrow x=2\\)، ومنه \\(y=2(2)+1=5\\)."}]}, {"id": "1-6", "title": "البرمجة الخطية والحل الأمثل", "concept": ["<b>البرمجة الخطية<\/b>: إيجاد القيمة العظمى أو الصغرى لدالة خطية \\(f(x,y)=ax+by\\) ضمن <b>قيود<\/b> تمثلها متباينات خطية.", "منطقة الحل قد تكون <b>محدودة<\/b> (مضلعاً مغلقاً) أو <b>غير محدودة<\/b>؛ وفي غير المحدودة قد لا توجد قيمة عظمى أو صغرى.", "تقع القيمة العظمى والقيمة الصغرى للدالة (إن وُجدتا) عند <b>رؤوس<\/b> منطقة الحل.", "الخطوات: حدّد المتغيرات، اكتب القيود، مثّلها، أوجد الرؤوس، عوّض في الدالة، ثم فسّر النتيجة."], "key": "\\[\\text{الحل الأمثل يقع عند أحد رؤوس منطقة الحل}\\]", "examples": [{"q": "أوجد القيمتين العظمى والصغرى للدالة \\(f(x,y)=3x+2y\\) ضمن القيود: \\(x\\ge 0\\)، \\(y\\ge 0\\)، \\(x+y\\le 5\\)، \\(x\\le 3\\).", "steps": ["الرؤوس: \\((0,0)\\)، \\((3,0)\\)، \\((3,2)\\)، \\((0,5)\\).", "التعويض: \\(f(0,0)=0\\)، \\(f(3,0)=9\\)، \\(f(3,2)=13\\)، \\(f(0,5)=10\\).", "القيمة العظمى \\(13\\) عند \\((3,2)\\)، والقيمة الصغرى \\(0\\) عند \\((0,0)\\)."]}, {"q": "مصنع تمور في الأحساء ينتج علب نوع \\(A\\) بربح 4 ريالات للعلبة، ونوع \\(B\\) بربح 6 ريالات. سعة الإنتاج اليومية 40 علبة، وساعات العمل تفرض \\(x+2y\\le 60\\). كم علبة من كل نوع تحقق أكبر ربح؟", "steps": ["القيود: \\(x\\ge 0\\)، \\(y\\ge 0\\)، \\(x+y\\le 40\\)، \\(x+2y\\le 60\\). والدالة \\(P=4x+6y\\).", "الرؤوس: \\((0,0)\\)، \\((40,0)\\)، \\((0,30)\\)، وتقاطع \\(x+y=40\\) مع \\(x+2y=60\\): بالطرح \\(y=20\\) ثم \\(x=20\\)، أي \\((20,20)\\).", "\\(P(40,0)=160\\)، \\(P(0,30)=180\\)، \\(P(20,20)=80+120=200\\).", "أكبر ربح 200 ريال عند إنتاج 20 علبة من كل نوع."]}], "mcq": [{"q": "تقع القيمة العظمى لدالة خطية ضمن منطقة حل محدودة عند:", "o": ["أحد رؤوس منطقة الحل", "مركز منطقة الحل", "نقطة الأصل دائماً", "أي نقطة على المحور السيني"], "a": 0, "e": "في البرمجة الخطية تُبلغ القيمتان العظمى والصغرى عند رؤوس منطقة الحل."}, {"q": "رؤوس منطقة حل هي \\((0,0)\\)، \\((4,0)\\)، \\((2,3)\\)، \\((0,4)\\). القيمة العظمى للدالة \\(f(x,y)=2x+y\\) هي:", "o": ["\\(8\\)", "\\(7\\)", "\\(4\\)", "\\(10\\)"], "a": 0, "e": "\\(f(0,0)=0\\)، \\(f(4,0)=8\\)، \\(f(2,3)=7\\)، \\(f(0,4)=4\\)؛ فالعظمى \\(8\\) عند \\((4,0)\\)."}, {"q": "القيمة الصغرى للدالة \\(f(x,y)=5x+3y\\) على منطقة حل رؤوسها \\((1,1)\\)، \\((4,1)\\)، \\((1,5)\\) هي:", "o": ["\\(8\\)", "\\(20\\)", "\\(23\\)", "\\(0\\)"], "a": 0, "e": "\\(f(1,1)=8\\)، \\(f(4,1)=23\\)، \\(f(1,5)=20\\)؛ فالصغرى \\(8\\). والقيمة \\(0\\) غير ممكنة لأن \\((0,0)\\) ليست في المنطقة."}, {"q": "ورشة تصنع \\(x\\) كرسياً و\\(y\\) طاولة. يحتاج الكرسي ساعتين والطاولة 5 ساعات، وساعات العمل لا تزيد على 40 ساعة. القيد هو:", "o": ["\\(2x+5y\\le 40\\)", "\\(5x+2y\\le 40\\)", "\\(2x+5y\\ge 40\\)", "\\(x+y\\le 40\\)"], "a": 0, "e": "ساعات الكراسي \\(2x\\) وساعات الطاولات \\(5y\\)، ومجموعها «لا يزيد على» 40."}, {"q": "إذا كانت منطقة الحل غير محدودة فإنه:", "o": ["قد لا توجد للدالة قيمة عظمى أو قيمة صغرى", "توجد دائماً قيمة عظمى وقيمة صغرى", "لا توجد رؤوس لمنطقة الحل", "تكون الدالة ثابتة"], "a": 0, "e": "المنطقة الممتدة بلا حدود قد تجعل قيم الدالة تكبر (أو تصغر) دون توقف، فلا تُبلغ قيمة عظمى (أو صغرى)."}]}]}, {"n": 2, "title": "المصفوفات", "lessons": [{"id": "2-1", "title": "مقدمة في المصفوفات", "concept": ["<b>المصفوفة<\/b> ترتيب مستطيل لأعداد تُسمّى <b>عناصر<\/b>، في صفوف وأعمدة، ويُرمز لها بحرف كبير مثل \\(A\\).", "<b>الرتبة<\/b> \\(m\\times n\\): \\(m\\) عدد الصفوف و\\(n\\) عدد الأعمدة، وعدد العناصر \\(m\\cdot n\\).", "العنصر \\(a_{ij}\\) يقع في الصف \\(i\\) والعمود \\(j\\).", "أنواع خاصة: مصفوفة <b>صف<\/b> \\(1\\times n\\)، <b>عمود<\/b> \\(m\\times 1\\)، <b>مربعة<\/b> \\(n\\times n\\)، <b>صفرية<\/b> جميع عناصرها أصفار.", "تتساوى مصفوفتان إذا كان لهما الرتبة نفسها وتساوت عناصرهما المتناظرة."], "key": "\\[A=\\begin{bmatrix}2 & -1 & 5 \\\\ 0 & 3 & 7\\end{bmatrix}\\quad \\text{رتبتها } 2\\times 3,\\quad a_{13}=5\\]", "examples": [{"q": "للمصفوفة \\(A\\) في الإطار أعلاه، حدّد رتبتها والعنصرين \\(a_{13}\\) و\\(a_{22}\\).", "steps": ["عدد الصفوف \\(2\\) وعدد الأعمدة \\(3\\)، فالرتبة \\(2\\times 3\\).", "\\(a_{13}\\): الصف الأول والعمود الثالث، ويساوي \\(5\\).", "\\(a_{22}\\): الصف الثاني والعمود الثاني، ويساوي \\(3\\)."]}, {"q": "أوجد قيمتي \\(x\\) و\\(y\\) إذا كان \\(\\begin{bmatrix}2x & 4 \\\\ y-1 & 6\\end{bmatrix}=\\begin{bmatrix}10 & 4 \\\\ 3 & 6\\end{bmatrix}\\).", "steps": ["نساوي العناصر المتناظرة: \\(2x=10\\) و\\(y-1=3\\).", "\\(x=5\\) و\\(y=4\\)."]}], "mcq": [{"q": "رتبة المصفوفة \\(\\begin{bmatrix}1 & 0 & -2 & 4 \\\\ 3 & 5 & 6 & -1\\end{bmatrix}\\) هي:", "o": ["\\(2\\times 4\\)", "\\(4\\times 2\\)", "\\(8\\)", "\\(2\\times 2\\)"], "a": 0, "e": "صفّان وأربعة أعمدة، والرتبة تُكتب (عدد الصفوف) × (عدد الأعمدة) أي \\(2\\times 4\\)."}, {"q": "إذا كانت \\(A=\\begin{bmatrix}4 & -3 \\\\ 7 & 2 \\\\ 0 & 9\\end{bmatrix}\\) فإن العنصر \\(a_{32}\\) هو:", "o": ["\\(9\\)", "\\(0\\)", "\\(7\\)", "\\(-3\\)"], "a": 0, "e": "\\(a_{32}\\) في الصف الثالث والعمود الثاني، وهو \\(9\\)."}, {"q": "إذا كان \\(\\begin{bmatrix}x+3 & 2 \\\\ 5 & 2y\\end{bmatrix}=\\begin{bmatrix}7 & 2 \\\\ 5 & -8\\end{bmatrix}\\) فإن \\(x+y\\) تساوي:", "o": ["\\(0\\)", "\\(8\\)", "\\(-8\\)", "\\(4\\)"], "a": 0, "e": "\\(x+3=7\\Rightarrow x=4\\)، و\\(2y=-8\\Rightarrow y=-4\\)، فالمجموع \\(0\\)."}, {"q": "عدد عناصر مصفوفة رتبتها \\(3\\times 5\\) هو:", "o": ["\\(15\\)", "\\(8\\)", "\\(9\\)", "\\(25\\)"], "a": 0, "e": "عدد العناصر = عدد الصفوف × عدد الأعمدة \\(=3\\times 5=15\\)."}, {"q": "أي الرتب الآتية لمصفوفة <b>مربعة<\/b>؟", "o": ["\\(3\\times 3\\)", "\\(1\\times 3\\)", "\\(3\\times 1\\)", "\\(2\\times 3\\)"], "a": 0, "e": "المصفوفة المربعة عدد صفوفها يساوي عدد أعمدتها."}]}, {"id": "2-2", "title": "العمليات على المصفوفات", "concept": ["<b>الجمع والطرح<\/b>: لمصفوفتين من الرتبة نفسها فقط، نجمع (أو نطرح) العناصر المتناظرة.", "<b>الضرب في عدد ثابت<\/b> \\(kA\\): نضرب كل عنصر من \\(A\\) في \\(k\\).", "خصائص: \\(A+B=B+A\\)، \\((A+B)+C=A+(B+C)\\)، \\(k(A+B)=kA+kB\\)، والمصفوفة الصفرية محايد جمعي."], "key": "\\[\\begin{bmatrix}a & b \\\\ c & d\\end{bmatrix}+\\begin{bmatrix}e & f \\\\ g & h\\end{bmatrix}=\\begin{bmatrix}a+e & b+f \\\\ c+g & d+h\\end{bmatrix}\\]", "examples": [{"q": "إذا كانت \\(A=\\begin{bmatrix}3 & -1 \\\\ 2 & 5\\end{bmatrix}\\) و\\(B=\\begin{bmatrix}-4 & 6 \\\\ 1 & 0\\end{bmatrix}\\)، فأوجد \\(3A-2B\\).", "steps": ["\\(3A=\\begin{bmatrix}9 & -3 \\\\ 6 & 15\\end{bmatrix}\\)، و\\(2B=\\begin{bmatrix}-8 & 12 \\\\ 2 & 0\\end{bmatrix}\\).", "\\(3A-2B=\\begin{bmatrix}9-(-8) & -3-12 \\\\ 6-2 & 15-0\\end{bmatrix}=\\begin{bmatrix}17 & -15 \\\\ 4 & 15\\end{bmatrix}\\)."]}, {"q": "حل المعادلة المصفوفية \\(2X+\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}=\\begin{bmatrix}5 & 8 \\\\ -1 & 10\\end{bmatrix}\\).", "steps": ["\\(2X=\\begin{bmatrix}5 & 8 \\\\ -1 & 10\\end{bmatrix}-\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}=\\begin{bmatrix}4 & 6 \\\\ -4 & 6\\end{bmatrix}\\).", "\\(X=\\frac{1}{2}\\begin{bmatrix}4 & 6 \\\\ -4 & 6\\end{bmatrix}=\\begin{bmatrix}2 & 3 \\\\ -2 & 3\\end{bmatrix}\\)."]}], "mcq": [{"q": "\\(\\begin{bmatrix}2 & -3 \\\\ 4 & 1\\end{bmatrix}+\\begin{bmatrix}-5 & 3 \\\\ 0 & 6\\end{bmatrix}\\) يساوي:", "o": ["\\(\\begin{bmatrix}-3 & 0 \\\\ 4 & 7\\end{bmatrix}\\)", "\\(\\begin{bmatrix}7 & -6 \\\\ 4 & -5\\end{bmatrix}\\)", "\\(\\begin{bmatrix}-3 & 0 \\\\ 4 & 6\\end{bmatrix}\\)", "\\(\\begin{bmatrix}-10 & -9 \\\\ 0 & 6\\end{bmatrix}\\)"], "a": 0, "e": "نجمع العناصر المتناظرة: \\(2+(-5)=-3\\)، \\(-3+3=0\\)، \\(4+0=4\\)، \\(1+6=7\\)."}, {"q": "\\(4\\begin{bmatrix}1 & -2 \\\\ 0 & 3\\end{bmatrix}\\) يساوي:", "o": ["\\(\\begin{bmatrix}4 & -8 \\\\ 0 & 12\\end{bmatrix}\\)", "\\(\\begin{bmatrix}4 & -2 \\\\ 0 & 3\\end{bmatrix}\\)", "\\(\\begin{bmatrix}5 & 2 \\\\ 4 & 7\\end{bmatrix}\\)", "\\(\\begin{bmatrix}4 & 8 \\\\ 0 & 12\\end{bmatrix}\\)"], "a": 0, "e": "نضرب كل عنصر في 4: \\(4,\\,-8,\\,0,\\,12\\)."}, {"q": "لا يمكن جمع مصفوفتين إذا:", "o": ["كانتا من رتبتين مختلفتين", "كانت إحداهما صفرية", "كانتا مربعتين", "احتوتا على أعداد سالبة"], "a": 0, "e": "الجمع يتطلب تناظر العناصر، وهذا لا يتحقق إلا عند تساوي الرتبتين."}, {"q": "إذا كانت \\(A=\\begin{bmatrix}6 & 2 \\\\ -1 & 4\\end{bmatrix}\\) و\\(B=\\begin{bmatrix}1 & 5 \\\\ 3 & -2\\end{bmatrix}\\) فإن \\(2A-B\\) تساوي:", "o": ["\\(\\begin{bmatrix}11 & -1 \\\\ -5 & 10\\end{bmatrix}\\)", "\\(\\begin{bmatrix}11 & -1 \\\\ -5 & 6\\end{bmatrix}\\)", "\\(\\begin{bmatrix}13 & 9 \\\\ 1 & 6\\end{bmatrix}\\)", "\\(\\begin{bmatrix}5 & -3 \\\\ -4 & 6\\end{bmatrix}\\)"], "a": 0, "e": "\\(2A=\\begin{bmatrix}12 & 4 \\\\ -2 & 8\\end{bmatrix}\\)، ثم نطرح \\(B\\): \\(12-1=11\\)، \\(4-5=-1\\)، \\(-2-3=-5\\)، \\(8-(-2)=10\\)."}, {"q": "إذا كان \\(X-\\begin{bmatrix}2 & 1 \\\\ 0 & 3\\end{bmatrix}=\\begin{bmatrix}4 & -1 \\\\ 5 & 2\\end{bmatrix}\\) فإن \\(X\\) تساوي:", "o": ["\\(\\begin{bmatrix}6 & 0 \\\\ 5 & 5\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & -2 \\\\ 5 & -1\\end{bmatrix}\\)", "\\(\\begin{bmatrix}6 & 0 \\\\ 5 & 6\\end{bmatrix}\\)", "\\(\\begin{bmatrix}8 & -1 \\\\ 0 & 6\\end{bmatrix}\\)"], "a": 0, "e": "نضيف المصفوفة إلى الطرفين: \\(X=\\begin{bmatrix}4 & -1 \\\\ 5 & 2\\end{bmatrix}+\\begin{bmatrix}2 & 1 \\\\ 0 & 3\\end{bmatrix}=\\begin{bmatrix}6 & 0 \\\\ 5 & 5\\end{bmatrix}\\)."}]}, {"id": "2-3", "title": "ضرب المصفوفات", "concept": ["يمكن ضرب \\(A_{m\\times n}\\) في \\(B_{n\\times p}\\) فقط إذا كان <b>عدد أعمدة \\(A\\) = عدد صفوف \\(B\\)<\/b>، والناتج رتبته \\(m\\times p\\).", "العنصر في الصف \\(i\\) والعمود \\(j\\) من \\(AB\\) = مجموع حواصل ضرب عناصر الصف \\(i\\) من \\(A\\) في العناصر المناظرة من العمود \\(j\\) من \\(B\\).", "الضرب <b>ليس إبدالياً<\/b> عموماً: \\(AB\\neq BA\\)، لكنه تجميعي وتوزيعي.", "<b>مصفوفة الوحدة<\/b> \\(I\\): \\(AI=IA=A\\)."], "key": "\\[\\begin{bmatrix}a & b \\\\ c & d\\end{bmatrix}\\begin{bmatrix}e & f \\\\ g & h\\end{bmatrix}=\\begin{bmatrix}ae+bg & af+bh \\\\ ce+dg & cf+dh\\end{bmatrix}\\]", "examples": [{"q": "أوجد \\(\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\begin{bmatrix}5 & 6 \\\\ 7 & 8\\end{bmatrix}\\).", "steps": ["الصف الأول × العمودين: \\(1\\cdot5+2\\cdot7=19\\)، \\(1\\cdot6+2\\cdot8=22\\).", "الصف الثاني × العمودين: \\(3\\cdot5+4\\cdot7=43\\)، \\(3\\cdot6+4\\cdot8=50\\).", "الناتج \\(\\begin{bmatrix}19 & 22 \\\\ 43 & 50\\end{bmatrix}\\)."]}, {"q": "اشترى خالد 2 كيلوغرام تمر بسعر 45 ريالاً للكيلو و3 علب قهوة بسعر 20 ريالاً للعلبة. عبّر عن المبلغ بضرب مصفوفتين.", "steps": ["مصفوفة الكميات \\(\\begin{bmatrix}2 & 3\\end{bmatrix}\\) رتبتها \\(1\\times 2\\)، ومصفوفة الأسعار \\(\\begin{bmatrix}45 \\\\ 20\\end{bmatrix}\\) رتبتها \\(2\\times 1\\).", "\\(\\begin{bmatrix}2 & 3\\end{bmatrix}\\begin{bmatrix}45 \\\\ 20\\end{bmatrix}=\\begin{bmatrix}2(45)+3(20)\\end{bmatrix}=\\begin{bmatrix}150\\end{bmatrix}\\).", "المبلغ 150 ريالاً."]}], "mcq": [{"q": "إذا كانت رتبة \\(A\\) هي \\(3\\times 2\\) ورتبة \\(B\\) هي \\(2\\times 5\\)، فإن رتبة \\(AB\\):", "o": ["\\(3\\times 5\\)", "\\(2\\times 2\\)", "\\(5\\times 3\\)", "غير معرّفة"], "a": 0, "e": "الأبعاد الداخلية متساوية (2 = 2)، والناتج يأخذ الأبعاد الخارجية \\(3\\times 5\\)."}, {"q": "\\(\\begin{bmatrix}2 & 0 \\\\ 1 & 3\\end{bmatrix}\\begin{bmatrix}4 \\\\ -1\\end{bmatrix}\\) يساوي:", "o": ["\\(\\begin{bmatrix}8 \\\\ 1\\end{bmatrix}\\)", "\\(\\begin{bmatrix}8 \\\\ 7\\end{bmatrix}\\)", "\\(\\begin{bmatrix}6 \\\\ 2\\end{bmatrix}\\)", "\\(\\begin{bmatrix}8 \\\\ -3\\end{bmatrix}\\)"], "a": 0, "e": "\\(2(4)+0(-1)=8\\)، و\\(1(4)+3(-1)=1\\)."}, {"q": "\\(\\begin{bmatrix}1 & -1 \\\\ 2 & 0\\end{bmatrix}\\begin{bmatrix}3 & 1 \\\\ 1 & 4\\end{bmatrix}\\) يساوي:", "o": ["\\(\\begin{bmatrix}2 & -3 \\\\ 6 & 2\\end{bmatrix}\\)", "\\(\\begin{bmatrix}3 & -1 \\\\ 2 & 0\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & 5 \\\\ 6 & 2\\end{bmatrix}\\)", "\\(\\begin{bmatrix}5 & -3 \\\\ 9 & -1\\end{bmatrix}\\)"], "a": 0, "e": "\\(1(3)+(-1)(1)=2\\)، \\(1(1)+(-1)(4)=-3\\)، \\(2(3)+0(1)=6\\)، \\(2(1)+0(4)=2\\). والخيار الأخير هو \\(BA\\) وليس \\(AB\\)."}, {"q": "أي العبارات الآتية صحيحة <b>دائماً<\/b> للمصفوفات المربعة؟", "o": ["\\(AI=IA=A\\)", "\\(AB=BA\\)", "\\((A+B)^2=A^2+2AB+B^2\\)", "إذا كان \\(AB=0\\) فإن \\(A=0\\) أو \\(B=0\\)"], "a": 0, "e": "مصفوفة الوحدة محايد ضربي. أما بقية العبارات فتفشل لأن ضرب المصفوفات ليس إبدالياً."}, {"q": "إذا كانت \\(A=\\begin{bmatrix}2 & 5 \\\\ -1 & 3\\end{bmatrix}\\) و\\(B=\\begin{bmatrix}4 & 0 \\\\ 1 & -2\\end{bmatrix}\\) فإن العنصر في الصف الثاني والعمود الأول من \\(AB\\) هو:", "o": ["\\(-1\\)", "\\(7\\)", "\\(-4\\)", "\\(3\\)"], "a": 0, "e": "الصف الثاني من \\(A\\) × العمود الأول من \\(B\\): \\((-1)(4)+(3)(1)=-1\\)."}]}, {"id": "2-4", "title": "المحددات وقاعدة كرامر", "concept": ["<b>محددة<\/b> المصفوفة \\(2\\times 2\\): \\(\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix}=ad-bc\\).", "محددة \\(3\\times 3\\) بطريقة <b>الأقطار<\/b>: نكرر العمودين الأول والثاني يمين المحددة، ثم (مجموع حواصل ضرب الأقطار الهابطة) − (مجموع حواصل ضرب الأقطار الصاعدة).", "<b>مساحة مثلث<\/b> رؤوسه \\((a,b),(c,d),(e,f)\\): \\(A=\\frac{1}{2}|D|\\) حيث \\(D=\\begin{vmatrix} a & b & 1 \\\\ c & d & 1 \\\\ e & f & 1 \\end{vmatrix}\\).", "<b>قاعدة كرامر<\/b> للنظام \\(ax+by=e\\)، \\(cx+dy=f\\): إذا كانت محددة المعاملات \\(C\\neq 0\\) فإن \\(x=\\frac{\\begin{vmatrix} e & b \\\\ f & d \\end{vmatrix}}{C}\\) و\\(y=\\frac{\\begin{vmatrix} a & e \\\\ c & f \\end{vmatrix}}{C}\\).", "إذا كانت \\(C=0\\) فالنظام <b>ليس له حل وحيد<\/b> (إما لا حل أو عدد لا نهائي من الحلول)."], "key": "\\[\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix}=ad-bc\\]", "examples": [{"q": "أوجد قيمة \\(\\begin{vmatrix}2 & 1 & 0 \\\\ 3 & -1 & 2 \\\\ 1 & 4 & 1\\end{vmatrix}\\).", "steps": ["الأقطار الهابطة: \\(2(-1)(1)+1(2)(1)+0(3)(4)=-2+2+0=0\\).", "الأقطار الصاعدة: \\(0(-1)(1)+2(2)(4)+1(3)(1)=0+16+3=19\\).", "المحددة \\(=0-19=-19\\)."]}, {"q": "استعمل قاعدة كرامر لحل النظام \\(2x+3y=13\\)، \\(x-y=-1\\).", "steps": ["\\(C=\\begin{vmatrix}2 & 3 \\\\ 1 & -1\\end{vmatrix}=2(-1)-3(1)=-5\\).", "\\(x=\\frac{\\begin{vmatrix}13 & 3 \\\\ -1 & -1\\end{vmatrix}}{-5}=\\frac{-13+3}{-5}=2\\).", "\\(y=\\frac{\\begin{vmatrix}2 & 13 \\\\ 1 & -1\\end{vmatrix}}{-5}=\\frac{-2-13}{-5}=3\\). الحل \\((2,3)\\)."]}, {"q": "أوجد مساحة المثلث الذي رؤوسه \\((1,2)\\)، \\((4,6)\\)، \\((5,1)\\).", "steps": ["\\(D=\\begin{vmatrix}1 & 2 & 1 \\\\ 4 & 6 & 1 \\\\ 5 & 1 & 1\\end{vmatrix}=1(6-1)-2(4-5)+1(4-30)=5+2-26=-19\\).", "المساحة \\(=\\frac{1}{2}|-19|=9.5\\) وحدة مربعة."]}], "mcq": [{"q": "قيمة \\(\\begin{vmatrix}7 & -2 \\\\ 3 & 4\\end{vmatrix}\\) هي:", "o": ["\\(34\\)", "\\(22\\)", "\\(28\\)", "\\(-34\\)"], "a": 0, "e": "\\(7(4)-(-2)(3)=28+6=34\\)."}, {"q": "إذا كان \\(\\begin{vmatrix}x & 3 \\\\ 2 & x\\end{vmatrix}=10\\) فإن:", "o": ["\\(x=\\pm 4\\)", "\\(x=\\pm 2\\)", "\\(x=8\\)", "\\(x=\\pm\\sqrt{10}\\)"], "a": 0, "e": "\\(x\\cdot x-3\\cdot 2=10\\Rightarrow x^2=16\\Rightarrow x=\\pm 4\\)."}, {"q": "قيمة \\(\\begin{vmatrix}1 & 0 & 2 \\\\ -1 & 3 & 1 \\\\ 2 & 1 & 0\\end{vmatrix}\\) هي:", "o": ["\\(-15\\)", "\\(15\\)", "\\(-13\\)", "\\(7\\)"], "a": 0, "e": "الهابطة: \\(0+0+2(-1)(1)=-2\\). الصاعدة: \\(2(3)(2)+1(1)(1)+0=13\\). المحددة \\(-2-13=-15\\)."}, {"q": "باستعمال قاعدة كرامر، قيمة \\(x\\) في النظام \\(3x-y=5\\)، \\(x+2y=4\\) هي:", "o": ["\\(2\\)", "\\(1\\)", "\\(14\\)", "\\(7\\)"], "a": 0, "e": "\\(C=3(2)-(-1)(1)=7\\)، و\\(x=\\frac{5(2)-(-1)(4)}{7}=\\frac{14}{7}=2\\)."}, {"q": "مساحة المثلث الذي رؤوسه \\((0,0)\\)، \\((6,0)\\)، \\((2,5)\\) بالوحدات المربعة:", "o": ["\\(15\\)", "\\(30\\)", "\\(12\\)", "\\(60\\)"], "a": 0, "e": "\\(D=\\begin{vmatrix}0 & 0 & 1 \\\\ 6 & 0 & 1 \\\\ 2 & 5 & 1\\end{vmatrix}=1(30-0)=30\\)، والمساحة \\(\\frac{1}{2}(30)=15\\)."}, {"q": "إذا كانت محددة مصفوفة المعاملات لنظام معادلتين تساوي صفراً، فإن النظام:", "o": ["ليس له حل وحيد", "له حل وحيد", "حله النقطة \\((0,0)\\)", "له حلان فقط"], "a": 0, "e": "قاعدة كرامر تتطلب القسمة على \\(C\\)؛ وعندما \\(C=0\\) يكون الخطان متوازيين أو منطبقين."}]}, {"id": "2-5", "title": "النظير الضربي للمصفوفة وأنظمة المعادلات الخطية", "concept": ["<b>مصفوفة الوحدة<\/b> \\(I=\\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}\\).", "المصفوفتان \\(A\\) و\\(B\\) <b>نظيرتان ضربيتان<\/b> إذا كان \\(AB=BA=I\\)، ونكتب \\(B=A^{-1}\\).", "للمصفوفة \\(A=\\begin{bmatrix}a & b \\\\ c & d\\end{bmatrix}\\): إذا كانت \\(|A|\\neq 0\\) فإن \\(A^{-1}=\\frac{1}{|A|}\\begin{bmatrix}d & -b \\\\ -c & a\\end{bmatrix}\\). وإذا كانت \\(|A|=0\\) فليس لها نظير ضربي.", "<b>المعادلة المصفوفية<\/b> \\(AX=B\\): \\(A\\) مصفوفة المعاملات، \\(X\\) مصفوفة المتغيرات، \\(B\\) مصفوفة الثوابت، والحل \\(X=A^{-1}B\\)."], "key": "\\[A^{-1}=\\frac{1}{ad-bc}\\begin{bmatrix}d & -b \\\\ -c & a\\end{bmatrix}\\]", "examples": [{"q": "أوجد النظير الضربي للمصفوفة \\(A=\\begin{bmatrix}4 & 7 \\\\ 2 & 5\\end{bmatrix}\\).", "steps": ["\\(|A|=4(5)-7(2)=6\\neq 0\\)، إذن لها نظير ضربي.", "نبدّل عنصري القطر الرئيس ونغيّر إشارة العنصرين الآخرين: \\(A^{-1}=\\frac{1}{6}\\begin{bmatrix}5 & -7 \\\\ -2 & 4\\end{bmatrix}\\)."]}, {"q": "استعمل المعادلة المصفوفية لحل النظام \\(4x+7y=18\\)، \\(2x+5y=12\\).", "steps": ["\\(\\begin{bmatrix}4 & 7 \\\\ 2 & 5\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix}=\\begin{bmatrix}18 \\\\ 12\\end{bmatrix}\\).", "\\(X=A^{-1}B=\\frac{1}{6}\\begin{bmatrix}5 & -7 \\\\ -2 & 4\\end{bmatrix}\\begin{bmatrix}18 \\\\ 12\\end{bmatrix}=\\frac{1}{6}\\begin{bmatrix}6 \\\\ 12\\end{bmatrix}=\\begin{bmatrix}1 \\\\ 2\\end{bmatrix}\\).", "الحل \\((1,2)\\)."]}], "mcq": [{"q": "النظير الضربي للمصفوفة \\(\\begin{bmatrix}3 & 1 \\\\ 5 & 2\\end{bmatrix}\\) هو:", "o": ["\\(\\begin{bmatrix}2 & -1 \\\\ -5 & 3\\end{bmatrix}\\)", "\\(\\begin{bmatrix}-2 & 1 \\\\ 5 & -3\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & -5 \\\\ -1 & 3\\end{bmatrix}\\)", "\\(\\begin{bmatrix}3 & -1 \\\\ -5 & 2\\end{bmatrix}\\)"], "a": 0, "e": "المحددة \\(3(2)-1(5)=1\\)، فالنظير \\(\\frac{1}{1}\\begin{bmatrix}2 & -1 \\\\ -5 & 3\\end{bmatrix}\\)."}, {"q": "أي المصفوفات الآتية <b>ليس<\/b> لها نظير ضربي؟", "o": ["\\(\\begin{bmatrix}2 & 4 \\\\ 1 & 2\\end{bmatrix}\\)", "\\(\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & 1 \\\\ 1 & 1\\end{bmatrix}\\)", "\\(\\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix}\\)"], "a": 0, "e": "محددتها \\(2(2)-4(1)=0\\)، والمصفوفة التي محددتها صفر ليس لها نظير ضربي."}, {"q": "إذا كانت \\(|A|=4\\) فإن \\(|A^{-1}|\\) تساوي:", "o": ["\\(\\frac{1}{4}\\)", "\\(4\\)", "\\(-4\\)", "\\(16\\)"], "a": 0, "e": "\\(AA^{-1}=I\\) و\\(|I|=1\\)، إذن \\(|A|\\cdot|A^{-1}|=1\\)، فـ \\(|A^{-1}|=\\frac{1}{4}\\)."}, {"q": "المعادلة المصفوفية للنظام \\(2x-y=3\\)، \\(x+4y=6\\) هي:", "o": ["\\(\\begin{bmatrix}2 & -1 \\\\ 1 & 4\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix}=\\begin{bmatrix}3 \\\\ 6\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & 1 \\\\ -1 & 4\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix}=\\begin{bmatrix}3 \\\\ 6\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & -1 \\\\ 1 & 4\\end{bmatrix}\\begin{bmatrix}3 \\\\ 6\\end{bmatrix}=\\begin{bmatrix}x \\\\ y\\end{bmatrix}\\)", "\\(\\begin{bmatrix}2 & -1 \\\\ 1 & 4\\end{bmatrix}\\begin{bmatrix}x \\\\ y\\end{bmatrix}=\\begin{bmatrix}6 \\\\ 3\\end{bmatrix}\\)"], "a": 0, "e": "صفوف مصفوفة المعاملات هي معاملات كل معادلة بالترتيب: \\((2,-1)\\) ثم \\((1,4)\\)."}, {"q": "حل النظام \\(x+2y=5\\)، \\(3x+5y=13\\) باستعمال النظير الضربي هو:", "o": ["\\((1,2)\\)", "\\((2,1)\\)", "\\((-1,3)\\)", "\\((3,1)\\)"], "a": 0, "e": "\\(|A|=5-6=-1\\)، \\(A^{-1}=\\begin{bmatrix}-5 & 2 \\\\ 3 & -1\\end{bmatrix}\\)، و\\(A^{-1}\\begin{bmatrix}5 \\\\ 13\\end{bmatrix}=\\begin{bmatrix}1 \\\\ 2\\end{bmatrix}\\)."}]}]}, {"n": 3, "title": "كثيرات الحدود ودوالها", "lessons": [{"id": "3-1", "title": "الأعداد المركبة", "concept": ["<b>الوحدة التخيلية<\/b> \\(i\\) حيث \\(i^2=-1\\)، و\\(\\sqrt{-a}=i\\sqrt{a}\\) لكل \\(a\\gt 0\\).", "قوى \\(i\\) تتكرر كل أربع: \\(i^1=i,\\; i^2=-1,\\; i^3=-i,\\; i^4=1\\). لإيجاد \\(i^n\\) نقسم \\(n\\) على 4 ونستعمل الباقي.", "<b>العدد المركب<\/b> \\(a+bi\\): \\(a\\) الجزء الحقيقي و\\(b\\) الجزء التخيلي. ويتساوى عددان مركبان إذا تساوى جزآهما الحقيقيان والتخيليان.", "نجمع ونطرح الأجزاء المتشابهة، ونضرب بالتوزيع مع التعويض \\(i^2=-1\\).", "<b>المرافق<\/b> للعدد \\(a+bi\\) هو \\(a-bi\\)، و\\((a+bi)(a-bi)=a^2+b^2\\). نستعمله في القسمة لإنطاق المقام."], "key": "\\[i^2=-1\\qquad (a+bi)(a-bi)=a^2+b^2\\]", "examples": [{"q": "بسّط \\(i^{27}\\).", "steps": ["\\(27=4(6)+3\\)، والباقي \\(3\\).", "\\(i^{27}=i^3=-i\\)."]}, {"q": "أوجد ناتج \\((3+2i)(1-4i)\\).", "steps": ["بالتوزيع: \\(3-12i+2i-8i^2\\).", "نعوّض \\(i^2=-1\\): \\(3-10i+8=11-10i\\)."]}, {"q": "بسّط \\(\\frac{5+i}{2-i}\\).", "steps": ["نضرب البسط والمقام في المرافق \\(2+i\\): \\(\\frac{(5+i)(2+i)}{(2-i)(2+i)}\\).", "البسط: \\(10+5i+2i+i^2=9+7i\\)، والمقام: \\(4+1=5\\).", "الناتج \\(\\frac{9}{5}+\\frac{7}{5}i\\)."]}], "mcq": [{"q": "قيمة \\(i^{42}\\) هي:", "o": ["\\(-1\\)", "\\(1\\)", "\\(i\\)", "\\(-i\\)"], "a": 0, "e": "\\(42=4(10)+2\\)، إذن \\(i^{42}=i^2=-1\\)."}, {"q": "ناتج \\((4-3i)-(-2+5i)\\) هو:", "o": ["\\(6-8i\\)", "\\(2+2i\\)", "\\(6+2i\\)", "\\(2-8i\\)"], "a": 0, "e": "\\((4-(-2))+(-3-5)i=6-8i\\)."}, {"q": "ناتج \\((2+i)(3-2i)\\) هو:", "o": ["\\(8-i\\)", "\\(4-i\\)", "\\(8+i\\)", "\\(6-2i\\)"], "a": 0, "e": "\\(6-4i+3i-2i^2=6-i+2=8-i\\)."}, {"q": "تبسيط \\(\\sqrt{-50}\\) هو:", "o": ["\\(5i\\sqrt{2}\\)", "\\(-5\\sqrt{2}\\)", "\\(25i\\sqrt{2}\\)", "\\(10i\\sqrt{5}\\)"], "a": 0, "e": "\\(\\sqrt{-50}=\\sqrt{-1}\\cdot\\sqrt{25}\\cdot\\sqrt{2}=5i\\sqrt{2}\\)."}, {"q": "ناتج \\(\\frac{3+i}{1-i}\\) هو:", "o": ["\\(1+2i\\)", "\\(2+i\\)", "\\(3+i\\)", "\\(1-2i\\)"], "a": 0, "e": "نضرب في \\(\\frac{1+i}{1+i}\\): \\(\\frac{3+3i+i+i^2}{1+1}=\\frac{2+4i}{2}=1+2i\\)."}, {"q": "قيمتا \\(x\\) و\\(y\\) اللتان تحققان \\((2x-4)+6i=8+3yi\\) هما:", "o": ["\\(x=6,\\ y=2\\)", "\\(x=2,\\ y=6\\)", "\\(x=6,\\ y=-2\\)", "\\(x=4,\\ y=2\\)"], "a": 0, "e": "الجزآن الحقيقيان: \\(2x-4=8\\Rightarrow x=6\\). والتخيليان: \\(3y=6\\Rightarrow y=2\\)."}]}, {"id": "3-2", "title": "القانون العام والمميز", "concept": ["<b>القانون العام<\/b> لحل \\(ax^2+bx+c=0\\) حيث \\(a\\neq 0\\): \\(x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\).", "<b>المميز<\/b> \\(\\Delta=b^2-4ac\\) يحدد نوع الجذرين دون حل المعادلة:", "\\(\\Delta\\gt 0\\) ومربع كامل: جذران حقيقيان نسبيان. \\(\\Delta\\gt 0\\) وليس مربعاً كاملاً: جذران حقيقيان غير نسبيين.", "\\(\\Delta=0\\): جذر حقيقي واحد مكرر. \\(\\Delta\\lt 0\\): جذران مركبان مترافقان."], "key": "\\[x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\]", "examples": [{"q": "حل المعادلة \\(2x^2+5x-3=0\\).", "steps": ["\\(a=2,\\ b=5,\\ c=-3\\)، و\\(\\Delta=25-4(2)(-3)=49\\) مربع كامل.", "\\(x=\\frac{-5\\pm 7}{4}\\)، أي \\(x=\\frac{1}{2}\\) أو \\(x=-3\\)."]}, {"q": "حل المعادلة \\(x^2-6x+13=0\\).", "steps": ["\\(\\Delta=36-52=-16\\lt 0\\)، إذن الجذران مركبان.", "\\(x=\\frac{6\\pm\\sqrt{-16}}{2}=\\frac{6\\pm 4i}{2}=3\\pm 2i\\)."]}], "mcq": [{"q": "قيمة المميز للمعادلة \\(3x^2-4x+2=0\\) هي:", "o": ["\\(-8\\)", "\\(40\\)", "\\(8\\)", "\\(-40\\)"], "a": 0, "e": "\\(\\Delta=(-4)^2-4(3)(2)=16-24=-8\\)."}, {"q": "نوع جذري المعادلة \\(x^2+10x+25=0\\):", "o": ["جذر حقيقي واحد مكرر", "جذران حقيقيان نسبيان مختلفان", "جذران حقيقيان غير نسبيين", "جذران مركبان"], "a": 0, "e": "\\(\\Delta=100-4(1)(25)=0\\)، فللمعادلة جذر حقيقي واحد هو \\(x=-5\\)."}, {"q": "حلا المعادلة \\(x^2-4x+7=0\\) هما:", "o": ["\\(2\\pm i\\sqrt{3}\\)", "\\(-2\\pm i\\sqrt{3}\\)", "\\(2\\pm\\sqrt{3}\\)", "\\(4\\pm i\\sqrt{3}\\)"], "a": 0, "e": "\\(\\Delta=16-28=-12\\)، و\\(x=\\frac{4\\pm 2i\\sqrt{3}}{2}=2\\pm i\\sqrt{3}\\)."}, {"q": "حلا المعادلة \\(x^2-2x-5=0\\) هما:", "o": ["\\(1\\pm\\sqrt{6}\\)", "\\(-1\\pm\\sqrt{6}\\)", "\\(2\\pm\\sqrt{6}\\)", "\\(1\\pm 2\\sqrt{6}\\)"], "a": 0, "e": "\\(\\Delta=4+20=24\\)، و\\(x=\\frac{2\\pm 2\\sqrt{6}}{2}=1\\pm\\sqrt{6}\\)."}, {"q": "قيمة \\(k\\) التي تجعل للمعادلة \\(x^2+kx+9=0\\) جذراً حقيقياً واحداً:", "o": ["\\(\\pm 6\\)", "\\(\\pm 3\\)", "\\(\\pm 9\\)", "\\(\\pm 36\\)"], "a": 0, "e": "نشترط \\(\\Delta=k^2-36=0\\)، إذن \\(k=\\pm 6\\)."}]}, {"id": "3-3", "title": "العمليات على كثيرات الحدود", "concept": ["خصائص الأسس: \\(a^m\\cdot a^n=a^{m+n}\\)، \\(\\frac{a^m}{a^n}=a^{m-n}\\)، \\((a^m)^n=a^{mn}\\)، \\((ab)^m=a^mb^m\\).", "\\(a^0=1\\) و\\(a^{-n}=\\frac{1}{a^n}\\) حيث \\(a\\neq 0\\)، ولا تُترك أسس سالبة في الناتج المبسّط.", "<b>درجة<\/b> وحيدة الحد مجموع أسس متغيراتها، ودرجة كثيرة الحدود أكبر درجة لحدودها.", "نجمع ونطرح الحدود المتشابهة، ونضرب كثيرات الحدود بخاصية التوزيع."], "key": "\\[a^m\\cdot a^n=a^{m+n}\\qquad (a^m)^n=a^{mn}\\qquad a^{-n}=\\frac{1}{a^n}\\]", "examples": [{"q": "بسّط \\(\\frac{12a^5b^2}{4a^2b^6}\\).", "steps": ["\\(\\frac{12}{4}=3\\)، و\\(\\frac{a^5}{a^2}=a^3\\)، و\\(\\frac{b^2}{b^6}=b^{-4}=\\frac{1}{b^4}\\).", "الناتج \\(\\frac{3a^3}{b^4}\\)."]}, {"q": "أوجد ناتج \\((2x-3)(x^2+4x-1)\\).", "steps": ["\\(2x(x^2+4x-1)=2x^3+8x^2-2x\\).", "\\(-3(x^2+4x-1)=-3x^2-12x+3\\).", "المجموع: \\(2x^3+5x^2-14x+3\\)."]}], "mcq": [{"q": "تبسيط \\((2a^3b)^3\\) هو:", "o": ["\\(8a^9b^3\\)", "\\(6a^9b^3\\)", "\\(8a^6b^3\\)", "\\(2a^9b^3\\)"], "a": 0, "e": "\\(2^3=8\\)، \\((a^3)^3=a^9\\)، \\(b^3\\)."}, {"q": "تبسيط \\(\\frac{x^{-3}y^5}{x^2y^{-1}}\\) هو:", "o": ["\\(\\frac{y^6}{x^5}\\)", "\\(\\frac{y^4}{x}\\)", "\\(x^5y^6\\)", "\\(\\frac{y^6}{x}\\)"], "a": 0, "e": "\\(x^{-3-2}=x^{-5}=\\frac{1}{x^5}\\)، و\\(y^{5-(-1)}=y^6\\)."}, {"q": "ناتج \\((3x^2-5x+2)-(x^2+2x-7)\\) هو:", "o": ["\\(2x^2-7x+9\\)", "\\(2x^2-3x-5\\)", "\\(4x^2-3x-5\\)", "\\(2x^2-7x-5\\)"], "a": 0, "e": "نوزّع الإشارة السالبة: \\(3x^2-5x+2-x^2-2x+7=2x^2-7x+9\\)."}, {"q": "ناتج \\((x-3)^2\\) هو:", "o": ["\\(x^2-6x+9\\)", "\\(x^2+9\\)", "\\(x^2-9\\)", "\\(x^2-3x+9\\)"], "a": 0, "e": "\\((x-3)(x-3)=x^2-3x-3x+9=x^2-6x+9\\)."}, {"q": "درجة كثيرة الحدود \\(4x^3y^2-7xy+5\\) هي:", "o": ["\\(5\\)", "\\(3\\)", "\\(2\\)", "\\(6\\)"], "a": 0, "e": "درجة الحد \\(4x^3y^2\\) هي \\(3+2=5\\)، وهي الأكبر."}]}, {"id": "3-4", "title": "قسمة كثيرات الحدود", "concept": ["لقسمة كثيرة حدود على وحيدة حد نقسم كل حد على وحيدة الحد.", "<b>القسمة الطويلة<\/b>: نرتب الحدود تنازلياً، ونضع حداً صفرياً مكان أي حد ناقص.", "<b>القسمة التركيبية<\/b> عند القسمة على \\(x-r\\): نكتب المعاملات، ننزل الأول، نضرب في \\(r\\) ونضيف إلى المعامل التالي، وهكذا. آخر عدد هو <b>الباقي<\/b>.", "إذا كان معامل \\(x\\) في المقسوم عليه لا يساوي 1 (مثل \\(2x-1\\)) نقسم المقسوم والمقسوم عليه على ذلك المعامل أولاً.", "المقسوم = المقسوم عليه × الناتج + الباقي."], "key": "\\[\\frac{f(x)}{x-r}=q(x)+\\frac{R}{x-r}\\]", "examples": [{"q": "استعمل القسمة التركيبية لإيجاد \\((x^3-4x^2+2x+5)\\div(x-3)\\).", "steps": ["المعاملات \\(1,\\,-4,\\,2,\\,5\\) و\\(r=3\\).", "ننزل \\(1\\)؛ \\(1\\cdot 3=3\\) و\\(-4+3=-1\\)؛ \\(-1\\cdot 3=-3\\) و\\(2-3=-1\\)؛ \\(-1\\cdot 3=-3\\) و\\(5-3=2\\).", "الناتج \\(x^2-x-1\\) والباقي \\(2\\)، أي \\(x^2-x-1+\\frac{2}{x-3}\\)."]}, {"q": "أوجد \\((x^3-8)\\div(x-2)\\).", "steps": ["نكتب المقسوم بحدوده الناقصة: \\(x^3+0x^2+0x-8\\).", "المعاملات \\(1,0,0,-8\\) و\\(r=2\\): \\(1\\)، \\(2\\)، \\(4\\)، والباقي \\(-8+8=0\\).", "الناتج \\(x^2+2x+4\\) والباقي صفر."]}], "mcq": [{"q": "ناتج \\(\\frac{12x^4-8x^3+4x^2}{4x^2}\\) هو:", "o": ["\\(3x^2-2x+1\\)", "\\(3x^2-2x\\)", "\\(3x^4-2x^3+x^2\\)", "\\(8x^2-4x\\)"], "a": 0, "e": "نقسم كل حد على \\(4x^2\\): \\(3x^2-2x+1\\)."}, {"q": "ناتج قسمة \\(x^3+2x^2-5x+1\\) على \\(x-1\\) هو:", "o": ["\\(x^2+3x-2\\) والباقي \\(-1\\)", "\\(x^2+x-6\\) والباقي \\(7\\)", "\\(x^2+3x-2\\) والباقي \\(1\\)", "\\(x^2+2x-5\\) والباقي \\(1\\)"], "a": 0, "e": "المعاملات \\(1,2,-5,1\\) و\\(r=1\\): \\(1\\)، \\(3\\)، \\(-2\\)، والباقي \\(-1\\). (الخيار الثاني ناتج القسمة على \\(x+1\\).)"}, {"q": "ناتج \\(\\frac{x^2+5x+6}{x+2}\\) هو:", "o": ["\\(x+3\\)", "\\(x+2\\)", "\\(x-3\\)", "\\(x+4\\)"], "a": 0, "e": "\\(x^2+5x+6=(x+2)(x+3)\\)، إذن الناتج \\(x+3\\)."}, {"q": "باقي قسمة \\(2x^3-3x^2+4\\) على \\(x-2\\) هو:", "o": ["\\(8\\)", "\\(0\\)", "\\(4\\)", "\\(-4\\)"], "a": 0, "e": "المعاملات \\(2,-3,0,4\\) و\\(r=2\\): \\(2\\)، \\(1\\)، \\(2\\)، والباقي \\(4+4=8\\)."}, {"q": "ناتج \\(\\frac{x^3+27}{x+3}\\) هو:", "o": ["\\(x^2-3x+9\\)", "\\(x^2+3x+9\\)", "\\(x^2-9\\)", "\\(x^2+9\\)"], "a": 0, "e": "المعاملات \\(1,0,0,27\\) و\\(r=-3\\): \\(1\\)، \\(-3\\)، \\(9\\)، والباقي \\(0\\)."}]}, {"id": "3-5", "title": "دوال كثيرات الحدود", "concept": ["كثيرة الحدود بمتغير واحد: \\(a_nx^n+\\dots+a_1x+a_0\\)، و\\(a_n\\) <b>المعامل الرئيس<\/b> و\\(n\\) الدرجة.", "<b>سلوك طرفي التمثيل البياني<\/b> يحدده الدرجة وإشارة المعامل الرئيس:", "درجة <b>زوجية<\/b>: \\(a_n\\gt 0\\) الطرفان إلى أعلى، و\\(a_n\\lt 0\\) الطرفان إلى أسفل.", "درجة <b>فردية<\/b>: \\(a_n\\gt 0\\) يبدأ من أسفل وينتهي إلى أعلى، و\\(a_n\\lt 0\\) العكس.", "عدد الأصفار الحقيقية لدالة من الدرجة \\(n\\) لا يزيد على \\(n\\)."], "key": "\\[f(x)=-3x^4+x-1:\\quad x\\to\\pm\\infty \\Rightarrow f(x)\\to -\\infty\\]", "examples": [{"q": "إذا كانت \\(p(x)=2x^3-x^2+4\\) فأوجد \\(p(-2)\\).", "steps": ["\\(p(-2)=2(-8)-4+4\\).", "\\(p(-2)=-16\\)."]}, {"q": "صف سلوك طرفي التمثيل البياني للدالة \\(f(x)=-3x^4+x-1\\).", "steps": ["الدرجة \\(4\\) زوجية، والمعامل الرئيس \\(-3\\) سالب.", "عندما \\(x\\to+\\infty\\) أو \\(x\\to-\\infty\\) فإن \\(f(x)\\to-\\infty\\)؛ الطرفان إلى أسفل."]}], "mcq": [{"q": "درجة كثيرة الحدود \\(5x^2-3x^5+7\\) ومعاملها الرئيس:", "o": ["الدرجة \\(5\\) والمعامل الرئيس \\(-3\\)", "الدرجة \\(2\\) والمعامل الرئيس \\(5\\)", "الدرجة \\(5\\) والمعامل الرئيس \\(7\\)", "الدرجة \\(5\\) والمعامل الرئيس \\(3\\)"], "a": 0, "e": "أكبر أس هو \\(5\\) في الحد \\(-3x^5\\)، فمعامله \\(-3\\) هو المعامل الرئيس."}, {"q": "سلوك طرفي التمثيل البياني للدالة \\(f(x)=x^3-2x\\):", "o": ["عندما \\(x\\to+\\infty\\)، \\(f(x)\\to+\\infty\\)؛ وعندما \\(x\\to-\\infty\\)، \\(f(x)\\to-\\infty\\)", "الطرفان يتجهان إلى \\(+\\infty\\)", "الطرفان يتجهان إلى \\(-\\infty\\)", "عندما \\(x\\to+\\infty\\)، \\(f(x)\\to-\\infty\\)؛ وعندما \\(x\\to-\\infty\\)، \\(f(x)\\to+\\infty\\)"], "a": 0, "e": "درجة فردية ومعامل رئيس موجب: يبدأ من أسفل وينتهي إلى أعلى."}, {"q": "إذا كانت \\(p(x)=x^4-3x^2+2\\) فإن \\(p(-1)\\) تساوي:", "o": ["\\(0\\)", "\\(6\\)", "\\(2\\)", "\\(-2\\)"], "a": 0, "e": "\\((-1)^4-3(-1)^2+2=1-3+2=0\\)."}, {"q": "أكبر عدد ممكن من الأصفار الحقيقية للدالة \\(f(x)=2x^6-x^3+1\\):", "o": ["\\(6\\)", "\\(3\\)", "\\(2\\)", "\\(7\\)"], "a": 0, "e": "لا يزيد عدد الأصفار الحقيقية على درجة الدالة، وهي \\(6\\)."}, {"q": "تمثيل بياني لدالة كثيرة حدود طرفاه يتجهان إلى أسفل معاً. إذن درجتها:", "o": ["زوجية ومعاملها الرئيس سالب", "زوجية ومعاملها الرئيس موجب", "فردية ومعاملها الرئيس سالب", "فردية ومعاملها الرئيس موجب"], "a": 0, "e": "اتجاه الطرفين معاً يعني درجة زوجية، واتجاههما إلى أسفل يعني معاملاً رئيساً سالباً."}]}, {"id": "3-6", "title": "حل معادلات كثيرات الحدود", "concept": ["طرق التحليل: إخراج <b>العامل المشترك الأكبر<\/b>، و<b>التجميع<\/b>، والفرق بين مربعين \\(a^2-b^2=(a-b)(a+b)\\).", "<b>مجموع مكعبين<\/b> \\(a^3+b^3=(a+b)(a^2-ab+b^2)\\)، و<b>الفرق بين مكعبين<\/b> \\(a^3-b^3=(a-b)(a^2+ab+b^2)\\).", "<b>الصيغة التربيعية<\/b>: كتابة المعادلة على الصورة \\(au^2+bu+c=0\\) حيث \\(u\\) عبارة في \\(x\\)، مثل \\(u=x^2\\).", "بعد التحليل نستعمل <b>خاصية الضرب الصفري<\/b>: إذا كان \\(ab=0\\) فإن \\(a=0\\) أو \\(b=0\\)."], "key": "\\[a^3\\pm b^3=(a\\pm b)(a^2\\mp ab+b^2)\\]", "examples": [{"q": "حل المعادلة \\(x^4-13x^2+36=0\\).", "steps": ["نضع \\(u=x^2\\): \\(u^2-13u+36=0\\Rightarrow (u-4)(u-9)=0\\).", "\\(x^2=4\\) أو \\(x^2=9\\).", "الحلول \\(x=\\pm 2,\\ \\pm 3\\)."]}, {"q": "حل المعادلة \\(x^3-64=0\\).", "steps": ["فرق بين مكعبين: \\((x-4)(x^2+4x+16)=0\\).", "\\(x-4=0\\Rightarrow x=4\\).", "\\(x^2+4x+16=0\\): \\(x=\\frac{-4\\pm\\sqrt{16-64}}{2}=\\frac{-4\\pm 4i\\sqrt{3}}{2}=-2\\pm 2i\\sqrt{3}\\)."]}, {"q": "حلّل \\(x^3+2x^2-9x-18\\) تحليلاً تاماً.", "steps": ["بالتجميع: \\(x^2(x+2)-9(x+2)=(x+2)(x^2-9)\\).", "\\((x+2)(x-3)(x+3)\\)."]}], "mcq": [{"q": "تحليل \\(8x^3+27\\) هو:", "o": ["\\((2x+3)(4x^2-6x+9)\\)", "\\((2x+3)(4x^2+6x+9)\\)", "\\((2x-3)(4x^2+6x+9)\\)", "\\((2x+3)^3\\)"], "a": 0, "e": "مجموع مكعبين حيث \\(a=2x\\) و\\(b=3\\): \\((a+b)(a^2-ab+b^2)\\)."}, {"q": "حلول المعادلة \\(x^4-5x^2+4=0\\) هي:", "o": ["\\(\\pm 1,\\ \\pm 2\\)", "\\(1,\\ 4\\)", "\\(\\pm 1,\\ \\pm 4\\)", "\\(\\pm 2\\) فقط"], "a": 0, "e": "\\((x^2-1)(x^2-4)=0\\)، إذن \\(x^2=1\\) أو \\(x^2=4\\)."}, {"q": "تحليل \\(x^3-3x^2-4x+12\\) هو:", "o": ["\\((x-3)(x-2)(x+2)\\)", "\\((x+3)(x-2)(x+2)\\)", "\\((x-3)(x-4)(x+1)\\)", "\\((x-3)(x^2+4)\\)"], "a": 0, "e": "\\(x^2(x-3)-4(x-3)=(x-3)(x^2-4)=(x-3)(x-2)(x+2)\\)."}, {"q": "الصيغة التربيعية للمعادلة \\(2x^6+5x^3-3=0\\) هي:", "o": ["\\(2(x^3)^2+5(x^3)-3=0\\)", "\\(2(x^2)^3+5(x^2)-3=0\\)", "\\(2(x^6)^2+5(x^3)-3=0\\)", "\\(2(x^3)^2+5x-3=0\\)"], "a": 0, "e": "\\(x^6=(x^3)^2\\)، فنضع \\(u=x^3\\): \\(2u^2+5u-3=0\\)."}, {"q": "الحلول الحقيقية للمعادلة \\(x^3-9x=0\\) هي:", "o": ["\\(0,\\ 3,\\ -3\\)", "\\(3,\\ -3\\)", "\\(0,\\ 9\\)", "\\(0,\\ 3\\)"], "a": 0, "e": "\\(x(x^2-9)=x(x-3)(x+3)=0\\). لا تنسَ الحل \\(x=0\\) الناتج من العامل المشترك."}]}, {"id": "3-7", "title": "نظريتا الباقي والعوامل", "concept": ["<b>نظرية الباقي<\/b>: باقي قسمة كثيرة الحدود \\(f(x)\\) على \\(x-r\\) يساوي \\(f(r)\\).", "<b>التعويض التركيبي<\/b>: إيجاد \\(f(r)\\) بالقسمة التركيبية، فالباقي هو قيمة الدالة.", "<b>نظرية العوامل<\/b>: يكون \\(x-r\\) عاملاً من عوامل \\(f(x)\\) إذا وفقط إذا كان \\(f(r)=0\\).", "بعد إيجاد عامل نقسم عليه، ثم نحلل ناتج القسمة لإيجاد بقية العوامل."], "key": "\\[f(r)=0 \\iff (x-r)\\ \\text{عامل من عوامل}\\ f(x)\\]", "examples": [{"q": "أوجد باقي قسمة \\(f(x)=2x^3-5x^2+x+7\\) على \\(x-2\\).", "steps": ["حسب نظرية الباقي: \\(R=f(2)\\).", "\\(f(2)=2(8)-5(4)+2+7=16-20+9=5\\). الباقي \\(5\\)."]}, {"q": "بيّن أن \\(x+2\\) عامل من عوامل \\(x^3+3x^2-4\\)، ثم حلّلها تحليلاً تاماً.", "steps": ["\\(f(-2)=-8+12-4=0\\)، إذن \\(x+2\\) عامل.", "بالقسمة التركيبية على \\(r=-2\\) للمعاملات \\(1,3,0,-4\\): \\(1,\\ 1,\\ -2\\) والباقي \\(0\\)، أي \\(x^2+x-2\\).", "\\(x^2+x-2=(x+2)(x-1)\\)، إذن \\(x^3+3x^2-4=(x+2)^2(x-1)\\)."]}], "mcq": [{"q": "باقي قسمة \\(x^4-2x^3+3x-1\\) على \\(x+1\\) هو:", "o": ["\\(-1\\)", "\\(1\\)", "\\(3\\)", "\\(-7\\)"], "a": 0, "e": "\\(f(-1)=1+2-3-1=-1\\)."}, {"q": "أي مما يأتي عامل من عوامل \\(x^3-7x+6\\)؟", "o": ["\\(x-1\\)", "\\(x+1\\)", "\\(x-3\\)", "\\(x+2\\)"], "a": 0, "e": "\\(f(1)=1-7+6=0\\). أما \\(f(-1)\\) و\\(f(3)\\) و\\(f(-2)\\) فتساوي \\(12\\) جميعاً."}, {"q": "قيمة \\(k\\) التي تجعل \\(x-2\\) عاملاً من عوامل \\(x^3+kx^2-4x+4\\):", "o": ["\\(-1\\)", "\\(1\\)", "\\(-4\\)", "\\(2\\)"], "a": 0, "e": "\\(f(2)=8+4k-8+4=4k+4=0\\Rightarrow k=-1\\)."}, {"q": "إذا كان باقي قسمة \\(f(x)\\) على \\(x-3\\) يساوي 7، فإن:", "o": ["\\(f(3)=7\\)", "\\(f(7)=3\\)", "\\(f(-3)=7\\)", "\\(f(3)=0\\)"], "a": 0, "e": "نظرية الباقي: الباقي عند القسمة على \\(x-r\\) هو \\(f(r)\\)."}, {"q": "إذا كان \\(x-1\\) عاملاً من عوامل \\(x^3-2x^2-5x+6\\)، فإن العاملين الآخرين هما:", "o": ["\\((x-3)(x+2)\\)", "\\((x+3)(x-2)\\)", "\\((x-6)(x+1)\\)", "\\((x-3)(x-2)\\)"], "a": 0, "e": "القسمة التركيبية على \\(r=1\\) تعطي \\(x^2-x-6=(x-3)(x+2)\\)."}]}, {"id": "3-8", "title": "الجذور والأصفار", "concept": ["<b>جذور<\/b> المعادلة \\(f(x)=0\\) هي <b>أصفار<\/b> الدالة \\(f\\)، والأصفار الحقيقية هي المقاطع السينية لتمثيلها.", "<b>النظرية الأساسية في الجبر<\/b>: لكل كثيرة حدود درجتها \\(n\\ge 1\\) عدد \\(n\\) من الجذور المركبة بالضبط (مع احتساب التكرار).", "<b>قاعدة ديكارت للإشارات<\/b>: عدد الأصفار الحقيقية الموجبة يساوي عدد مرات تغير الإشارة في \\(f(x)\\) أو يقل عنه بعدد زوجي، والسالبة من \\(f(-x)\\).", "إذا كانت المعاملات حقيقية والعدد \\(a+bi\\) صفراً فإن مرافقه \\(a-bi\\) صفر أيضاً.", "لكتابة دالة بمعلومية أصفارها \\(r_1,r_2,\\dots\\): \\(f(x)=(x-r_1)(x-r_2)\\cdots\\)."], "key": "\\[a+bi\\ \\text{صفر} \\;\\Longrightarrow\\; a-bi\\ \\text{صفر}\\]", "examples": [{"q": "حدّد العدد الممكن من الأصفار الحقيقية الموجبة والسالبة للدالة \\(f(x)=x^4-3x^3+2x^2-x+5\\).", "steps": ["إشارات \\(f(x)\\): \\(+,-,+,-,+\\)، فيها 4 تغيرات، فالأصفار الموجبة \\(4\\) أو \\(2\\) أو \\(0\\).", "\\(f(-x)=x^4+3x^3+2x^2+x+5\\) لا تغيّر فيها، فلا توجد أصفار سالبة."]}, {"q": "اكتب دالة كثيرة حدود من الدرجة الثالثة معاملاتها حقيقية، وصفراها \\(2\\) و\\(3i\\).", "steps": ["بما أن \\(3i\\) صفر فإن مرافقه \\(-3i\\) صفر أيضاً.", "\\(f(x)=(x-2)(x-3i)(x+3i)=(x-2)(x^2+9)\\).", "\\(f(x)=x^3-2x^2+9x-18\\)."]}], "mcq": [{"q": "عدد جذور المعادلة \\(x^5-3x^2+1=0\\) في مجموعة الأعداد المركبة (مع التكرار):", "o": ["\\(5\\)", "\\(3\\)", "\\(2\\)", "\\(1\\)"], "a": 0, "e": "حسب النظرية الأساسية في الجبر، عدد الجذور يساوي الدرجة \\(5\\)."}, {"q": "إذا كان \\(4-i\\) صفراً لدالة كثيرة حدود معاملاتها حقيقية، فإن صفراً آخر لها هو:", "o": ["\\(4+i\\)", "\\(-4+i\\)", "\\(-4-i\\)", "\\(4i\\)"], "a": 0, "e": "الأصفار المركبة تأتي أزواجاً مترافقة، ومرافق \\(4-i\\) هو \\(4+i\\)."}, {"q": "العدد الممكن من الأصفار الحقيقية الموجبة للدالة \\(f(x)=2x^3-5x^2-x+6\\):", "o": ["\\(2\\) أو \\(0\\)", "\\(3\\) أو \\(1\\)", "\\(2\\) فقط", "\\(1\\) فقط"], "a": 0, "e": "الإشارات \\(+,-,-,+\\): تتغير مرتين، فالعدد \\(2\\) أو \\(2-2=0\\)."}, {"q": "دالة من الدرجة الثانية صفراها \\(3\\) و\\(-5\\) هي:", "o": ["\\(f(x)=x^2+2x-15\\)", "\\(f(x)=x^2-2x-15\\)", "\\(f(x)=x^2+8x+15\\)", "\\(f(x)=x^2-2x+15\\)"], "a": 0, "e": "\\((x-3)(x+5)=x^2+5x-3x-15=x^2+2x-15\\)."}, {"q": "أصفار الدالة \\(f(x)=x^3+16x\\) هي:", "o": ["\\(0,\\ \\pm 4i\\)", "\\(0,\\ \\pm 4\\)", "\\(\\pm 4i\\) فقط", "\\(0,\\ 16\\)"], "a": 0, "e": "\\(x(x^2+16)=0\\)، ومنه \\(x=0\\) أو \\(x^2=-16\\Rightarrow x=\\pm 4i\\)."}]}]}, {"n": 4, "title": "العلاقات والدوال العكسية والجذرية", "lessons": [{"id": "4-1", "title": "العمليات على الدوال", "concept": ["\\((f+g)(x)=f(x)+g(x)\\)، \\((f-g)(x)=f(x)-g(x)\\)، \\((f\\cdot g)(x)=f(x)\\cdot g(x)\\).", "\\(\\left(\\frac{f}{g}\\right)(x)=\\frac{f(x)}{g(x)}\\) بشرط \\(g(x)\\neq 0\\)، فنستبعد من المجال أصفار \\(g\\).", "<b>تركيب دالتين<\/b>: \\([f\\circ g](x)=f(g(x))\\)، أي نعوّض \\(g(x)\\) مكان \\(x\\) في \\(f\\).", "التركيب ليس إبدالياً عادة: \\([f\\circ g](x)\\neq[g\\circ f](x)\\)."], "key": "\\[[f\\circ g](x)=f\\big(g(x)\\big)\\]", "examples": [{"q": "إذا كانت \\(f(x)=x^2-1\\) و\\(g(x)=x+3\\)، فأوجد \\((f+g)(x)\\) و\\(\\left(\\frac{f}{g}\\right)(x)\\).", "steps": ["\\((f+g)(x)=x^2-1+x+3=x^2+x+2\\).", "\\(\\left(\\frac{f}{g}\\right)(x)=\\frac{x^2-1}{x+3}\\)، حيث \\(x\\neq -3\\)."]}, {"q": "للدالتين نفسيهما، أوجد \\([f\\circ g](x)\\) و\\([g\\circ f](x)\\) و\\([f\\circ g](2)\\).", "steps": ["\\([f\\circ g](x)=f(x+3)=(x+3)^2-1=x^2+6x+8\\).", "\\([g\\circ f](x)=g(x^2-1)=x^2-1+3=x^2+2\\).", "\\([f\\circ g](2)=f(5)=25-1=24\\)."]}], "mcq": [{"q": "إذا كانت \\(f(x)=3x-2\\) و\\(g(x)=x^2\\) فإن \\((f-g)(x)\\):", "o": ["\\(-x^2+3x-2\\)", "\\(x^2-3x+2\\)", "\\(x^2+3x-2\\)", "\\(3x^3-2x^2\\)"], "a": 0, "e": "\\((3x-2)-x^2=-x^2+3x-2\\)."}, {"q": "إذا كانت \\(f(x)=2x+1\\) و\\(g(x)=x-4\\) فإن \\([f\\circ g](x)\\):", "o": ["\\(2x-7\\)", "\\(2x-3\\)", "\\(2x^2-7x-4\\)", "\\(2x+5\\)"], "a": 0, "e": "\\(f(x-4)=2(x-4)+1=2x-7\\). (الخيار \\(2x-3\\) هو \\([g\\circ f](x)\\).)"}, {"q": "إذا كانت \\(f(x)=x^2\\) و\\(g(x)=x+5\\) فإن \\([g\\circ f](-3)\\):", "o": ["\\(14\\)", "\\(4\\)", "\\(-4\\)", "\\(64\\)"], "a": 0, "e": "\\(f(-3)=9\\)، ثم \\(g(9)=14\\). (الخيار \\(4\\) هو \\([f\\circ g](-3)=f(2)\\).)"}, {"q": "إذا كانت \\(f(x)=x+1\\) و\\(g(x)=x-1\\) فإن مجال \\(\\left(\\frac{f}{g}\\right)(x)\\):", "o": ["\\(x\\neq 1\\)", "\\(x\\neq -1\\)", "جميع الأعداد الحقيقية", "\\(x\\gt 1\\)"], "a": 0, "e": "المقام \\(g(x)=x-1\\) لا يساوي صفراً، إذن \\(x\\neq 1\\)."}, {"q": "إذا كانت \\(f(x)=4x\\) و\\(g(x)=x^2+1\\) فإن \\((f\\cdot g)(2)\\):", "o": ["\\(40\\)", "\\(13\\)", "\\(20\\)", "\\(17\\)"], "a": 0, "e": "\\(f(2)=8\\) و\\(g(2)=5\\)، وحاصل ضربهما \\(40\\)."}]}, {"id": "4-2", "title": "العلاقات والدوال العكسية", "concept": ["<b>العلاقة العكسية<\/b>: نبدّل إحداثيي كل زوج مرتب، فـ \\((a,b)\\) تصبح \\((b,a)\\)، ويتبادل المجال والمدى.", "لإيجاد <b>الدالة العكسية<\/b> \\(f^{-1}\\): نكتب \\(y=f(x)\\)، نبدّل \\(x\\) و\\(y\\)، ثم نحل المعادلة بالنسبة لـ \\(y\\).", "الدالتان \\(f\\) و\\(g\\) عكسيتان إذا وفقط إذا كان \\([f\\circ g](x)=x\\) و\\([g\\circ f](x)=x\\).", "التمثيل البياني للدالة وعكسيتها <b>متماثلان حول المستقيم \\(y=x\\)<\/b>.", "تكون العلاقة العكسية دالةً إذا كانت الدالة الأصلية متباينة (يقطع أي خط أفقي تمثيلها مرة واحدة على الأكثر)."], "key": "\\[f\\big(f^{-1}(x)\\big)=f^{-1}\\big(f(x)\\big)=x\\]", "examples": [{"q": "أوجد الدالة العكسية للدالة \\(f(x)=3x-6\\).", "steps": ["\\(y=3x-6\\)، ثم نبدّل: \\(x=3y-6\\).", "\\(3y=x+6\\Rightarrow y=\\frac{x+6}{3}\\).", "\\(f^{-1}(x)=\\frac{x}{3}+2\\)."]}, {"q": "تحقق أن \\(f(x)=2x+4\\) و\\(g(x)=\\frac{x-4}{2}\\) دالتان عكسيتان.", "steps": ["\\([f\\circ g](x)=2\\cdot\\frac{x-4}{2}+4=x-4+4=x\\).", "\\([g\\circ f](x)=\\frac{2x+4-4}{2}=x\\).", "كلا التركيبين يساوي \\(x\\)، إذن الدالتان عكسيتان."]}], "mcq": [{"q": "الدالة العكسية للدالة \\(f(x)=4x+8\\) هي:", "o": ["\\(f^{-1}(x)=\\frac{x-8}{4}\\)", "\\(f^{-1}(x)=\\frac{x+8}{4}\\)", "\\(f^{-1}(x)=4x-8\\)", "\\(f^{-1}(x)=\\frac{1}{4x+8}\\)"], "a": 0, "e": "\\(x=4y+8\\Rightarrow y=\\frac{x-8}{4}\\). انتبه: \\(f^{-1}\\) لا تعني \\(\\frac{1}{f}\\)."}, {"q": "العلاقة العكسية للعلاقة \\(\\{(-2,3),(0,5),(4,-1)\\}\\) هي:", "o": ["\\(\\{(3,-2),(5,0),(-1,4)\\}\\)", "\\(\\{(2,-3),(0,-5),(-4,1)\\}\\)", "\\(\\{(-3,2),(-5,0),(1,-4)\\}\\)", "\\(\\{(3,2),(5,0),(1,4)\\}\\)"], "a": 0, "e": "نبدّل الإحداثيين في كل زوج مرتب دون تغيير الإشارات."}, {"q": "التمثيل البياني لدالة وعكسيتها متماثلان حول:", "o": ["المستقيم \\(y=x\\)", "المحور السيني", "المحور الصادي", "نقطة الأصل"], "a": 0, "e": "تبديل \\(x\\) و\\(y\\) يعني الانعكاس حول المستقيم \\(y=x\\)."}, {"q": "أي زوج مما يأتي يمثل دالتين عكسيتين؟", "o": ["\\(f(x)=x+5,\\ g(x)=x-5\\)", "\\(f(x)=2x,\\ g(x)=x+2\\)", "\\(f(x)=x^2,\\ g(x)=-x^2\\)", "\\(f(x)=3x,\\ g(x)=-3x\\)"], "a": 0, "e": "\\(f(g(x))=(x-5)+5=x\\) و\\(g(f(x))=(x+5)-5=x\\)."}, {"q": "إذا كانت \\(f(x)=\\frac{x-1}{2}\\) فإن \\(f^{-1}(3)\\) تساوي:", "o": ["\\(7\\)", "\\(1\\)", "\\(5\\)", "\\(2\\)"], "a": 0, "e": "\\(f^{-1}(x)=2x+1\\)، إذن \\(f^{-1}(3)=7\\). تحقّق: \\(f(7)=\\frac{6}{2}=3\\)."}]}, {"id": "4-3", "title": "دوال ومتباينات الجذر التربيعي", "concept": ["<b>دالة الجذر التربيعي<\/b> تحوي متغيراً تحت الجذر. الدالة الرئيسة \\(f(x)=\\sqrt{x}\\): مجالها \\(x\\ge 0\\) ومداها \\(y\\ge 0\\).", "التحويلات \\(f(x)=a\\sqrt{x-h}+k\\): يبدأ التمثيل من النقطة \\((h,k)\\)، والمجال \\(x\\ge h\\).", "إذا كانت \\(a\\gt 0\\) فالمدى \\(y\\ge k\\)، وإذا كانت \\(a\\lt 0\\) فالمدى \\(y\\le k\\) (انعكاس حول المحور السيني).", "لإيجاد المجال نحل المتباينة: ما تحت الجذر \\(\\ge 0\\).", "في <b>متباينة الجذر التربيعي<\/b> نمثّل دالة الحدود، ونظلّل أعلاها مع \\(\\gt\\) و\\(\\ge\\) وأسفلها مع \\(\\lt\\) و\\(\\le\\)، ضمن المجال."], "key": "\\[f(x)=a\\sqrt{x-h}+k:\\quad \\text{البداية } (h,k),\\quad x\\ge h\\]", "examples": [{"q": "حدّد مجال الدالة \\(f(x)=\\sqrt{x-2}+3\\) ومداها ونقطة بدايتها.", "steps": ["\\(x-2\\ge 0\\Rightarrow x\\ge 2\\)، فالمجال \\(\\{x\\mid x\\ge 2\\}\\).", "\\(\\sqrt{x-2}\\ge 0\\) فإن \\(f(x)\\ge 3\\)، والمدى \\(\\{y\\mid y\\ge 3\\}\\).", "نقطة البداية \\((2,3)\\)."]}, {"q": "حدّد مجال الدالة \\(g(x)=-2\\sqrt{x+1}\\) ومداها.", "steps": ["\\(x+1\\ge 0\\Rightarrow x\\ge -1\\).", "\\(a=-2\\lt 0\\) فالتمثيل منعكس، والمدى \\(y\\le 0\\)."]}], "mcq": [{"q": "مجال الدالة \\(f(x)=\\sqrt{x+4}-1\\) هو:", "o": ["\\(x\\ge -4\\)", "\\(x\\ge 4\\)", "\\(x\\ge -1\\)", "\\(x\\ge 1\\)"], "a": 0, "e": "\\(x+4\\ge 0\\Rightarrow x\\ge -4\\)."}, {"q": "مدى الدالة \\(f(x)=-\\sqrt{x-3}+5\\) هو:", "o": ["\\(y\\le 5\\)", "\\(y\\ge 5\\)", "\\(y\\ge 3\\)", "\\(y\\le 3\\)"], "a": 0, "e": "الإشارة السالبة أمام الجذر تجعل \\(-\\sqrt{x-3}\\le 0\\)، فتكون \\(f(x)\\le 5\\)."}, {"q": "نقطة بداية التمثيل البياني للدالة \\(f(x)=\\sqrt{x-1}+2\\) هي:", "o": ["\\((1,2)\\)", "\\((-1,2)\\)", "\\((2,1)\\)", "\\((1,-2)\\)"], "a": 0, "e": "على الصورة \\(\\sqrt{x-h}+k\\) حيث \\(h=1\\) و\\(k=2\\)."}, {"q": "مجال الدالة \\(f(x)=\\sqrt{2x-10}\\) هو:", "o": ["\\(x\\ge 5\\)", "\\(x\\ge 10\\)", "\\(x\\ge -5\\)", "\\(x\\le 5\\)"], "a": 0, "e": "\\(2x-10\\ge 0\\Rightarrow x\\ge 5\\)."}, {"q": "أي النقاط الآتية تقع في منطقة حل المتباينة \\(y\\gt\\sqrt{x}\\)؟", "o": ["\\((1,2)\\)", "\\((4,1)\\)", "\\((9,3)\\)", "\\((16,3)\\)"], "a": 0, "e": "\\(2\\gt\\sqrt{1}=1\\) صحيحة. أما \\((9,3)\\) فتقع على الحدود ولا تحقق \\(\\gt\\)، والنقطتان الأخريان أسفل المنحنى."}]}, {"id": "4-4", "title": "الجذر النوني", "concept": ["إذا كان \\(a^n=b\\) فإن \\(a\\) <b>جذر نوني<\/b> للعدد \\(b\\)، ونكتب \\(\\sqrt[n]{b}\\) حيث \\(n\\) <b>دليل الجذر<\/b>.", "\\(n\\) زوجي و\\(b\\gt 0\\): جذران حقيقيان \\(\\pm\\)، و<b>الجذر الرئيس<\/b> هو الموجب. \\(n\\) زوجي و\\(b\\lt 0\\): لا توجد جذور حقيقية.", "\\(n\\) فردي: جذر حقيقي واحد له إشارة \\(b\\) نفسها.", "\\(\\sqrt[n]{x^n}=|x|\\) إذا كان \\(n\\) زوجياً، و\\(\\sqrt[n]{x^n}=x\\) إذا كان \\(n\\) فردياً."], "key": "\\[\\sqrt[n]{x^n}=\\begin{cases} |x|, & n\\ \\text{زوجي} \\\\ x, & n\\ \\text{فردي} \\end{cases}\\]", "examples": [{"q": "بسّط: \\(\\sqrt[4]{81}\\)، \\(\\sqrt[3]{-125}\\)، \\(\\pm\\sqrt{49}\\)، \\(\\sqrt{-16}\\).", "steps": ["\\(\\sqrt[4]{81}=3\\) لأن \\(3^4=81\\). و\\(\\sqrt[3]{-125}=-5\\) لأن \\((-5)^3=-125\\).", "\\(\\pm\\sqrt{49}=\\pm 7\\).", "\\(\\sqrt{-16}\\) ليس عدداً حقيقياً، لأن الدليل زوجي وما تحت الجذر سالب."]}, {"q": "بسّط \\(\\sqrt{16x^4y^2}\\) و\\(\\sqrt[3]{-27a^6b^3}\\).", "steps": ["\\(\\sqrt{16x^4y^2}=4x^2|y|\\) (لا نحتاج قيمة مطلقة لـ \\(x^2\\) لأنه غير سالب دائماً).", "\\(\\sqrt[3]{-27a^6b^3}=-3a^2b\\) (الدليل فردي فلا قيمة مطلقة)."]}], "mcq": [{"q": "قيمة \\(\\sqrt[5]{-32}\\) هي:", "o": ["\\(-2\\)", "\\(2\\)", "\\(\\pm 2\\)", "ليس عدداً حقيقياً"], "a": 0, "e": "الدليل فردي، و\\((-2)^5=-32\\)."}, {"q": "قيمة \\(\\sqrt[4]{-16}\\):", "o": ["ليس عدداً حقيقياً", "\\(-2\\)", "\\(\\pm 2\\)", "\\(2\\)"], "a": 0, "e": "الدليل زوجي وما تحت الجذر سالب، ولا يوجد عدد حقيقي قوته الرابعة سالبة."}, {"q": "تبسيط \\(\\sqrt{25x^2}\\) هو:", "o": ["\\(5|x|\\)", "\\(5x\\)", "\\(\\pm 5x\\)", "\\(25|x|\\)"], "a": 0, "e": "الدليل زوجي، فـ \\(\\sqrt{x^2}=|x|\\) لضمان أن الجذر الرئيس غير سالب."}, {"q": "تبسيط \\(\\sqrt[3]{64a^9}\\) هو:", "o": ["\\(4a^3\\)", "\\(8a^3\\)", "\\(4a^6\\)", "\\(16a^3\\)"], "a": 0, "e": "\\(4^3=64\\) و\\((a^3)^3=a^9\\)."}, {"q": "تبسيط \\(\\sqrt[4]{81y^8}\\) هو:", "o": ["\\(3y^2\\)", "\\(9y^2\\)", "\\(3y^4\\)", "\\(3|y|\\)"], "a": 0, "e": "\\(3^4=81\\) و\\((y^2)^4=y^8\\)، و\\(y^2\\) غير سالب فلا يحتاج قيمة مطلقة."}]}, {"id": "4-5", "title": "العمليات على العبارات الجذرية", "concept": ["<b>خاصية الضرب<\/b>: \\(\\sqrt[n]{ab}=\\sqrt[n]{a}\\cdot\\sqrt[n]{b}\\). <b>خاصية القسمة<\/b>: \\(\\sqrt[n]{\\frac{a}{b}}=\\frac{\\sqrt[n]{a}}{\\sqrt[n]{b}}\\).", "نبسّط الجذر بإخراج العوامل التي هي قوى تامة، ولا نترك جذراً في المقام.", "<b>إنطاق المقام<\/b>: نضرب البسط والمقام في الجذر نفسه، أو في <b>المرافق<\/b> (مرافق \\(a+\\sqrt{b}\\) هو \\(a-\\sqrt{b}\\)).", "نجمع ونطرح <b>الجذور المتشابهة<\/b> فقط: لها الدليل نفسه وما تحت الجذر نفسه."], "key": "\\[\\frac{c}{a+\\sqrt{b}}\\cdot\\frac{a-\\sqrt{b}}{a-\\sqrt{b}}=\\frac{c\\,(a-\\sqrt{b})}{a^2-b}\\]", "examples": [{"q": "بسّط \\(3\\sqrt{12}+5\\sqrt{27}\\).", "steps": ["\\(\\sqrt{12}=2\\sqrt{3}\\) و\\(\\sqrt{27}=3\\sqrt{3}\\).", "\\(3(2\\sqrt{3})+5(3\\sqrt{3})=6\\sqrt{3}+15\\sqrt{3}=21\\sqrt{3}\\)."]}, {"q": "بسّط \\(\\frac{4}{3-\\sqrt{5}}\\).", "steps": ["نضرب في المرافق: \\(\\frac{4(3+\\sqrt{5})}{(3-\\sqrt{5})(3+\\sqrt{5})}=\\frac{4(3+\\sqrt{5})}{9-5}\\).", "\\(=3+\\sqrt{5}\\)."]}, {"q": "أوجد ناتج \\((2+\\sqrt{3})(5-\\sqrt{3})\\).", "steps": ["بالتوزيع: \\(10-2\\sqrt{3}+5\\sqrt{3}-3\\).", "\\(=7+3\\sqrt{3}\\)."]}], "mcq": [{"q": "ناتج \\(\\sqrt{50}+\\sqrt{18}\\) هو:", "o": ["\\(8\\sqrt{2}\\)", "\\(\\sqrt{68}\\)", "\\(15\\sqrt{2}\\)", "\\(2\\sqrt{2}\\)"], "a": 0, "e": "\\(5\\sqrt{2}+3\\sqrt{2}=8\\sqrt{2}\\). لا يجوز جمع ما تحت الجذرين مباشرة."}, {"q": "تبسيط \\(\\frac{6}{\\sqrt{3}}\\) هو:", "o": ["\\(2\\sqrt{3}\\)", "\\(6\\sqrt{3}\\)", "\\(3\\sqrt{2}\\)", "\\(\\frac{\\sqrt{3}}{2}\\)"], "a": 0, "e": "\\(\\frac{6}{\\sqrt{3}}\\cdot\\frac{\\sqrt{3}}{\\sqrt{3}}=\\frac{6\\sqrt{3}}{3}=2\\sqrt{3}\\)."}, {"q": "تبسيط \\(\\frac{2}{\\sqrt{5}+1}\\) هو:", "o": ["\\(\\frac{\\sqrt{5}-1}{2}\\)", "\\(\\frac{\\sqrt{5}+1}{2}\\)", "\\(\\sqrt{5}-1\\)", "\\(\\frac{\\sqrt{5}-1}{4}\\)"], "a": 0, "e": "نضرب في المرافق \\(\\sqrt{5}-1\\): \\(\\frac{2(\\sqrt{5}-1)}{5-1}=\\frac{\\sqrt{5}-1}{2}\\)."}, {"q": "ناتج \\((\\sqrt{7}+2)(\\sqrt{7}-2)\\) هو:", "o": ["\\(3\\)", "\\(11\\)", "\\(5\\)", "\\(9\\)"], "a": 0, "e": "فرق بين مربعين: \\((\\sqrt{7})^2-2^2=7-4=3\\)."}, {"q": "ناتج \\(\\sqrt[3]{16}\\cdot\\sqrt[3]{4}\\) هو:", "o": ["\\(4\\)", "\\(8\\)", "\\(\\sqrt[3]{20}\\)", "\\(2\\)"], "a": 0, "e": "\\(\\sqrt[3]{16\\cdot 4}=\\sqrt[3]{64}=4\\)."}]}, {"id": "4-6", "title": "الأسس النسبية", "concept": ["\\(b^{\\frac{1}{n}}=\\sqrt[n]{b}\\)، و\\(b^{\\frac{m}{n}}=\\left(\\sqrt[n]{b}\\right)^m=\\sqrt[n]{b^m}\\).", "جميع خصائص الأسس الصحيحة تنطبق على الأسس النسبية، مثل \\(b^{\\frac{1}{2}}\\cdot b^{\\frac{1}{3}}=b^{\\frac{5}{6}}\\).", "العبارة المبسّطة: لا أسس سالبة، ولا أسس كسرية في المقام، ودليل الجذر أصغر ما يمكن.", "نصيحة: عند حساب \\(b^{\\frac{m}{n}}\\) عددياً، أوجد الجذر أولاً ثم ارفع للقوة لتبقى الأعداد صغيرة."], "key": "\\[b^{\\frac{m}{n}}=\\left(\\sqrt[n]{b}\\right)^m\\]", "examples": [{"q": "أوجد قيمة \\(27^{\\frac{2}{3}}\\) و\\(16^{-\\frac{3}{4}}\\).", "steps": ["\\(27^{\\frac{2}{3}}=\\left(\\sqrt[3]{27}\\right)^2=3^2=9\\).", "\\(16^{-\\frac{3}{4}}=\\frac{1}{\\left(\\sqrt[4]{16}\\right)^3}=\\frac{1}{2^3}=\\frac{1}{8}\\)."]}, {"q": "اكتب \\(\\sqrt[5]{a^3}\\) على الصورة الأسية، وبسّط \\(x^{\\frac{1}{2}}\\cdot x^{\\frac{1}{3}}\\).", "steps": ["\\(\\sqrt[5]{a^3}=a^{\\frac{3}{5}}\\).", "\\(x^{\\frac{1}{2}+\\frac{1}{3}}=x^{\\frac{3}{6}+\\frac{2}{6}}=x^{\\frac{5}{6}}\\)."]}], "mcq": [{"q": "قيمة \\(32^{\\frac{3}{5}}\\) هي:", "o": ["\\(8\\)", "\\(4\\)", "\\(16\\)", "\\(2\\)"], "a": 0, "e": "\\(\\sqrt[5]{32}=2\\)، ثم \\(2^3=8\\)."}, {"q": "قيمة \\(81^{-\\frac{1}{4}}\\) هي:", "o": ["\\(\\frac{1}{3}\\)", "\\(-3\\)", "\\(3\\)", "\\(-\\frac{1}{3}\\)"], "a": 0, "e": "\\(81^{-\\frac{1}{4}}=\\frac{1}{\\sqrt[4]{81}}=\\frac{1}{3}\\). الأس السالب لا يجعل الناتج سالباً."}, {"q": "الصورة الأسية للعبارة \\(\\sqrt[4]{x^3}\\) هي:", "o": ["\\(x^{\\frac{3}{4}}\\)", "\\(x^{\\frac{4}{3}}\\)", "\\(x^{12}\\)", "\\(x^{-\\frac{3}{4}}\\)"], "a": 0, "e": "الأس داخل الجذر في البسط، والدليل في المقام: \\(x^{\\frac{3}{4}}\\)."}, {"q": "تبسيط \\(y^{\\frac{2}{3}}\\cdot y^{\\frac{1}{6}}\\) هو:", "o": ["\\(y^{\\frac{5}{6}}\\)", "\\(y^{\\frac{1}{9}}\\)", "\\(y^{\\frac{1}{2}}\\)", "\\(y^{\\frac{3}{2}}\\)"], "a": 0, "e": "نجمع الأسس: \\(\\frac{2}{3}+\\frac{1}{6}=\\frac{4}{6}+\\frac{1}{6}=\\frac{5}{6}\\)."}, {"q": "تبسيط \\((8x^6)^{\\frac{1}{3}}\\) هو:", "o": ["\\(2x^2\\)", "\\(8x^2\\)", "\\(2x^3\\)", "\\(2x^{18}\\)"], "a": 0, "e": "\\(8^{\\frac{1}{3}}=2\\) و\\((x^6)^{\\frac{1}{3}}=x^2\\)."}]}, {"id": "4-7", "title": "حل المعادلات والمتباينات الجذرية", "concept": ["<b>المعادلة الجذرية<\/b> فيها متغير تحت الجذر. الخطوات: اعزل الجذر، ارفع الطرفين للقوة المناسبة، حل المعادلة، ثم <b>تحقق<\/b> دائماً.", "<b>الحل الدخيل<\/b>: قيمة تنتج عن رفع الطرفين لقوة زوجية ولا تحقق المعادلة الأصلية، فتُستبعد.", "<b>المتباينة الجذرية<\/b>: نحدد أولاً قيود المجال (ما تحت الجذر ذي الدليل الزوجي \\(\\ge 0\\))، ثم نحل المتباينة ونأخذ التقاطع.", "مع الأسس النسبية: إذا كان \\(x^{\\frac{m}{n}}=c\\) نرفع الطرفين للقوة \\(\\frac{n}{m}\\)."], "key": "\\[\\sqrt{x+7}=x+1 \\Rightarrow x=2\\ \\text{أو}\\ x=-3\\ (\\text{دخيل})\\]", "examples": [{"q": "حل المعادلة \\(\\sqrt{x+3}+5=9\\).", "steps": ["نعزل الجذر: \\(\\sqrt{x+3}=4\\).", "نربّع الطرفين: \\(x+3=16\\Rightarrow x=13\\).", "التحقق: \\(\\sqrt{16}+5=9\\) ✓."]}, {"q": "حل المعادلة \\(\\sqrt{x+7}=x+1\\).", "steps": ["نربّع الطرفين: \\(x+7=x^2+2x+1\\Rightarrow x^2+x-6=0\\Rightarrow (x+3)(x-2)=0\\).", "التحقق من \\(x=2\\): \\(\\sqrt{9}=3\\) و\\(2+1=3\\) ✓.", "التحقق من \\(x=-3\\): \\(\\sqrt{4}=2\\) بينما \\(-3+1=-2\\)، إذن \\(x=-3\\) حل دخيل. الحل \\(x=2\\)."]}, {"q": "حل المتباينة \\(\\sqrt{2x-4}\\le 4\\).", "steps": ["قيد المجال: \\(2x-4\\ge 0\\Rightarrow x\\ge 2\\).", "نربّع: \\(2x-4\\le 16\\Rightarrow x\\le 10\\).", "الحل \\(2\\le x\\le 10\\)."]}], "mcq": [{"q": "حل المعادلة \\(\\sqrt{2x+1}=5\\) هو:", "o": ["\\(x=12\\)", "\\(x=13\\)", "\\(x=2\\)", "\\(x=24\\)"], "a": 0, "e": "\\(2x+1=25\\Rightarrow x=12\\). التحقق: \\(\\sqrt{25}=5\\) ✓."}, {"q": "حل المعادلة \\(\\sqrt[3]{x-2}=-3\\) هو:", "o": ["\\(x=-25\\)", "\\(x=29\\)", "\\(x=11\\)", "\\(x=-7\\)"], "a": 0, "e": "نكعّب الطرفين: \\(x-2=-27\\Rightarrow x=-25\\). الدليل فردي فالناتج السالب مقبول."}, {"q": "حل المعادلة \\(\\sqrt{x+6}=x\\) هو:", "o": ["\\(x=3\\) فقط", "\\(x=-2\\) فقط", "\\(x=3\\) أو \\(x=-2\\)", "لا يوجد حل"], "a": 0, "e": "\\(x^2-x-6=0\\Rightarrow x=3\\) أو \\(x=-2\\). لكن \\(\\sqrt{4}=2\\neq -2\\)، فـ \\(x=-2\\) دخيل."}, {"q": "حل المتباينة \\(\\sqrt{x-3}\\lt 2\\) هو:", "o": ["\\(3\\le x\\lt 7\\)", "\\(x\\lt 7\\)", "\\(x\\ge 3\\)", "\\(-1\\lt x\\lt 7\\)"], "a": 0, "e": "المجال \\(x\\ge 3\\)، والتربيع يعطي \\(x-3\\lt 4\\Rightarrow x\\lt 7\\). نأخذ التقاطع."}, {"q": "حل المعادلة \\(\\sqrt{x}+4=1\\):", "o": ["لا يوجد حل حقيقي", "\\(x=9\\)", "\\(x=-9\\)", "\\(x=25\\)"], "a": 0, "e": "\\(\\sqrt{x}=-3\\)، والجذر الرئيس لا يكون سالباً. (تربيع الطرفين يعطي \\(x=9\\) لكنه حل دخيل.)"}, {"q": "حل المعادلة \\(x^{\\frac{2}{3}}=16\\) حيث \\(x\\gt 0\\):", "o": ["\\(x=64\\)", "\\(x=8\\)", "\\(x=4\\)", "\\(x=256\\)"], "a": 0, "e": "نرفع الطرفين للقوة \\(\\frac{3}{2}\\): \\(x=16^{\\frac{3}{2}}=\\left(\\sqrt{16}\\right)^3=64\\)."}]}]}], "challenges": [{"id": "c1", "ch": 1, "level": "صعب", "title": "الربح الأمثل لمصنع الألواح الشمسية", "q": "مصنع في المنطقة الشرقية ينتج نوعين من الألواح الشمسية. اللوح \\(A\\) يحتاج ساعتي تجميع وساعة فحص وربحه 300 ريال، واللوح \\(B\\) يحتاج ساعة تجميع وساعتي فحص وربحه 250 ريالاً. المتاح أسبوعياً 100 ساعة تجميع و80 ساعة فحص. ما أكبر ربح أسبوعي ممكن بالريال؟", "hint": "اكتب قيدين للساعات، وأوجد تقاطع خطيهما، ثم عوّض الرؤوس في دالة الربح.", "sol": ["المتغيرات: \\(x\\) عدد ألواح \\(A\\)، و\\(y\\) عدد ألواح \\(B\\).", "القيود: \\(2x+y\\le 100\\)، \\(x+2y\\le 80\\)، \\(x\\ge 0\\)، \\(y\\ge 0\\). دالة الربح \\(P=300x+250y\\).", "تقاطع \\(2x+y=100\\) مع \\(x+2y=80\\): من الأولى \\(y=100-2x\\)، فـ \\(x+200-4x=80\\Rightarrow x=40\\)، و\\(y=20\\).", "الرؤوس: \\((0,0)\\)، \\((50,0)\\)، \\((0,40)\\)، \\((40,20)\\).", "\\(P(50,0)=15000\\)، \\(P(0,40)=10000\\)، \\(P(40,20)=12000+5000=17000\\)."], "ans": "أكبر ربح \\(17000\\) ريال بإنتاج 40 لوحاً من \\(A\\) و20 لوحاً من \\(B\\).", "num": 17000}, {"id": "c2", "ch": 1, "level": "متوسط", "title": "مساحة منطقة الحل", "q": "أوجد مساحة منطقة حل النظام: \\(y\\ge 0\\)، \\(y\\le x\\)، \\(x+y\\le 8\\).", "hint": "المنطقة مثلث. أوجد رؤوسه من تقاطعات الخطوط الثلاثة.", "sol": ["تقاطع \\(y=0\\) و\\(y=x\\): \\((0,0)\\). وتقاطع \\(y=0\\) و\\(x+y=8\\): \\((8,0)\\).", "تقاطع \\(y=x\\) و\\(x+y=8\\): \\(2x=8\\Rightarrow (4,4)\\).", "القاعدة على المحور السيني طولها \\(8\\)، والارتفاع \\(4\\).", "المساحة \\(=\\frac{1}{2}(8)(4)=16\\)."], "ans": "\\(16\\) وحدة مربعة.", "num": 16}, {"id": "c3", "ch": 1, "level": "صعب", "title": "معادلة أكبر عدد صحيح", "q": "حل المعادلة \\([\\![2x-1]\\!]=5\\).", "hint": "\\([\\![u]\\!]=5\\) تعني \\(5\\le u\\lt 6\\).", "sol": ["\\(5\\le 2x-1\\lt 6\\).", "نضيف 1: \\(6\\le 2x\\lt 7\\).", "نقسم على 2: \\(3\\le x\\lt 3.5\\)."], "ans": "\\(3\\le x\\lt 3.5\\)", "num": null}, {"id": "c4", "ch": 2, "level": "متوسط", "title": "مصفوفة بلا نظير", "q": "أوجد قيم \\(x\\) التي تجعل المصفوفة \\(\\begin{bmatrix}x & 3 \\\\ 2 & x-1\\end{bmatrix}\\) ليس لها نظير ضربي.", "hint": "المصفوفة ليس لها نظير ضربي عندما تكون محددتها صفراً.", "sol": ["المحددة: \\(x(x-1)-3(2)=x^2-x-6\\).", "\\(x^2-x-6=0\\Rightarrow (x-3)(x+2)=0\\)."], "ans": "\\(x=3\\) أو \\(x=-2\\).", "num": null}, {"id": "c5", "ch": 2, "level": "متوسط", "title": "مساحة موقع أثري", "q": "عثر فريق آثار في العُلا على ثلاث قطع عند النقاط \\((-2,1)\\)، \\((3,4)\\)، \\((5,-2)\\) على خريطة وحدتها المتر. أوجد مساحة المثلث الذي رؤوسه هذه النقاط بالمتر المربع.", "hint": "استعمل \\(A=\\frac{1}{2}|D|\\) مع محددة \\(3\\times 3\\) عمودها الأخير أعداد 1.", "sol": ["\\(D=\\begin{vmatrix}-2 & 1 & 1 \\\\ 3 & 4 & 1 \\\\ 5 & -2 & 1\\end{vmatrix}\\).", "بالتوسيع حول الصف الأول: \\(-2(4+2)-1(3-5)+1(-6-20)=-12+2-26=-36\\).", "\\(A=\\frac{1}{2}|-36|=18\\)."], "ans": "\\(18\\ \\text{m}^2\\)", "num": 18}, {"id": "c6", "ch": 2, "level": "تحدٍّ", "title": "مصفوفة تحقق معادلة", "q": "إذا كانت \\(A=\\begin{bmatrix}2 & 1 \\\\ 1 & 1\\end{bmatrix}\\) فأوجد \\(A^2-3A+I\\)، ثم استنتج \\(A^{-1}\\) دون استعمال القانون.", "hint": "احسب \\(A^2\\) أولاً. ثم اكتب النتيجة على الصورة \\(A(3I-A)=I\\).", "sol": ["\\(A^2=\\begin{bmatrix}2 & 1 \\\\ 1 & 1\\end{bmatrix}\\begin{bmatrix}2 & 1 \\\\ 1 & 1\\end{bmatrix}=\\begin{bmatrix}5 & 3 \\\\ 3 & 2\\end{bmatrix}\\).", "\\(A^2-3A+I=\\begin{bmatrix}5 & 3 \\\\ 3 & 2\\end{bmatrix}-\\begin{bmatrix}6 & 3 \\\\ 3 & 3\\end{bmatrix}+\\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}=\\begin{bmatrix}0 & 0 \\\\ 0 & 0\\end{bmatrix}\\).", "إذن \\(A^2-3A=-I\\)، أي \\(A(3I-A)=I\\).", "\\(A^{-1}=3I-A=\\begin{bmatrix}3 & 0 \\\\ 0 & 3\\end{bmatrix}-\\begin{bmatrix}2 & 1 \\\\ 1 & 1\\end{bmatrix}=\\begin{bmatrix}1 & -1 \\\\ -1 & 2\\end{bmatrix}\\)."], "ans": "\\(A^2-3A+I\\) هي المصفوفة الصفرية، و\\(A^{-1}=\\begin{bmatrix}1 & -1 \\\\ -1 & 2\\end{bmatrix}\\).", "num": null}, {"id": "c7", "ch": 3, "level": "متوسط", "title": "قوة عدد مركب", "q": "أوجد قيمة \\((1+i)^8\\).", "hint": "احسب \\((1+i)^2\\) أولاً، ثم استعمل خصائص الأسس.", "sol": ["\\((1+i)^2=1+2i+i^2=2i\\).", "\\((1+i)^8=\\left((1+i)^2\\right)^4=(2i)^4\\).", "\\((2i)^4=16\\,i^4=16(1)=16\\)."], "ans": "\\(16\\)", "num": 16}, {"id": "c8", "ch": 3, "level": "متوسط", "title": "جذران متساويان", "q": "أوجد قيم \\(k\\) التي تجعل للمعادلة \\(x^2-(k+2)x+9=0\\) جذرين حقيقيين متساويين.", "hint": "الجذران متساويان عندما يكون المميز صفراً.", "sol": ["\\(\\Delta=(k+2)^2-4(1)(9)=0\\).", "\\((k+2)^2=36\\Rightarrow k+2=\\pm 6\\).", "\\(k=4\\) أو \\(k=-8\\)."], "ans": "\\(k=4\\) أو \\(k=-8\\).", "num": null}, {"id": "c9", "ch": 3, "level": "صعب", "title": "معاملات مجهولة", "q": "إذا كان كل من \\(x-1\\) و\\(x+2\\) عاملاً من عوامل \\(f(x)=x^3+ax^2+bx-6\\)، فأوجد \\(a\\) و\\(b\\) والعامل الثالث.", "hint": "استعمل نظرية العوامل: \\(f(1)=0\\) و\\(f(-2)=0\\)، ثم حل النظام.", "sol": ["\\(f(1)=1+a+b-6=0\\Rightarrow a+b=5\\).", "\\(f(-2)=-8+4a-2b-6=0\\Rightarrow 2a-b=7\\).", "بالجمع: \\(3a=12\\Rightarrow a=4\\)، و\\(b=1\\).", "\\(f(x)=x^3+4x^2+x-6\\)، و\\((x-1)(x+2)=x^2+x-2\\)، وبالقسمة نجد العامل \\(x+3\\)."], "ans": "\\(a=4\\)، \\(b=1\\)، والعامل الثالث \\(x+3\\).", "num": null}, {"id": "c10", "ch": 3, "level": "متوسط", "title": "معادلة على الصيغة التربيعية", "q": "حل المعادلة \\(x^4+5x^2-36=0\\) في مجموعة الأعداد المركبة.", "hint": "ضع \\(u=x^2\\).", "sol": ["\\(u^2+5u-36=0\\Rightarrow (u+9)(u-4)=0\\).", "\\(x^2=4\\Rightarrow x=\\pm 2\\).", "\\(x^2=-9\\Rightarrow x=\\pm 3i\\)."], "ans": "\\(x=\\pm 2,\\ \\pm 3i\\)", "num": null}, {"id": "c11", "ch": 3, "level": "تحدٍّ", "title": "صندوق من الكرتون", "q": "قطعة كرتون مربعة طول ضلعها 20 cm، قُصّ من كل زاوية من زواياها مربع طول ضلعه \\(x\\) cm، ثم طُويت الجوانب لصنع صندوق مفتوح حجمه \\(576\\ \\text{cm}^3\\). أوجد جميع القيم الممكنة لـ \\(x\\).", "hint": "الحجم \\(V=x(20-2x)^2\\). جرّب \\(x=4\\)، ثم استعمل القسمة التركيبية لإيجاد بقية الحلول، وتذكر أن \\(0\\lt x\\lt 10\\).", "sol": ["\\(x(20-2x)^2=576\\Rightarrow 4x^3-80x^2+400x-576=0\\Rightarrow x^3-20x^2+100x-144=0\\).", "\\(x=4\\): \\(64-320+400-144=0\\)، إذن \\(x-4\\) عامل.", "القسمة التركيبية تعطي \\(x^2-16x+36=0\\)، ومنه \\(x=8\\pm 2\\sqrt{7}\\).", "\\(8+2\\sqrt{7}\\approx 13.29\\) مرفوض لأن \\(x\\lt 10\\)، و\\(8-2\\sqrt{7}\\approx 2.71\\) مقبول."], "ans": "\\(x=4\\) cm أو \\(x=8-2\\sqrt{7}\\approx 2.71\\) cm.", "num": null}, {"id": "c12", "ch": 4, "level": "صعب", "title": "تركيبان متساويان", "q": "إذا كانت \\(f(x)=2x-3\\) و\\(g(x)=x^2+1\\)، فأوجد قيم \\(x\\) التي تحقق \\([f\\circ g](x)=[g\\circ f](x)\\).", "hint": "أوجد كل تركيب على حدة، ثم ساوِ بينهما وحل المعادلة التربيعية.", "sol": ["\\([f\\circ g](x)=2(x^2+1)-3=2x^2-1\\).", "\\([g\\circ f](x)=(2x-3)^2+1=4x^2-12x+10\\).", "\\(2x^2-1=4x^2-12x+10\\Rightarrow 2x^2-12x+11=0\\).", "\\(x=\\frac{12\\pm\\sqrt{144-88}}{4}=\\frac{12\\pm 2\\sqrt{14}}{4}=\\frac{6\\pm\\sqrt{14}}{2}\\)."], "ans": "\\(x=\\frac{6\\pm\\sqrt{14}}{2}\\)", "num": null}, {"id": "c13", "ch": 4, "level": "متوسط", "title": "عكس دالة جذرية", "q": "أوجد الدالة العكسية للدالة \\(f(x)=\\sqrt{x-2}+1\\) حيث \\(x\\ge 2\\)، وحدّد مجالها.", "hint": "مدى \\(f\\) يصبح مجالاً لـ \\(f^{-1}\\).", "sol": ["مدى \\(f\\): \\(y\\ge 1\\).", "\\(x=\\sqrt{y-2}+1\\Rightarrow \\sqrt{y-2}=x-1\\Rightarrow y-2=(x-1)^2\\).", "\\(f^{-1}(x)=(x-1)^2+2\\)، ومجالها \\(x\\ge 1\\)."], "ans": "\\(f^{-1}(x)=(x-1)^2+2,\\ x\\ge 1\\)", "num": null}, {"id": "c14", "ch": 4, "level": "صعب", "title": "معادلة بجذرين", "q": "حل المعادلة \\(\\sqrt{x+5}-\\sqrt{x}=1\\).", "hint": "اعزل أحد الجذرين، ثم ربّع مرتين إن لزم.", "sol": ["\\(\\sqrt{x+5}=1+\\sqrt{x}\\).", "نربّع: \\(x+5=1+2\\sqrt{x}+x\\Rightarrow 2\\sqrt{x}=4\\Rightarrow \\sqrt{x}=2\\).", "\\(x=4\\). التحقق: \\(\\sqrt{9}-\\sqrt{4}=3-2=1\\) ✓."], "ans": "\\(x=4\\)", "num": 4}, {"id": "c15", "ch": 4, "level": "متوسط", "title": "إنطاق مقام ثنائي", "q": "بسّط \\(\\frac{\\sqrt{3}+\\sqrt{2}}{\\sqrt{3}-\\sqrt{2}}\\) إلى أبسط صورة.", "hint": "اضرب البسط والمقام في مرافق المقام.", "sol": ["نضرب في \\(\\frac{\\sqrt{3}+\\sqrt{2}}{\\sqrt{3}+\\sqrt{2}}\\): المقام \\(3-2=1\\).", "البسط \\((\\sqrt{3}+\\sqrt{2})^2=3+2\\sqrt{6}+2\\).", "الناتج \\(5+2\\sqrt{6}\\)."], "ans": "\\(5+2\\sqrt{6}\\)", "num": null}, {"id": "c16", "ch": 4, "level": "متوسط", "title": "أس نسبي", "q": "حل المعادلة \\((x-2)^{\\frac{3}{2}}=27\\).", "hint": "ارفع الطرفين للقوة \\(\\frac{2}{3}\\).", "sol": ["\\(x-2=27^{\\frac{2}{3}}=\\left(\\sqrt[3]{27}\\right)^2=9\\).", "\\(x=11\\). التحقق: \\(9^{\\frac{3}{2}}=\\left(\\sqrt{9}\\right)^3=27\\) ✓."], "ans": "\\(x=11\\)", "num": 11}]}</script>
+<script>
+(function () {
+'use strict';
+var D = JSON.parse(document.getElementById('appdata').textContent);
+var LET = ['أ', 'ب', 'ج', 'د'];
+var chapters = D.chapters, challenges = D.challenges;
+var lessons = [], lessonById = {}, qById = {};
+chapters.forEach(function (c) { c.lessons.forEach(function (l) {
+  l.chapter = c; lessons.push(l); lessonById[l.id] = l;
+  l.mcq.forEach(function (q, i) { q.id = l.id + '_' + i; q.lesson = l; qById[q.id] = q; });
+}); });
+var allQ = [];
+lessons.forEach(function (l) { allQ = allQ.concat(l.mcq); });
+
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+var store = {
+  get: function (k) { try { return JSON.parse(localStorage.getItem('himma:' + k)); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem('himma:' + k, JSON.stringify(v)); } catch (e) {} }
+};
+
+/* ---------- LaTeX typesetting (MathJax) */
+var mjChain = Promise.resolve();
+function typeset(node) {
+  if (!node) return;
+  var MJ = window.MathJax;
+  if (MJ && MJ.typesetPromise && MJ.startup && MJ.startup.promise) {
+    mjChain = mjChain.then(function () { return MJ.startup.promise; })
+      .then(function () { return MJ.typesetPromise([node]); }).catch(function () {});
+  } else { window.__mjPending.add(node); }
+}
+
+/* ---------- random helpers */
+function hash(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shuffle(arr, r) { r = r || Math.random; var a = arr.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+var ICON = {
+  ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>',
+  bad: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 6M15 9l-6 6"/></svg>'
+};
+function plural(n, one, two, few, many) { if (n === 1) return one; if (n === 2) return two; var m = n % 100; if (m >= 3 && m <= 10) return n + ' ' + few; return n + ' ' + many; }
+
+/* ---------- MCQ component */
+function mcqHTML(q, order, num) {
+  return '<div class="mcq" data-q="' + q.id + '">' +
+    '<div class="mcq-stem"><span class="qnum">' + num + '</span><div class="stem">' + q.q + '</div></div>' +
+    '<div class="opts">' + order.map(function (oi, p) {
+      return '<button type="button" class="opt" data-oi="' + oi + '" aria-pressed="false"><span class="let">' + LET[p] + '</span><span class="otext">' + q.o[oi] + '</span></button>';
+    }).join('') + '</div><div class="feedback" hidden aria-live="polite"></div></div>';
+}
+function grade(box, oi) {
+  var q = qById[box.dataset.q], ok = oi === q.a;
+  box.classList.add('done', ok ? 'is-ok' : 'is-bad');
+  $$('.opt', box).forEach(function (b) {
+    var i = +b.dataset.oi; b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    if (i === oi && !ok) b.classList.add('wrong');
+    b.setAttribute('aria-pressed', i === oi ? 'true' : 'false');
+  });
+  var fb = $('.feedback', box);
+  fb.innerHTML = '<p class="fb-head">' + (ok ? ICON.ok + 'إجابة صحيحة' : ICON.bad + 'إجابة غير صحيحة') + '</p>' +
+    '<div class="fb-body"><span class="fb-label">الحل</span>' + q.e + '</div>';
+  fb.hidden = false; typeset(fb);
+  return ok;
+}
+function seededOrder(q) { return shuffle([0, 1, 2, 3], rng(hash(q.id))); }
+
+/* ---------- views */
+var VIEWS = ['home', 'lessons', 'test', 'challenge', 'vision', 'about'];
+var current = null;
+function setHash(t) { try { history.replaceState(null, '', '#' + t); } catch (e) {} }
+function showView(name, lessonId) {
+  if (VIEWS.indexOf(name) < 0) name = 'home';
+  $$('.view').forEach(function (v) { v.hidden = v.dataset.view !== name; });
+  $$('.nav a').forEach(function (a) {
+    if (a.dataset.go === name) { a.setAttribute('aria-current', 'page'); try { a.scrollIntoView({ block: 'nearest', inline: 'nearest' }); } catch (e) {} }
+    else a.removeAttribute('aria-current');
+  });
+  if (current !== name) window.scrollTo(0, 0);
+  current = name;
+  if (name === 'lessons') {
+    var id = lessonId || (curLesson && curLesson.id) || store.get('lesson') || lessons[0].id;
+    if (!curLesson || curLesson.id !== id) openLesson(id, true);
+    setHash('lesson-' + curLesson.id);
+  } else setHash(name);
+  if (name === 'challenge' && !chalBuilt) buildChallenges();
+  typeset($('.view[data-view="' + name + '"]'));
+}
+
+/* ---------- lessons */
+var curLesson = null;
+var art = $('#lessonArticle'), toc = $('#toc'), sel = $('#lessonSelect');
+function openLesson(id, silent) {
+  var L = lessonById[id] || lessons[0]; curLesson = L; store.set('lesson', L.id);
+  var C = L.chapter, idx = lessons.indexOf(L), prev = lessons[idx - 1], next = lessons[idx + 1];
+  art.innerHTML =
+    '<header class="lesson-head"><p class="crumb"><span>الفصل ' + C.n + '</span><span class="dot"></span><span>' + C.title + '</span></p>' +
+    '<h2><span class="lnum">' + L.id + '</span><span>' + L.title + '</span></h2></header>' +
+    '<section class="block"><h3 class="block-title">الفكرة باختصار</h3><ul class="concepts">' +
+      L.concept.map(function (c) { return '<li>' + c + '</li>'; }).join('') + '</ul>' +
+      '<div class="rule"><span class="rule-tag">القاعدة</span><div class="rule-body">' + L.key + '</div></div></section>' +
+    '<section class="block"><h3 class="block-title">أمثلة محلولة</h3><div class="examples">' +
+      L.examples.map(function (e, i) {
+        return '<div class="example"><span class="ex-tag">مثال ' + (i + 1) + '</span><div class="ex-q">' + e.q + '</div>' +
+          '<button type="button" class="btn btn-soft btn-sm reveal" data-ex="' + i + '" aria-expanded="false">اعرض الحل</button><div class="ex-sol" hidden></div></div>';
+      }).join('') + '</div></section>' +
+    '<section class="block"><div class="block-row"><h3 class="block-title">تدرّب على الدرس</h3><span class="lesson-score" id="lessonScore"></span></div>' +
+      '<div class="mcq-list" id="practiceList"></div>' +
+      '<div class="practice-foot"><button type="button" class="btn btn-ghost btn-sm" id="resetPractice">أعد المحاولة</button></div></section>' +
+    '<nav class="pager" aria-label="التنقل بين الدروس">' +
+      (prev ? '<button type="button" class="pager-btn" data-lesson="' + prev.id + '"><small>→ الدرس السابق</small><span>' + prev.id + ' ' + prev.title + '</span></button>' : '<span></span>') +
+      (next ? '<button type="button" class="pager-btn next" data-lesson="' + next.id + '"><small>الدرس التالي ←</small><span>' + next.id + ' ' + next.title + '</span></button>' : '<span></span>') +
+    '</nav>';
+  renderPractice(false);
+  $$('.toc-l', toc).forEach(function (b) {
+    var on = b.dataset.lesson === L.id; b.classList.toggle('active', on);
+    if (on) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+  });
+  sel.value = L.id;
+  typeset(art);
+  if (!silent) {
+    setHash('lesson-' + L.id);
+    window.scrollTo(0, 0);
+  }
+}
+function renderPractice(doTypeset) {
+  var list = $('#practiceList');
+  list.innerHTML = curLesson.mcq.map(function (q, i) { return mcqHTML(q, seededOrder(q), i + 1); }).join('');
+  updateScore();
+  if (doTypeset) typeset(list);
+}
+function updateScore() {
+  var boxes = $$('#practiceList .mcq'), done = boxes.filter(function (b) { return b.classList.contains('done'); });
+  var ok = boxes.filter(function (b) { return b.classList.contains('is-ok'); }).length;
+  var el = $('#lessonScore');
+  if (!done.length) { el.textContent = plural(boxes.length, 'سؤال واحد', 'سؤالان', 'أسئلة', 'سؤالاً'); el.classList.remove('full'); }
+  else if (done.length < boxes.length) { el.textContent = 'أجبت عن ' + done.length + ' من ' + boxes.length; el.classList.remove('full'); }
+  else { el.textContent = 'النتيجة: ' + ok + ' من ' + boxes.length; el.classList.toggle('full', ok === boxes.length); }
+}
+art.addEventListener('click', function (e) {
+  var rb = e.target.closest('.reveal');
+  if (rb) {
+    var box = rb.nextElementSibling, ex = curLesson.examples[+rb.dataset.ex];
+    if (box.hidden) {
+      if (!box.dataset.filled) {
+        box.innerHTML = '<ol class="steps">' + ex.steps.map(function (s) { return '<li><div>' + s + '</div></li>'; }).join('') + '</ol>';
+        box.dataset.filled = '1';
+      }
+      box.hidden = false; rb.textContent = 'أخفِ الحل'; rb.setAttribute('aria-expanded', 'true'); typeset(box);
+    } else { box.hidden = true; rb.textContent = 'اعرض الحل'; rb.setAttribute('aria-expanded', 'false'); }
+    return;
+  }
+  var ob = e.target.closest('.opt');
+  if (ob) { var m = ob.closest('.mcq'); if (m.classList.contains('done')) return; grade(m, +ob.dataset.oi); updateScore(); return; }
+  if (e.target.closest('#resetPractice')) renderPractice(true);
+});
+sel.addEventListener('change', function () { openLesson(sel.value); });
+
+/* ---------- random test */
+var T = { qs: [], i: 0, res: [], t0: 0, timer: null, picked: null, elapsed: 0 };
+var setupEl = $('#testSetup'), runEl = $('#testRun'), resEl = $('#testResult');
+function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return (m < 10 ? '0' : '') + m + ':' + (r < 10 ? '0' : '') + r; }
+function tick() { T.elapsed = Math.floor((Date.now() - T.t0) / 1000); $('#runTimer').textContent = fmt(T.elapsed); }
+function showBest() {
+  var b = store.get('best');
+  $('#bestScore').textContent = b ? 'أفضل نتيجة لك: ' + b.pct + '% (' + b.c + ' من ' + b.n + ')' : 'يحتوي البنك على ' + allQ.length + ' سؤالاً محلولاً.';
+}
+function startTest(pool) {
+  T.qs = pool.map(function (q) { return { q: q, order: shuffle([0, 1, 2, 3]) }; });
+  T.i = 0; T.res = []; T.t0 = Date.now(); clearInterval(T.timer); T.timer = setInterval(tick, 1000); tick();
+  setupEl.hidden = true; resEl.hidden = true; runEl.hidden = false;
+  renderRunQ();
+}
+function renderRunQ() {
+  var it = T.qs[T.i], n = T.qs.length;
+  $('#runCount').textContent = 'السؤال ' + (T.i + 1) + ' من ' + n;
+  $('#runTag').textContent = 'الدرس ' + it.q.lesson.id + ': ' + it.q.lesson.title;
+  $('#runBar').style.width = (T.i / n * 100) + '%';
+  var rq = $('#runQ'); rq.innerHTML = mcqHTML(it.q, it.order, T.i + 1);
+  T.picked = null;
+  var c = $('#runConfirm'); c.hidden = false; c.disabled = true; $('#runNext').hidden = true;
+  typeset(rq);
+}
+$('#runQ').addEventListener('click', function (e) {
+  var ob = e.target.closest('.opt'); if (!ob) return;
+  var box = ob.closest('.mcq'); if (box.classList.contains('done')) return;
+  T.picked = +ob.dataset.oi;
+  $$('.opt', box).forEach(function (b) { b.setAttribute('aria-pressed', b === ob ? 'true' : 'false'); });
+  $('#runConfirm').disabled = false;
+});
+$('#runConfirm').addEventListener('click', function () {
+  if (T.picked === null) return;
+  var it = T.qs[T.i], ok = grade($('#runQ .mcq'), T.picked);
+  T.res[T.i] = { picked: T.picked, ok: ok };
+  this.hidden = true;
+  var nx = $('#runNext'); nx.hidden = false; nx.textContent = T.i === T.qs.length - 1 ? 'عرض النتيجة' : 'السؤال التالي'; nx.focus();
+  $('#runBar').style.width = ((T.i + 1) / T.qs.length * 100) + '%';
+});
+$('#runNext').addEventListener('click', function () {
+  if (T.i >= T.qs.length - 1) { finish(); return; }
+  T.i++; renderRunQ(); runEl.scrollIntoView({ block: 'start' }); window.scrollBy(0, -90);
+});
+$('#runQuit').addEventListener('click', finish);
+function finish() {
+  clearInterval(T.timer); tick();
+  var n = T.qs.length, c = T.res.filter(function (r) { return r && r.ok; }).length, pct = Math.round(c / n * 100);
+  runEl.hidden = true; resEl.hidden = false;
+  $('#resPct').textContent = pct + '%';
+  var C = 326.73; requestAnimationFrame(function () { $('#ringVal').style.strokeDashoffset = (C * (1 - pct / 100)).toFixed(2); });
+  $('#resMsg').textContent = pct >= 90 ? 'أداء متميز، همّة تعانق طويق!' : pct >= 75 ? 'أداء رائع، واصل التقدّم' : pct >= 50 ? 'بداية جيدة، راجع أخطاءك وأعد المحاولة' : 'لا بأس، راجع الدروس ثم أعد الاختبار';
+  $('#resCorrect').textContent = c + ' من ' + n;
+  $('#resTime').textContent = fmt(T.elapsed);
+  var wrong = T.qs.filter(function (it, i) { return !(T.res[i] && T.res[i].ok); });
+  $('#resRetry').hidden = !wrong.length;
+  var b = store.get('best'); if (!b || pct > b.pct) store.set('best', { pct: pct, c: c, n: n });
+  var rv = $('#resReview');
+  rv.innerHTML = '<h3 class="block-title" style="margin-top:10px">مراجعة الإجابات</h3>' + T.qs.map(function (it, i) {
+    var r = T.res[i], q = it.q;
+    var st = !r ? '<span class="pill skip">لم تُجب</span>' : r.ok ? '<span class="pill ok">صحيحة</span>' : '<span class="pill bad">خاطئة</span>';
+    return '<div class="rv"><div class="rv-head"><span class="rv-lesson">' + (i + 1) + ' · الدرس ' + q.lesson.id + ' ' + q.lesson.title + '</span>' + st + '</div>' +
+      '<div class="rv-q">' + q.q + '</div><div class="rv-a">' +
+      (r && !r.ok ? '<div class="mine">إجابتك: ' + q.o[r.picked] + '</div>' : '') +
+      '<div class="right">الإجابة الصحيحة: ' + q.o[q.a] + '</div></div>' +
+      '<div class="rv-e"><span class="fb-label">الحل</span>' + q.e + '</div></div>';
+  }).join('');
+  typeset(resEl);
+  resEl.scrollIntoView({ block: 'start' }); window.scrollBy(0, -90);
+  showBest();
+}
+$('#startTest').addEventListener('click', function () {
+  var chs = $$('input[name="tch"]:checked').map(function (i) { return +i.value; });
+  var count = +($('input[name="tcount"]:checked') || { value: 10 }).value;
+  if (!chs.length) { $('#setupMsg').textContent = 'اختر فصلاً واحداً على الأقل.'; return; }
+  $('#setupMsg').textContent = '';
+  var pool = shuffle(allQ.filter(function (q) { return chs.indexOf(q.lesson.chapter.n) >= 0; })).slice(0, count);
+  startTest(pool);
+});
+$('#resNew').addEventListener('click', function () { resEl.hidden = true; setupEl.hidden = false; window.scrollTo(0, 0); });
+$('#resRetry').addEventListener('click', function () {
+  var wrong = T.qs.filter(function (it, i) { return !(T.res[i] && T.res[i].ok); }).map(function (it) { return it.q; });
+  if (wrong.length) { startTest(shuffle(wrong)); window.scrollTo(0, 0); }
+});
+
+/* ---------- challenges */
+var chalBuilt = false, LV = { 'متوسط': '', 'صعب': 'hard', 'تحدٍّ': 'max' };
+function chTitle(n) { for (var i = 0; i < chapters.length; i++) if (chapters[i].n === n) return chapters[i].title; return ''; }
+function buildChallenges() {
+  chalBuilt = true;
+  $('#chalGrid').innerHTML = challenges.map(function (c) {
+    var hasNum = typeof c.num === 'number';
+    return '<article class="chal" data-c="' + c.id + '" data-ch="' + c.ch + '">' +
+      '<div class="chal-top"><span class="lvl ' + LV[c.level] + '">' + c.level + '</span><span class="chal-ch">الفصل ' + c.ch + ' · ' + chTitle(c.ch) + '</span></div>' +
+      '<h3>' + c.title + '</h3><div class="chal-q">' + c.q + '</div>' +
+      '<div><label for="ans-' + c.id + '">' + (hasNum ? 'اكتب الناتج النهائي للتحقق' : 'اكتب إجابتك ثم قارنها بالحل') + '</label>' +
+      '<div class="ans-row"><input id="ans-' + c.id + '" type="text" inputmode="' + (hasNum ? 'decimal' : 'text') + '" autocomplete="off" placeholder="' + (hasNum ? 'مثال: 12' : 'إجابتك') + '">' +
+      '<button type="button" class="btn btn-primary btn-sm" data-act="check">' + (hasNum ? 'تحقّق' : 'قارن') + '</button></div>' +
+      '<p class="chal-msg" aria-live="polite"></p></div>' +
+      '<div class="chal-actions"><button type="button" class="btn btn-soft btn-sm" data-act="hint" aria-expanded="false">تلميح</button>' +
+      '<button type="button" class="btn btn-ghost btn-sm" data-act="sol" aria-expanded="false">الحل التفصيلي</button></div>' +
+      '<div class="chal-hint" hidden></div><div class="chal-sol" hidden></div></article>';
+  }).join('');
+  applyFilter('all');
+}
+function parseNum(s) {
+  s = String(s).replace(/[٠-٩]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); }).replace(/[۰-۹]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); })
+    .replace(/٫/g, '.').replace(/[−–]/g, '-').replace(/[,،٬\s]/g, '').replace(/[^0-9.\-\/]/g, '');
+  if (!s) return NaN;
+  if (s.indexOf('/') >= 0) { var p = s.split('/'); return parseFloat(p[0]) / parseFloat(p[1]); }
+  return parseFloat(s);
+}
+function findChal(id) { for (var i = 0; i < challenges.length; i++) if (challenges[i].id === id) return challenges[i]; }
+function revealSol(card, c) {
+  var box = $('.chal-sol', card), btn = $('[data-act="sol"]', card);
+  if (!box.dataset.filled) {
+    box.innerHTML = '<ol class="steps">' + c.sol.map(function (s) { return '<li><div>' + s + '</div></li>'; }).join('') + '</ol>' +
+      '<div class="answer-line"><span class="fb-label">الإجابة</span>' + c.ans + '</div>';
+    box.dataset.filled = '1';
+  }
+  box.hidden = false; btn.textContent = 'أخفِ الحل'; btn.setAttribute('aria-expanded', 'true'); typeset(box);
+}
+$('#chalGrid').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-act]'); if (!b) return;
+  var card = b.closest('.chal'), c = findChal(card.dataset.c), act = b.dataset.act;
+  if (act === 'hint') {
+    var h = $('.chal-hint', card);
+    if (h.hidden) { if (!h.dataset.filled) { h.innerHTML = '<span class="fb-label">تلميح</span>' + c.hint; h.dataset.filled = '1'; } h.hidden = false; b.setAttribute('aria-expanded', 'true'); typeset(h); }
+    else { h.hidden = true; b.setAttribute('aria-expanded', 'false'); }
+  } else if (act === 'sol') {
+    var s = $('.chal-sol', card);
+    if (s.hidden) revealSol(card, c); else { s.hidden = true; b.textContent = 'الحل التفصيلي'; b.setAttribute('aria-expanded', 'false'); }
+  } else if (act === 'check') {
+    var msg = $('.chal-msg', card), val = $('input', card).value;
+    msg.className = 'chal-msg';
+    if (typeof c.num === 'number') {
+      var v = parseNum(val);
+      if (isNaN(v)) { msg.textContent = 'اكتب عدداً للتحقق، مثل 12 أو 2.5'; msg.classList.add('info'); return; }
+      if (Math.abs(v - c.num) <= Math.max(1e-6, Math.abs(c.num) * 1e-6)) { msg.textContent = 'إجابة صحيحة! راجع الحل لتقارن طريقتك.'; msg.classList.add('ok'); }
+      else { msg.textContent = 'ليست صحيحة بعد. جرّب التلميح ثم أعد المحاولة.'; msg.classList.add('bad'); }
+    } else {
+      msg.textContent = 'قارن إجابتك بالحل التفصيلي أدناه.'; msg.classList.add('info'); revealSol(card, c);
+    }
+  }
+});
+$('#chalGrid').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && e.target.matches('input')) { e.preventDefault(); var b = $('[data-act="check"]', e.target.closest('.chal')); if (b) b.click(); }
+});
+function applyFilter(f) {
+  $$('#chalFilters .filter').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.filter === f ? 'true' : 'false'); });
+  $$('#chalGrid .chal').forEach(function (c) { c.hidden = !(f === 'all' || c.dataset.ch === f); });
+  $$('#chalGrid .chal').forEach(function (c) { if (!c.hidden) typeset(c); });
+}
+$('#chalFilters').addEventListener('click', function (e) { var b = e.target.closest('.filter'); if (b) applyFilter(b.dataset.filter); });
+
+/* ---------- global navigation */
+document.addEventListener('click', function (e) {
+  var l = e.target.closest('[data-lesson]');
+  if (l && !e.target.closest('#lessonArticle .mcq')) {
+    e.preventDefault();
+    if (current === 'lessons') openLesson(l.dataset.lesson); else showView('lessons', l.dataset.lesson);
+    return;
+  }
+  var g = e.target.closest('[data-go]');
+  if (g) { e.preventDefault(); showView(g.dataset.go); }
+});
+
+showBest();
+var h = (location.hash || '').replace('#', '');
+if (h.indexOf('lesson-') === 0 && lessonById[h.slice(7)]) showView('lessons', h.slice(7));
+else showView(VIEWS.indexOf(h) >= 0 ? h : 'home');
+})();
+</script>
+
+</body>
+</html>
